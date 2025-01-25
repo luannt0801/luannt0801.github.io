@@ -1,7 +1,7 @@
 {
-  "name": "Meyawo",
+  "name": "homepage",
   "version": "1.5.0",
-  "description": "An elegant responsive bootstrap 4.x theme.",
+  "description": "Luan page",
   "main": "gulpfile.js",
   "author": "DevCRUD",
   "scripts": {

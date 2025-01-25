@@ -49,16 +49,12 @@
     </nav><!-- End of Page Navbar -->
 
     <script>
-        // Thêm sự kiện cho các liên kết trong navbar
         document.querySelectorAll('.nav .link').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault(); // Ngăn chặn hành động mặc định
+                e.preventDefault();
     
-                // Lấy id của phần mục tiêu từ href (ví dụ: #home)
-                const targetId = this.getAttribute('href').substring(1); // Lấy id từ href (loại bỏ dấu '#')
+                const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-    
-                // Cuộn đến phần tử có id tương ứng
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             });
         });
@@ -73,7 +69,7 @@
                 <span class="up">Hi!</span>
                 <span class="down">I am Luan</span>
             </h1>
-            <p class="header-subtitle">SOLUTION ENGINEER</p>            
+            <p class="header-subtitle">AI ENGINEER</p>            
 
             <!-- <button class="btn btn-primary">Visit My Works</button> -->
             <button class="btn btn-primary" onclick="scrollToProject()">Visit My Works</button>
@@ -99,8 +95,9 @@
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-3">About Me</h2>
                     <p>
-                        Graduated from the <span style="font-weight: 900;">Talent Program in Electronics and Telecommunications</span>, Hanoi University of Science and Technology, in 2024. Passionate about research in the fields of AI and Networking, with a focus on applying AI algorithms to Automation Networks.  
-                        <br> Currently working at <span style="font-weight: 900;">DTS Telecom Company</span> while conducting research at the <span style="font-weight: 900;">FIL - Future Internet Lab</span>.    
+                        Graduated from the <span style="font-weight: 900;">Talent Program in Electronics and Telecommunications</span>, Hanoi University of Science and Technology, in 2024.
+                        <br>- Passionate about research in the fields of AI and Networking, with a focus on applying AI algorithms to Automation Networks.  
+                        <br>- Research at the <span style="font-weight: 900;">FIL - Future Internet Lab</span>.
                     </p>
                     <!-- <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button> -->
                     <button class="btn-rounded btn btn-outline-primary mt-4" onclick="downloadCV()">Download CV</button>
@@ -120,46 +117,59 @@
     <!-- service section -->
     <section class="section" id="project">
         <div class="container text-center">
-            <p class="section-subtitle">What I Do ?</p>
-            <h6 class="section-title mb-6">Project</h6>
+            <p class="section-subtitle">What I Did ?</p>
+            <h6 class="section-title mb-6">Personal Projects</h6>
             <!-- row -->
             <div class="row">
+                <!-- - - - - - -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/meme.gif" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page" class="icon">
-                            <h6 class="title">Luan 1</h6>
-                            <p class="subtitle">description</p>
-                        </div>
+                        <a href="project4.html">
+                            <div class="body">
+                                <img src="assets/imgs/malware.png" alt="Project 1 Icon" class="icon">
+                                <h6 class="title">Federated Learning Detect DGA Malware</h6>
+                                <p class="subtitle">Pytorch, MQTT Mosquitto, Docker</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
+                <!-- - - - - - -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/meme.gif" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page" class="icon">
-                            <h6 class="title">Luan 1</h6>
-                            <p class="subtitle">description</p>
-                        </div>
+                        <a href="project4.html">
+                            <div class="body">
+                                <img src="assets/imgs/reinforcement learnign.png" alt="Project 2 Icon" class="icon">
+                                <h6 class="title">Reinforcement Learning Optimized 5G antena system</h6>
+                                <p class="subtitle">RL with Q-Learning, pygame, gymnasium</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
+                <!-- - - - - - -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/meme.gif" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page" class="icon">
-                            <h6 class="title">Luan 1</h6>
-                            <p class="subtitle">description</p>
-                        </div>
+                        <a href="project4.html">
+                            <div class="body">
+                                <img src="assets/imgs/signlang.png" alt="Project 2 Icon" class="icon">
+                                <h6 class="title">Recognize actions in videos: Sign language - ViViT model</h6>
+                                <p class="subtitle">Yolo v8, Pytorch</p>
+                            </div>
+                        </a>
                     </div>
-                </div>
+                </div>                
+                <!-- - - - - - -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/meme.gif" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page" class="icon">
-                            <h6 class="title">Luan 1</h6>
-                            <p class="subtitle">description</p>
-                        </div>
+                        <a href="project4.html">
+                            <div class="body">
+                                <img src="assets/imgs/meme.gif" alt="Project 2 Icon" class="icon">
+                                <h6 class="title">Project 99</h6>
+                                <p class="subtitle">This is the description of Project 2. Another unique project.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
+                <!-- - - - - - -->
             </div><!-- end of row -->
         </div>
     </section>
@@ -173,7 +183,7 @@
             <!-- row -->
             <div class="row">
                 <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
+                    <a href="/public_html/AI.html" class="portfolio-card">
                         <img src="assets/imgs/AI.jpg" class="portfolio-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">    
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
