@@ -1,23 +1,4 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
+# basic setting
 title: Luan's Blogs
 email: ntl080102@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -26,30 +7,26 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  luannt0801
 
-# Build settings
+# Theme and plugin
 theme: minima
 plugins:
   - jekyll-feed
 
+# build and directories
 include: ["assets"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock"] 
+destination: _site
 
+# collection setting for pose
+collections:
+  posts:
+    output: true
+    permalink: /blogs/:title/
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
+  
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# permalink for post
+permalink: /:categories/:title/  # Định dạng đường dẫn bài viết
+paginate_path: "/page:num/"  # Định dạng URL phân trang
