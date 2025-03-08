@@ -12083,7 +12083,8 @@ pre .code {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(../imgs/luan_root.jpg);
+  /* background-image: url(../imgs/luan_root.jpg); */
+  background-image: url("/blogs/assets/imgs/luan_root.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
