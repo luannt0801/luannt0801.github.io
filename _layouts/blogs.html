@@ -19,7 +19,9 @@
             <!-- <a class="logo" href="#">Welcome to my blog</a>  -->
             <ul class="nav">
                 <li class="item">
-                    <a class="link" href="#home">Home</a>
+                    <!-- <a class="link" href="#home">Home</a> -->
+                    <!-- <a class="link" href="{{ site.baseurl }}">Home</a> -->
+                    <a class="link" href="/">Home</a>
                 </li>
                 <li class="item">
                     <a class="link" href="#about">About</a>
@@ -50,15 +52,18 @@
     </nav><!-- End of Page Navbar -->
 
     <!-- page header -->
-    <header id="home" class="header">
-            <h1 class="welcome-text">Welcome to my blog</h1>
-            <img src="/assets/images/i_am_root.jpg" alt="Blog Header Image" class="header-image">
+    <header id="home" class="header_blogs">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title" style="margin: 360px auto 10px auto; text-align: center;">
+                <span class="down" style="font-size: 20px;">This blog is where I store the knowledge I've gathered from my own research and various sources. 🤖🐮🐗🫎
+                    <br>I’d love to hear your feedback so we can learn and grow together! 🚀</span>
+            </h1>
         </div>              
-    </header>
-    
-    <!-- end of page header -->
+    </header><!-- end of page header -->
 
-    <section class="section" id="blog">
+
+    <!-- <section class="section" id="blog">
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts</p>
             <h6 class="section-title mb-6">Blog</h6>
@@ -80,7 +85,43 @@
             </div>
             {% endfor %}
         </div>
-    </section>    
+    </section>     -->
+
+    <section class="section" id="blog">
+        <div class="container text-center">
+            <p class="section-subtitle">Recent Posts</p>
+            <h6 class="section-title mb-6">Blog</h6>
+    
+            {% for post in site.posts %}
+            <div class="blog-card">
+                <div class="blog-card-header">
+                    <img src="{{ post.image | default: '/assets/imgs/default.jpg' }}" class="blog-card-img" alt="{{ post.title }}">
+                </div>
+                <div class="blog-card-body">
+                    <h5 class="blog-card-title">{{ post.title }}</h5>
+                    <p class="blog-card-caption">
+                        <a href="#">By: {{ post.author | default: 'Admin' }}</a>
+                        <span> | {{ post.date | date: "%B %d, %Y" }}</span>
+                    </p>
+                    
+                    <!-- Hiển thị danh mục (category) -->
+                    {% if post.categories %}
+                    <p class="blog-category">
+                        Categories: 
+                        {% for category in post.categories %}
+                            <a href="/category/{{ category | slugify }}/" class="category-link">#{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+    
+                    <p>{{ post.excerpt }}</p>
+                    <a href="{{ post.url }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    
 
     <!-- footer -->
     <div class="container">
