@@ -12129,7 +12129,7 @@ pre .code {
 .header .header-content .header-blog-subtitle {
   font-size: calc(10px + (22 - 10) * ((100vw - 300px) / (1300 - 300)));
   letter-spacing: calc(1px + (7 - 1) * ((100vw - 300px) / (1300 - 300)));
-  opacity: .8;
+  opacity: .9;
   margin-top: -10px;
   margin-bottom: 20px;
 }
