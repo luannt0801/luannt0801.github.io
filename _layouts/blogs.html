@@ -62,7 +62,6 @@
         </div>              
     </header><!-- end of page header -->
 
-
     <!-- <section class="section" id="blog">
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts</p>
@@ -79,33 +78,9 @@
                         <a href="#">By: {{ post.author | default: 'Admin' }}</a>
                         <span> | {{ post.date | date: "%B %d, %Y" }}</span>
                     </p>
-                    <p>{{ post.excerpt }}</p>
-                    <a href="{{ post.url }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>     -->
-
-    <section class="section" id="blog">
-        <div class="container text-center">
-            <p class="section-subtitle">Recent Posts</p>
-            <h6 class="section-title mb-6">Blog</h6>
-    
-            {% for post in site.posts %}
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="{{ post.image | default: '/assets/imgs/default.jpg' }}" class="blog-card-img" alt="{{ post.title }}">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">{{ post.title }}</h5>
-                    <p class="blog-card-caption">
-                        <a href="#">By: {{ post.author | default: 'Admin' }}</a>
-                        <span> | {{ post.date | date: "%B %d, %Y" }}</span>
-                    </p>
                     
-                    <!-- Hiển thị danh mục (category) -->
-                    {% if post.categories %}
+                     Hiển thị danh mục (category) -->
+                    <!-- {% if post.categories %}
                     <p class="blog-category">
                         Categories: 
                         {% for category in post.categories %}
@@ -118,10 +93,123 @@
                     <a href="{{ post.url }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %} -->
+        <!-- </div> -->
+    <!-- </section> -->
+
+
+    <section class="section" id="blog">
+        <div class="container">
+          <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-md-3 mb-4">
+              <div class="category-sidebar">
+                <h5 class="mb-3">Categories</h5>
+                <ul class="list-unstyled category-list">
+                  {% assign sorted_categories = site.categories | sort %}
+                  {% for category in sorted_categories %}
+                    <li>
+                      <a href="/category/{{ category[0] | slugify }}/" class="category-link">#{{ category[0] }} ({{ category[1].size }})</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </aside>
+      
+            <!-- Blog Posts -->
+            <div class="col-md-9">
+              <div class="text-center">
+                <p class="section-subtitle">Recent Posts</p>
+                <h6 class="section-title mb-6">Blog</h6>
+              </div>
+      
+              {% for post in site.posts %}
+              <div class="blog-card mb-4">
+                <div class="blog-card-header">
+                  <img src="{{ post.image | default: '/assets/imgs/default.jpg' }}" class="blog-card-img" alt="{{ post.title }}">
+                </div>
+                <div class="blog-card-body">
+                  <h5 class="blog-card-title">{{ post.title }}</h5>
+                  <p class="blog-card-caption">
+                    <a href="#">By: {{ post.author | default: 'Admin' }}</a>
+                    <span> | {{ post.date | date: "%B %d, %Y" }}</span>
+                  </p>
+                  {% if post.categories %}
+                    <p class="blog-category">
+                      Categories: 
+                      {% for category in post.categories %}
+                        <a href="/category/{{ category | slugify }}/" class="category-link">#{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                      {% endfor %}
+                    </p>
+                  {% endif %}
+                  <p>{{ post.excerpt }}</p>
+                  <a href="{{ post.url }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
         </div>
-    </section>
-    
+      </section>
+
+      <!-- <section class="section" id="blog">
+        <div class="container">
+          <div class="row">
+            <!-- Sidebar -->
+            <!-- <aside class="col-md-3 mb-4">
+              <div class="category-sidebar">
+                <h5 class="mb-3">Categories</h5>
+                <ul class="list-unstyled category-list">
+                  {% assign sorted_categories = site.categories | sort %}
+                  {% for category in sorted_categories %}
+                  <li>
+                    <a href="javascript:void(0);" class="category-link" data-category="{{ category[0] }}">
+                      #{{ category[0] }} ({{ category[1].size }})
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </aside>
+       -->
+            <!-- Blog Posts -->
+            <!-- <div class="col-md-9">
+              <div class="text-center">
+                <p class="section-subtitle">Recent Posts</p>
+                <h6 class="section-title mb-6">Blog</h6>
+              </div> -->
+      
+              <!-- Bài viết sẽ hiển thị ở đây -->
+              <!-- <div id="post-list">
+                {% for post in site.posts %}
+                <div class="blog-card mb-4 post-item" data-categories="{{ post.categories | join: ',' }}">
+                  <div class="blog-card-header">
+                    <img src="{{ post.image | default: '/assets/imgs/default.jpg' }}" class="blog-card-img" alt="{{ post.title }}">
+                  </div>
+                  <div class="blog-card-body">
+                    <h5 class="blog-card-title">{{ post.title }}</h5>
+                    <p class="blog-card-caption">
+                      <a href="#">By: {{ post.author | default: 'Admin' }}</a>
+                      <span> | {{ post.date | date: "%B %d, %Y" }}</span>
+                    </p>
+                    {% if post.categories %}
+                    <p class="blog-category">
+                      Categories:
+                      {% for category in post.categories %}
+                      <a href="/category/{{ category | slugify }}/" class="category-link">#{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                      {% endfor %}
+                    </p>
+                    {% endif %}
+                    <p>{{ post.excerpt }}</p>
+                    <a href="{{ post.url }}" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> --> -->
 
     <!-- footer -->
     <div class="container">

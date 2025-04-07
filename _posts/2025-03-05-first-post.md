@@ -2,6 +2,7 @@
 title: "My First Blog Post"
 date: 2024-03-08
 categories: [AI, Machine Learning]
+permalink: /category/AI/
 author: "Luan Nguyen"
 image: "/assets/imgs/default.jpg"
 ---

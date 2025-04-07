@@ -12069,8 +12069,14 @@ pre .code {
 
 .header_blogs {
   position: relative;
-  height: 100vh;
+  /* height: 100vh;
   min-height: 600px;
+  height: 100vh; */
+
+  height: 1000px;
+  min-height: 600px;
+  min-width: 800px;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -12084,6 +12090,8 @@ pre .code {
       -ms-flex-pack: center;
           justify-content: center;
   background-image: url(../imgs/luan_root.jpg);
+  /* background-image: url(../imgs/i_am_root.jpg); */
+  /* background-image: url("{{ site.baseurl }}/assets/imgs/luan_root.jpg"); */
   /* background-image: url("{{ site.baseurl }}/assets/imgs/luan_root.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
@@ -12259,7 +12267,7 @@ pre .code {
 
 /* Luan create */
 
-.blog-category {
+/* .blog-category {
   font-size: 14px;
   color: #666;
 }
@@ -12272,4 +12280,31 @@ pre .code {
 
 .category-link:hover {
   text-decoration: underline;
+} */
+
+
+.category-sidebar {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.category-sidebar h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.category-list li {
+  margin-bottom: 0.5rem;
+}
+
+.category-link {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.category-link:hover {
+  color: #007bff;
 }
