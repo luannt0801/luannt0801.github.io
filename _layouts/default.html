@@ -22,24 +22,27 @@
         <div class="stat-box">
             <div class="stat-item total-views">
                 <span>Total</span>
-                <strong>105,501</strong>
+                <!-- <strong>105,501</strong> -->
+                <strong id="total-views-value">0</strong>
             </div>
             <div class="stat-item today-views">
                 <span>Today</span>
-                <strong>1</strong>
+                <!-- <strong>1</strong> -->
+                <strong id="today-views-value">0</strong>
             </div>
             <div class="stat-item yesterday-views">
                 <span>Yesterday</span>
-                <strong>71</strong>
+                <!-- <strong>71</strong> -->
+                <strong id="yesterday-views-value">0</strong>
             </div>
         </div>
 
-        <div class="search-box">
-            <input type="text" placeholder="Find Nemo...">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
+        <!-- <div class="search-box"> -->
+            <!-- <input type="text" placeholder="Find Nemo..."> -->
+            <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
+        <!-- </div> -->
 
-        <div class="category-title">Catagories <span class="category-count">(97)</span></div>
+        <!-- <div class="category-title">Catagories <span class="category-count">(97)</span></div>
         <ul class="category-list">
             <li><span class="emoji">🐬</span> ML & Data <span class="count">(50)</span></li>
             <li><span class="emoji">💻</span> Web <span class="count">(50)</span></li>
@@ -50,6 +53,42 @@
             <li><span class="emoji">🐞</span> DEEEEBUG <span class="count">(50)</span></li>
             <li><span class="emoji">📦</span> etc. <span class="count">(50)</span></li>
             <li><span class="emoji">🐱</span> 사담 <span class="count">(50)</span></li>
+        </ul> -->
+
+        <div class="category-title">Catagories <span class="category-count">({% assign total_posts = site.posts | size %}{{ total_posts }})</span></div>
+        <ul class="category-list">
+            {% assign category_counts = "" | split: "" %}
+
+            {% for category in site.categories %}
+
+                {% assign category_name = category | first %}
+                {% assign posts_in_category = category | last | size %}
+                {% assign category_counts = category_counts | push: category_name | push: posts_in_category | join: "," | split: "," %}
+                <li>
+                    <span class="emoji">
+                        {% case category_name %}
+                            {% when "ML & Data" %} 🐬
+                            {% when "Web" %} 💻
+                            {% when "Project" %} 🛠️
+                            {% when "Algorithm" %} 💡
+                            {% when "CS" %} 🪐
+                            {% when "Docker & Kubernetes" %} 🌊
+                            {% when "DEEEEBUG" %} 🐞
+                            {% else %} 📦
+                        {% endcase %}
+                    </span>
+                    <a href="/categories/{{ category_name | slugify }}">{{ category_name }}</a> <span>({{ posts_in_category }})</span>
+                </li>
+            {% endfor %}
+
+            {% assign etc_count = total_posts %}
+            {% for i in (0..category_counts.size) by: 2 %}
+                {% assign etc_count = etc_count | minus: category_counts[i+1] %}
+            {% endfor %}
+            
+            {% if etc_count > 0 %}
+            <li><span class="emoji">📦</span> <a href="/categories/etc">etc.</a> <span>({{ etc_count }})</span>
+            {% endif %}
         </ul>
 
         <div class="category-title">Menu Blog</div>
@@ -98,6 +137,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.counter.dev/script.js" data-id="54d69579-6a7b-45c3-9ac6-1b8aa6325eb6" data-utcoffset="7"></script> -->
     <script src="/assets/js/scripts.js"></script>
 </body>
 </html>

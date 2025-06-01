@@ -18,12 +18,13 @@ async function updateStats() {
         } catch (error) {
             console.error("Error fetching counter stats:", error);
             // Optionally, set default/fallback values or hide the section
-            totalViewsElement.textContent = "N/A";
-            todayViewsElement.textContent = "N/A";
-            yesterdayViewsElement.textContent = "N/A";
+            totalViewsElement.textContent = "0";
+            todayViewsElement.textContent = "0";
+            yesterdayViewsElement.textContent = "0";
         }
     }
 }
+
 
 // --- Slideshow Functionality ---
 let slideIndex = 1;
