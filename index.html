@@ -1,0 +1,37 @@
+---
+layout: default
+title: Luan Nguyen's Blog - Homepage
+---
+
+<div class="welcome-page">
+    <div class="slideshow-container">
+        <div class="mySlides"><img src="/assets/imgs/slide4.jpg" loading="lazy" alt="Slide 1" class="full-cover"></div>
+        <div class="mySlides"><img src="/assets/imgs/slide2.jpg" loading="lazy" alt="Slide 2" class="full-cover"></div>
+        <div class="mySlides"><img src="/assets/imgs/slide3.jpg" loading="lazy" alt="Slide 3" class="full-cover"></div>
+        <div class="mySlides"><img src="/assets/imgs/slide1.jpg" loading="lazy" alt="Slide 4" class="full-cover"></div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+</div>
+
+<h1 class="latest-posts-heading">Articles</h1>
+<ul class="post-list">
+    {% for post in site.posts limit: 5 %}
+    <li>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p class="post-meta"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%b %-d, %Y" }}</p>
+        <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 50 }} {# Display a clean excerpt #}
+        </div>
+        <p class="read-more"><a href="{{ post.url }}">Đọc thêm &raquo;</a></p>
+    </li>
+    {% endfor %}
+</ul>

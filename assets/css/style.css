@@ -1,0 +1,578 @@
+/* General Body and Main Layout */
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex; /* Use flexbox for main layout */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    /* width: 10vw; */
+    height: 100vh; /* Full height */
+    background-color: #F4F4F6; /*Darker sidebar background*/
+    color: #000000; /*Black text color*/
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed; /* Keep sidebar fixed */
+    overflow-y: auto; /* Enable scrolling if content is long */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .text-center {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar .profile-section { /* Using the new class */
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 70%;
+    object-fit: cover;
+    border: 3px solid #EAEFEF; /*A nice border color*/
+    /* border: 3px solid #FFF2EB; */
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.username {
+    font-size: 18px;
+    /* font-weight: bold; */
+    font-weight:initial;
+    margin-top: 5px;
+}
+
+.userid {
+    color: gray;
+    /* margin-bottom: 1px; */
+    /* font-size: 0.9em; */
+    /* color: #bdc3c7; */
+}
+
+.stat-box {
+    display: flex;
+    justify-content: space-around;
+    background-color: #79777710; /* Slightly lighter background for stats */
+    padding: 15px 5px;
+    border-radius: 8px;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #201a1ab4;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px; /* Spacing between items */
+}
+
+.stat-item span {
+    font-size: 0.8em; /* Smaller text for '전체', '오늘', '어제' */
+    color: #888;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 1.1em;
+    color: #111111; /* black for numbers */
+}
+
+.stat-box div {
+    flex: 1;
+}
+
+.stat-box div:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Search Box Styling */
+.search-box {
+    display: flex;
+    margin-top: 15px;
+    /* margin-bottom: 5px; */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden; /* For input and button border-radius */
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 3px;
+    flex-grow: 1;
+    font-size: 0.9em;
+    outline: none; /* Remove outline on focus */
+}
+
+.search-box button {
+    background-color: #f8f8f8; /* Light background for button */
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #777;
+    transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+    background-color: #eee;
+}
+
+/* Catagory Styling */
+
+.category-title {
+    font-size: 1.0em;
+    /* font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #3498db; /* Category title color */
+    /* border-bottom: 1px solid rgba(255,255,255,0.1); */
+    /* padding-bottom: 5px; */
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333; /* Darker color for titles */
+    /* border-bottom: 1px solid #eee; Removed border, or make it subtle if needed */
+    padding-bottom: 5px;
+}
+
+.category-title .category-count {
+    font-weight: normal;
+    color: #777;
+    font-size: 0.9em; /* Smaller font for count */
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    padding: 6px 0;
+    display: flex;
+    justify-content: flex-start; /*space-between;*/
+    align-items: center;
+    gap: 7px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.category-list li:hover {
+    color: #fd3b00; /* Hover effect */
+    justify-content: flex-start;
+}
+
+.category-list li span.emoji {
+    /* margin-right: 5px; */
+    justify-content: flex-start;
+}
+
+.category-list li span.count{
+    font-size: 0.9em;
+    color: #777;
+}
+
+.category-list li a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+    display: block; /* Make the whole link clickable */
+    flex-grow: 1;
+}
+
+.category-list li a:hover {
+    text-decoration: underline;
+}
+
+/*Menu Blog Style*/
+
+.footer-menu {
+    margin-top: 0; /* Không có khoảng cách với phần phía trên */
+    border-top: 1px solid rgba(255,255,255,0.1); /* Viền trên mờ */
+    color: #bdc3c7; /* Màu chữ xám nhạt */
+    font-size: 1.0em; /* Cỡ chữ */
+    margin-left: 15px; /* Căn lề trái một chút nếu cần */
+    padding-top: 0px; /* (tuỳ chọn) Cho một chút khoảng cách bên trong nếu thấy quá sát */
+}
+
+.footer-menu a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0px 1px;
+    transition: color 0.2s;
+}
+
+.footer-menu a:hover {
+    color: #fd3b00;
+}
+
+.foot-sidebar {
+    margin-top: auto;        /* Đẩy footer xuống đáy */
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 260px; /* Offset by sidebar width */
+    padding: 30px;
+    flex-grow: 1; /* Take remaining space */
+    background-color: #fff;
+    min-height: 100vh; /* Ensure it takes full height */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+
+    height: 50vh; /*cố định chiều cao*/
+}
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 750px; /*Fixed height for consistency*/
+    height: 50vh;
+    object-fit: cover; /*Cover the area, cropping if necessary*/
+    border-radius: 8px;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    /* background-color: rgba(231, 225, 225, 0.5); */
+    z-index: 10;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(197, 189, 189, 0.8);
+}
+
+/* Dots/bullets/indicators */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(0,0,0,0.3); Semi-transparent background for dots */
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
+}
+
+/* Post List Styling */
+.latest-posts-heading {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 2em;
+    color: #333;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.post-list li h2 {
+    margin-top: 0;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.post-list li h2 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.post-list li h2 a:hover {
+    color: #3498db;
+}
+
+.post-list li .post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.post-list li .post-excerpt {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.post-list li .read-more a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-list li .read-more a:hover {
+    text-decoration: underline;
+}
+
+/* Individual Post Detail Styling */
+.post-detail {
+    padding: 30px 0;
+}
+
+.post-detail .post-title {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.post-detail .post-meta {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.post-detail .post-content {
+    line-height: 1.8;
+    color: #333;
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+    color: #2c3e50;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.post-content p {
+    margin-bottom: 1em;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post-content pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+.post-content code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments (optional, but good to have) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack sidebar and content */
+    }
+
+    .sidebar {
+        position: static; /* Sidebar becomes part of the scroll flow */
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .main-content {
+        margin-left: 0; /* No offset needed */
+        padding: 15px;
+    }
+
+    .sidebar .text-center {
+        margin-bottom: 15px;
+    }
+
+    .stat-box {
+        margin-bottom: 20px;
+    }
+
+    .category-title {
+        margin-top: 15px;
+    }
+
+    .footer-menu {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+}
+
+
+
+/* 404 Page Styling */
+.error-404-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 50px auto; /* Center the container */
+}
+
+.error-404-container h1 {
+    font-size: 3em;
+    color: #e74c3c; /* Red for error */
+    margin-bottom: 20px;
+}
+
+.error-404-container p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.error-actions {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.error-actions a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-home {
+    background-color: #3498db; /* Blue for home button */
+    color: white;
+}
+
+.btn-home:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+.btn-back {
+    background-color: #95a5a6; /* Grey for back button */
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+.error-contact {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.error-contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.error-contact a:hover {
+    text-decoration: underline;
+}
+
+
+/*  For scroll page */
+
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #000000; /* màu xanh lam */
+    z-index: 9999; /* đảm bảo luôn nằm trên cùng */
+}

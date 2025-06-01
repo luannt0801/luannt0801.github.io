@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="text-center profile-section"> 
+            <img src="/assets/imgs/luanne_copy2.jpg" alt="Avatar" class="profile-img">
+            <div class="username">Luan Nguyen</div>
+            <div class="userid">@luannt0801</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-item total-views">
+                <span>Total</span>
+                <strong>105,501</strong>
+            </div>
+            <div class="stat-item today-views">
+                <span>Today</span>
+                <strong>1</strong>
+            </div>
+            <div class="stat-item yesterday-views">
+                <span>Yesterday</span>
+                <strong>71</strong>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Find Nemo...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="category-title">Catagories <span class="category-count">(97)</span></div>
+        <ul class="category-list">
+            <li><span class="emoji">🐬</span> ML & Data <span class="count">(50)</span></li>
+            <li><span class="emoji">💻</span> Web <span class="count">(50)</span></li>
+            <li><span class="emoji">🛠️</span> Project <span class="count">(50)</span></li>
+            <li><span class="emoji">💡</span> Algorithm <span class="count">(50)</span> </li>
+            <li><span class="emoji">🪐</span> CS <span class="count">(50)</span></li>
+            <li><span class="emoji">🌊</span> Docker & Kubernetes <span class="count">(50)</span></li>
+            <li><span class="emoji">🐞</span> DEEEEBUG <span class="count">(50)</span></li>
+            <li><span class="emoji">📦</span> etc. <span class="count">(50)</span></li>
+            <li><span class="emoji">🐱</span> 사담 <span class="count">(50)</span></li>
+        </ul>
+
+        <div class="category-title">Menu Blog</div>
+        <ul class="category-list footer-menu"> 
+            <li><a href="/">Home Page</a></li>
+            <!-- <li><a href="#">Notebooks</a></li> -->
+            <li><a href="https://github.com/luannt0801" target="_blank">GitHub</a></li>
+            <li><a href="https://www.youtube.com/@luannguyen.02" target="_blank">Youtube</a></li>
+            <li><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank">LinkedIn</a></li> 
+        </ul>
+
+        <div class="category-title">Contact</div>
+        <ul class="category-list">
+            <li><span class="emoji">📧</span> <a href="mailto:ntl080102@gmail.com" target="_blank">Mail</a></li>
+            <!-- <li><span class="emoji">🔗</span> <a href="https://www.notion.so/luannt0801" target="_blank">Notion</a></li>  -->
+        </ul>
+
+        <div class="category-title">Notices</div>
+        <ul class="category-list">
+            <li><span class="emoji">🐧</span> <a href="mailto:ntl080102@gmail.com">Contact ME</a></li> 
+        </ul>
+        
+        <!-- <div class="gif-box" style="text-align: center; margin: 10px 0;">
+        <img src="/assets/imgs/pig_study.gif" alt="Fun GIF" style="width: 120px; height: 120px; border-radius: 8px;">
+        </div> -->
+        
+        <div class="foot-sidebar">
+          <div class="footer-title">Welcome to Luan's Blog</div>
+          <div class="footer-links">
+            <!-- <a href="https://github.com/luannt0801" target="_blank">GitHub</a> -->
+            <!-- <a href="mailto:ntl080102@gmail.com">Mail</a> -->
+          </div>
+          <div class="footer-copy">
+            © 2025 by luannt0801
+          </div>
+        </div>
+        
+      </div>
+    
+    <div id="scrollProgress"></div>
+
+    <div class="main-content">
+        {{ content }}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</body>
+</html>
