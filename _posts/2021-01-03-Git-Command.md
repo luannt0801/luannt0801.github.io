@@ -63,4 +63,6 @@ Git cũng hỗ trợ làm việc nhóm hiệu quả thông qua việc đồng b�
 |`git stash`|Lưu tạm thời các thay đổi chưa commit|
 |`git stash pop`|Khôi phục lại thay đổi đã stash|
 |`git tag <tagname>`|Gắn thẻ (tag) cho một commit cụ thể, thường dùng để đánh dấu phiên bản|
+
+
 At last, you can `git push origin main --force` j4f =)))))))))))))))
