@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: default
 title: Category: {{ page.category }}
 ---
@@ -13,4 +13,40 @@ title: Category: {{ page.category }}
     </li>
   {% endif %}
 {% endfor %}
-</ul>
+</ul> -->
+
+---
+layout: default
+---
+
+<div class="category-page-content"> {# Thêm một div bọc để dễ dàng ẩn/hiện nếu cần #}
+    <h1 class="page-title">Bài viết thuộc danh mục "{{ page.category }}"</h1>
+
+    <ul class="post-list">
+    {% assign current_category = page.category %}
+    {% for post in site.posts %}
+      {% if post.categories contains current_category %}
+        <li>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="post-meta"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%b %-d, %Y" }}</p>
+            <div class="post-excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 50 }}
+            </div>
+            <p class="read-more"><a href="{{ post.url | relative_url }}">Đọc thêm &raquo;</a></p>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+
+    {% comment %} Thông báo nếu không có bài viết nào trong category này {% endcomment %}
+    {% assign posts_found_in_category = 0 %}
+    {% for post in site.posts %}
+        {% if post.categories contains current_category %}
+            {% assign posts_found_in_category = posts_found_in_category | plus: 1 %}
+        {% endif %}
+    {% endfor %}
+
+    {% if posts_found_in_category == 0 %}
+        <p style="text-align: center; color: #777;">Không tìm thấy bài viết nào trong danh mục này.</p>
+    {% endif %}
+</div>

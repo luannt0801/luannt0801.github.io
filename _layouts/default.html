@@ -42,19 +42,6 @@
             <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
         <!-- </div> -->
 
-        <!-- <div class="category-title">Catagories <span class="category-count">(97)</span></div>
-        <ul class="category-list">
-            <li><span class="emoji">🐬</span> ML & Data <span class="count">(50)</span></li>
-            <li><span class="emoji">💻</span> Web <span class="count">(50)</span></li>
-            <li><span class="emoji">🛠️</span> Project <span class="count">(50)</span></li>
-            <li><span class="emoji">💡</span> Algorithm <span class="count">(50)</span> </li>
-            <li><span class="emoji">🪐</span> CS <span class="count">(50)</span></li>
-            <li><span class="emoji">🌊</span> Docker & Kubernetes <span class="count">(50)</span></li>
-            <li><span class="emoji">🐞</span> DEEEEBUG <span class="count">(50)</span></li>
-            <li><span class="emoji">📦</span> etc. <span class="count">(50)</span></li>
-            <li><span class="emoji">🐱</span> 사담 <span class="count">(50)</span></li>
-        </ul> -->
-
         <div class="category-title">Catagories <span class="category-count">({% assign total_posts = site.posts | size %}{{ total_posts }})</span></div>
         <ul class="category-list">
             {% assign category_counts = "" | split: "" %}
@@ -67,13 +54,13 @@
                 <li>
                     <span class="emoji">
                         {% case category_name %}
-                            {% when "ML & Data" %} 🐬
-                            {% when "Web" %} 💻
+                            {% when "AI & ML" %} 🐬
+                            {% when "Programming" %} 💻
                             {% when "Project" %} 🛠️
-                            {% when "Algorithm" %} 💡
-                            {% when "CS" %} 🪐
-                            {% when "Docker & Kubernetes" %} 🌊
-                            {% when "DEEEEBUG" %} 🐞
+                            {% when "Books" %} 💡
+                            <!-- {% when "Programming" %} 🪐 -->
+                            {% when "Network" %} 🛜
+                            <!-- {% when "DEEEEBUG" %} 🐞 -->
                             {% else %} 📦
                         {% endcase %}
                     </span>
