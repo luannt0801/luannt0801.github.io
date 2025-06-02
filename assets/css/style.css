@@ -149,6 +149,18 @@ body {
     padding-bottom: 5px;
 }
 
+.category-title a {
+    color: inherit; /* Kế thừa màu chữ từ phần tử cha (.category-title), tức là #333 */
+    text-decoration: none; /* Bỏ gạch chân mặc định của liên kết */
+    /* Bạn có thể thêm font-weight: bold; ở đây nếu muốn chỉ phần chữ "Categories" đậm hơn */
+}
+
+/* Hiệu ứng khi di chuột qua (hover) - tùy chọn */
+.category-title a:hover {
+    color: #ff3e30; /* Ví dụ: đổi lại màu xanh khi di chuột qua */
+    /* Hoặc bạn có thể thêm text-decoration: underline; nếu muốn gạch chân khi hover */
+}
+
 .category-title .category-count {
     font-weight: normal;
     color: #777;

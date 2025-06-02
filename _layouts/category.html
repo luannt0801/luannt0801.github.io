@@ -1,52 +1,32 @@
-<!-- ---
-layout: default
-title: Category: {{ page.category }}
+---
+layout: default 
 ---
 
-<h1>Category: {{ page.category }}</h1>
+<div class="category-page-content">
+    {% assign display_category_name = page.category_name | default: page.category %}
+    <h1 class="page-title">Articles in category "{{ display_category_name }}"</h1>
 
-<ul>
-{% for post in site.posts %}
-  {% if post.categories contains page.category %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endif %}
-{% endfor %}
-</ul> -->
+    {% assign posts_in_current_category = site.posts | where_exp:"post", "post.categories contains display_category_name" | sort: "date" | reverse %}
 
----
-layout: default
----
-
-<div class="category-page-content"> {# Thêm một div bọc để dễ dàng ẩn/hiện nếu cần #}
-    <h1 class="page-title">Bài viết thuộc danh mục "{{ page.category }}"</h1>
-
-    <ul class="post-list">
-    {% assign current_category = page.category %}
-    {% for post in site.posts %}
-      {% if post.categories contains current_category %}
-        <li>
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p class="post-meta"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%b %-d, %Y" }}</p>
-            <div class="post-excerpt">
-                {{ post.excerpt | strip_html | truncatewords: 50 }}
-            </div>
-            <p class="read-more"><a href="{{ post.url | relative_url }}">Đọc thêm &raquo;</a></p>
-        </li>
-      {% endif %}
-    {% endfor %}
-    </ul>
-
-    {% comment %} Thông báo nếu không có bài viết nào trong category này {% endcomment %}
-    {% assign posts_found_in_category = 0 %}
-    {% for post in site.posts %}
-        {% if post.categories contains current_category %}
-            {% assign posts_found_in_category = posts_found_in_category | plus: 1 %}
-        {% endif %}
-    {% endfor %}
-
-    {% if posts_found_in_category == 0 %}
-        <p style="text-align: center; color: #777;">Không tìm thấy bài viết nào trong danh mục này.</p>
+    {% if posts_in_current_category.size > 0 %}
+        <ul class="post-list"> 
+            {% for post in posts_in_current_category %}
+                <li> 
+                    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                    <p class="post-meta">
+                        <i class="far fa-calendar-alt"></i> {{ post.date | date: "%b %-d, %Y" }}
+                        {% if post.author %}
+                            <span class="author-meta"> | <i class="fas fa-user"></i> {{ post.author }}</span>
+                        {% endif %}
+                    </p>
+                    <div class="post-excerpt">
+                        {{ post.excerpt | strip_html | truncatewords: 50 }}
+                    </div>
+                    <p class="read-more"><a href="{{ post.url | relative_url }}">Đọc thêm &raquo;</a></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p style="text-align: center; color: #777; margin-top: 50px;">Không tìm thấy bài viết nào trong danh mục này.</p>
     {% endif %}
 </div>

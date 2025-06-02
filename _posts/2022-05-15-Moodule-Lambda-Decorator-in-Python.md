@@ -2,17 +2,19 @@
 layout: post
 title: Modules - Lambdas - Decorators - Interators - Regular Expressions in Python
 date: 2022-05-15 07:24:00 +0700
-categories: ["Programming"]
+author: Nguyen Thanh Luan
+categories: 
+    - Programming
 ---
 
 ## Modules
-
-Khi chương trình python dài và code chia thành nhiều files để bảo trì và sử dụng dễ dàng hơn và để có thể sử dụng lại nhiều hàm một cách tiện dụng mà không cần sao chép, định nghĩa nó vào chương trình Python đưa các định nghĩa vào một file và sử dụng chúng như một tập lệnh hoặc để trong một phiên bản tương tác của interpreter $\rightarrow$ File như vậy được gọi là một **module**
+Khi chương trình python dài và code chia thành nhiều files để bảo trì và sử dụng dễ dàng hơn và để có thể sử dụng lại nhiều hàm một cách tiện dụng mà không cần sao chép, định nghĩa nó vào chương trình Python đưa các định nghĩa vào một file và sử dụng chúng như một tập lệnh hoặc để trong một phiên bản tương tác của interpreter $$\rightarrow$$ File như vậy được gọi là một **module**
 
 Module có thể được *import* vào một module khác hoặc main module.
 
 **Định nghĩa** Module là tệp chưa các định nghĩa và function Python. Tên tệp là tên module có `.py`. Trong một module, tên module (string) có sẵn dưới dạng giá trị của biến toàn cục `__name__`. 
-```python
+```Python
+{% raw %}
 sound/                          Top-level package
       __init__.py               Initialize the sound package
       formats/                  Subpackage for file format conversions
@@ -36,6 +38,7 @@ sound/                          Top-level package
               vocoder.py
               karaoke.py
               ...
+{% endraw %}
 ```
 
 Các tập `__init__.py` được yêu cầu để Python coi các folder chứa các file là các package. Trong trường hợp đơn giản nhất, `__init__.py` có thể chỉ là một file trống, nhưng nó cũng có thể thực thi mã khởi tạo cho package hoặc đặt biến `__all__` `= [` tên các hàm, class, ...`]` trong package.

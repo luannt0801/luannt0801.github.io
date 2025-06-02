@@ -42,15 +42,14 @@
             <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
         <!-- </div> -->
 
-        <div class="category-title">Catagories <span class="category-count">({% assign total_posts = site.posts | size %}{{ total_posts }})</span></div>
+        <div class="category-title"><a href="/">Categories</a> <span class="category-count">({% assign total_posts = site.posts | size %}{{ total_posts }})</span></div>
         <ul class="category-list">
-            {% assign category_counts = "" | split: "" %}
-
+            {% assign counted_posts = 0 %}
             {% for category in site.categories %}
-
                 {% assign category_name = category | first %}
                 {% assign posts_in_category = category | last | size %}
-                {% assign category_counts = category_counts | push: category_name | push: posts_in_category | join: "," | split: "," %}
+                {% assign counted_posts = counted_posts | plus: posts_in_category %}
+                
                 <li>
                     <span class="emoji">
                         {% case category_name %}
@@ -58,24 +57,20 @@
                             {% when "Programming" %} 💻
                             {% when "Project" %} 🛠️
                             {% when "Books" %} 💡
-                            <!-- {% when "Programming" %} 🪐 -->
                             {% when "Network" %} 🛜
-                            <!-- {% when "DEEEEBUG" %} 🐞 -->
                             {% else %} 📦
                         {% endcase %}
                     </span>
-                    <a href="/categories/{{ category_name | slugify }}">{{ category_name }}</a> <span>({{ posts_in_category }})</span>
+                    <a href="/categories/{{ category_name | slugify }}">{{ category_name }}</a>
+                    <span>({{ posts_in_category }})</span>
                 </li>
             {% endfor %}
 
-            {% assign etc_count = total_posts %}
-            {% for i in (0..category_counts.size) by: 2 %}
-                {% assign etc_count = etc_count | minus: category_counts[i+1] %}
-            {% endfor %}
-            
+            {% assign etc_count = total_posts | minus: counted_posts %}
             {% if etc_count > 0 %}
-            <li><span class="emoji">📦</span> <a href="/categories/etc">etc.</a> <span>({{ etc_count }})</span>
+            <li><span class="emoji">📦</span> <a href="/categories/etc">etc.</a> <span>({{ etc_count }})</span></li>
             {% endif %}
+
         </ul>
 
         <div class="category-title">Menu Blog</div>
@@ -125,6 +120,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- <script src="https://cdn.counter.dev/script.js" data-id="54d69579-6a7b-45c3-9ac6-1b8aa6325eb6" data-utcoffset="7"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/themes/github.min.css" rel="stylesheet">
     <script src="/assets/js/scripts.js"></script>
 </body>
 </html>
