@@ -57,12 +57,13 @@
 # _config.yml
 title: Luan Nguyen's Blog
 description: A personal blog by Luan Nguyen
-author: Luan Nguyen
+author: Nguyen Thanh Luan
 paginate: 5 # Number of posts per page on the index (optional, but good for pagination)
 paginate_path: "/blog/page:num/" # Path for pagination
 
 markdown: kramdown
 highlighter: rouge
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
