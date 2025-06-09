@@ -6,12 +6,37 @@ author: Nguyen Thanh Luan
 categories:
   - Programming
 ---
-
-# Git Command
-
 **Git** là một hệ thống quản lý phiên bản giúp theo dõi và lưu trữ lịch sử thay đổi của mã nguồn trong quá trình phát triển phần mềm. Với Git, lập trình viên có thể dễ dàng quay lại các phiên bản trước đó, so sánh thay đổi, làm việc song song trên nhiều nhánh (branches) mà không ảnh hưởng đến main code, và kết hợp (merge) các thay đổi khi hoàn tất.
 
 Git cũng hỗ trợ làm việc nhóm hiệu quả thông qua việc đồng bộ mã nguồn giữa các máy tính qua các kho lưu trữ từ xa như GitHub, GitLab,... Nhờ đó, Git trở thành công cụ không thể thiếu trong quy trình phát triển phần mềm hiện đại, giúp tăng tính linh hoạt, an toàn và minh bạch trong quản lý mã nguồn.
+
+Bài viết này mục đích lưu trữ các git command mà `ntl0801` thường dùng.
+# Git Command
+
+
+`git rebase -i` dùng để check xem các commit nào chưa có trên main.
+
+`git branch -a` show các branch local và branch remote, branch remote thì sẽ có thêm origin/ten-branch còn lại là các branch local
+
+`git status` dùng để check xem branch hiện tại có trạng thái như nào, có update gì so với branch remote ko.
+
+`git fetch origin main` lệnh này sẽ update nhánh hiện tại với nhánh main trên remote nhưng không update vào nhánh main của local
+Còn nếu muốn cập nhật luôn nhánh main ở local dù đang ở nhánh khác:
+```
+git fetch origin
+git switch main
+git pull origin main
+```
+
+**Sự khác biệt giữa git pull và git fetch**
+
+`git fetch` dùng để tải dữ liệu từ remote về local (nhưng chưa merge vào nhánh local) --> Không merge
+(An toàn để xem trước remote có gì mới)
+`git pull` fetch + merge vào nhánh đang đứng --> có thể gây conflict
+(Lấy code và nhập ngay vào nhánh đang làm việc)
+
+`git remote prune origin` dùng để cập nhật các nhánh remote đã bị xóa (ở local lúc này vẫn còn connect các nhánh đó) --> cập nhật lại phía local.
+
 
 ### Các lệnh git cơ bản thường dùng
 
