@@ -52,7 +52,7 @@ info = 300 332 3
 >> colormap(gray);
 ```
 
-![](imgs/Pasted%20image%2020250622234318.png)
+![ảnh]({{ site.baseurl }}/assets/imgs/Pasted%20image%2020250622234318.png)
 
 
 ## Kỹ thuật phát hiện biên Laplace
@@ -78,7 +78,7 @@ colormap(gray);
 ```
 
 
-![](Pasted%20image%2020250622235051.png)
+![ảnh]({{ site.baseurl }}/assets/imgs/Pasted%20image%2020250622235051.png)
 
 ## Kỹ thuật phát hiện biên Canny
 
@@ -99,7 +99,7 @@ Các bước tính toán của thuật toán Canny:
    $$
   Trong đó, (x, y) là tọa độ trên mặt phẳng (Oxy). $\sigma$ là độ lệch chuẩn của phân phối Gauss. Khi áp dụng trên không gian 2 chiều thì hàm $G(x)$ tạo ra một bề mặt có đường viền là các vòng tròn đồng tâm với phân phối chuẩn Gauss từ tâm.
   $\Rightarrow$ Các giá trị từ phân phối này sẽ sử dụng để xây dựng ma trận tích chập được áp dụng cho ảnh gốc. Giá trị mới của mỗi pixel được đặt thành **giá trị trung bình có trọng số** của vùng lân cận pixel đó. Giá trị của pixel gốc nhận được có trọng số lớn nhất và các pixel lân cận nhận được trọng số nhỏ hơn khi khoảng cách của chúng đến pixel gốc tăng lên. $\rightarrow$ Hiệu ứng làm mờ bảo toàn ranh giới và cạnh tốt hơn các bộ lọc làm mờ đồng đều khác.
-  ![](imgs/Gaussian%20Blurring.png)
+  ![ảnh]({{ site.baseurl }}/assets/imgs/Gaussian%20Blurring.png)
   
   Ví dụ tính toán: Ma trận ảnh gốc với kích thước 5x5
 $$
@@ -146,7 +146,7 @@ $\Rightarrow$ **Pixel (2,2) sau khi bị làm mờ sẽ có giá trị là 25.0*
 3. Loại bỏ các điểm không phải cực đại (Non-maximum Suppression-NMS)
    
    Sau khi lấy được độ lớn và hướng của Gradient, quét toàn bộ hình ảnh để thực hiện loại bỏ bất kì pixel không tạo thành cạnh. Mỗi pixel sẽ được kiểm tra xem nó có phải là giá trị cực đại local trong vùng lân cận của nó theo hướng Gradient hay không. 
-   ![](imgs/NMS.png)
+   ![ảnh]({{ site.baseurl }}/assets/imgs/NMS.png)
 	Điểm A nằm trên cạnh (theo hướng thẳng đứng). Hướng gradient vuông góc với cạnh. Điểm B và C theo hướng gradient. Vì vậy, điểm A được kiểm tra với điểm B và C để xem liệu nó có tạo thành cực đại cục bộ hay không.
 	Nếu có, A sẽ được xem xét để nối, nếu không A sẽ được đặt về 0 (xóa).
 	Sau giai đoạn này, hình ảnh nhận được là một ảnh binary có các cạnh mỏng. 
@@ -157,7 +157,7 @@ $\Rightarrow$ **Pixel (2,2) sau khi bị làm mờ sẽ có giá trị là 25.0*
     Hai giá trị ngưỡng, minVal và maxVal dùng để xác định rất cả các cạnh tìm được ở bước 3, thì cạnh nào thật sự là cạnh cần tìm, cạnh nào không. 
     Bất kỳ cạnh nào có độ dốc cường độ lớn hơn maxVal chắc chắn là cạnh và những cạnh dưới minVal chắc chắn là không phải cạnh, do đó bị loại bỏ.
    Những cạnh nằm giữa hai ngưỡng này được phân loại là cạnh hoặc không phải cạnh dựa trên khả năng kết nối của chúng. Nếu chúng được kết nối với các pixel "sure-edge", chúng được coi là một phần của các cạnh. Nếu không, chúng cũng bị loại bỏ.
-		   ![](imgs/Pasted%20image%2020250622230935.png)
+		   ![ảnh]({{ site.baseurl }}/assets/imgs/Pasted%20image%2020250622230935.png)
 Giai đoạn này cũng loại bỏ các điểm ảnh nhiễu nhỏ dựa trên giả định rằng các cạnh là các đường dài.
 $\Rightarrow$ Cuối cùng chúng ta có được các cạnh sắc nét trong hình ảnh.
 
@@ -181,7 +181,7 @@ title('Cạnh được phát hiện bởi Canny');
 colormap(gray);
 ```
 
-![](imgs/Pasted%20image%2020250622235341.png)
+![ảnh]({{ site.baseurl }}/assets/imgs/Pasted%20image%2020250622235341.png)
 
 
 ```python
@@ -200,7 +200,7 @@ if __name__ == "__main__":
 	cv2.destroyAllWindows()
 ```
 
-![](result_edge_detection.png)
+![ảnh]({{ site.baseurl }}/assets/imgs/result_edge_detection.png)
 Phương pháp sử dụng cho ví dụ trên là Canny Edge Detection, một thuật toán phát hiện cạnh của ảnh khá phổ biến được phát triển bởi **John F.Canny** vào năm 1986 [Wiki](https://en.wikipedia.org/wiki/Canny_edge_detector)
  
 
@@ -212,7 +212,8 @@ Contouring là kĩ thuật căn bản của CV và xử lý ảnh (Image Process
 
 Quá trình phát triển các thuật toán phát hiện biên - Contour/Boundary Detection
 
-![](imgs/Boundary%20detection.png)
+
+![ảnh]({{ site.baseurl }}/assets/imgs/Boundary%20detection.png)
 
 Trong đó vòng 45 năm có rất nhiều thuật toán xác định đường biên của ảnh. Trong đó hiệu suất cao nhất là thuật toán **"Human"** là tốt nhất và thường được coi là chuẩn mực để so sánh với các thuật toán khác. Thuật toán **"Multiscale-Ren(2008)"** đạt performance khá tốt và gần với **Human**, là một trong những phương pháp tính toán hiệu quả.
 
