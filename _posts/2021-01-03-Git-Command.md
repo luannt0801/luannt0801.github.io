@@ -13,7 +13,6 @@ Git cũng hỗ trợ làm việc nhóm hiệu quả thông qua việc đồng b�
 Bài viết này mục đích lưu trữ các git command mà `ntl0801` thường dùng.
 # Git Command
 
-
 `git rebase -i` dùng để check xem các commit nào chưa có trên main.
 
 `git branch -a` show các branch local và branch remote, branch remote thì sẽ có thêm origin/ten-branch còn lại là các branch local

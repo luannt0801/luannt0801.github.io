@@ -60,7 +60,7 @@ Nhiều packages trong một folder thì có thể dùng thêm một thuộc tí
 Không chỉ Python mà các ngôn ngữ khác như Java, C# và C++ đều có các hàm lambda được thêm vào cú pháp, trong khi các ngôn ngữ như LISP hoặc ML, Haskell, OCaml và F# sử dụng lambda làm khái niệm cốt lõi.
 
 #### Lambdas Calculus
-
+ 
 Lambda function có nguồn gốc từ phép tính lambda, một mô hình tính toán do Alonzo Church phát minh.
 [Turning Complete](https://simple.wikipedia.org/wiki/Turing_complete)
 

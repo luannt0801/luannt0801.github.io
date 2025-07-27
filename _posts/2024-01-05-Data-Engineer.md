@@ -11,7 +11,7 @@ categories:
 
 Trong lĩnh vực **Data Engineering**, “protocols” thường đề cập đến các **giao thức truyền dữ liệu**, **chuẩn trao đổi thông tin**, hoặc **kỹ thuật giao tiếp giữa các hệ thống dữ liệu**. Dưới đây là các loại **protocol phổ biến** mà Data Engineers thường làm việc cùng:
 ## 1. **Messaging Protocols** (Dùng cho stream & queue data)
-
+ 
 |Protocol|Mô tả|Dùng trong|
 |---|---|---|
 |**Kafka** (Apache)|Distributed event streaming platform|Real-time data pipelines|

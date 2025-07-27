@@ -7,3 +7,4 @@ categories:
   - AI & ML
 ---
 
+Gradient Descent
