@@ -51,8 +51,7 @@ info = 300 332 3
 >> title('Cạnh được phát hiện bởi Sobel');
 >> colormap(gray);
 ```
-
-![ảnh](/imgs/Pasted%20image%2020250622234318.png)
+![ảnh](/assets/imgs_post/Pasted%20image%2020250622234318.png)
 
 
 ## Kỹ thuật phát hiện biên Laplace
@@ -78,7 +77,7 @@ colormap(gray);
 ```
 
 
-![ảnh](/imgs/Pasted%20image%2020250622235051.png)
+![ảnh](/assets/imgs_post/Pasted%20image%2020250622235051.png)
 
 ## Kỹ thuật phát hiện biên Canny
 
@@ -99,7 +98,7 @@ Các bước tính toán của thuật toán Canny:
    $$
   Trong đó, (x, y) là tọa độ trên mặt phẳng (Oxy). $\sigma$ là độ lệch chuẩn của phân phối Gauss. Khi áp dụng trên không gian 2 chiều thì hàm $G(x)$ tạo ra một bề mặt có đường viền là các vòng tròn đồng tâm với phân phối chuẩn Gauss từ tâm.
   $\Rightarrow$ Các giá trị từ phân phối này sẽ sử dụng để xây dựng ma trận tích chập được áp dụng cho ảnh gốc. Giá trị mới của mỗi pixel được đặt thành **giá trị trung bình có trọng số** của vùng lân cận pixel đó. Giá trị của pixel gốc nhận được có trọng số lớn nhất và các pixel lân cận nhận được trọng số nhỏ hơn khi khoảng cách của chúng đến pixel gốc tăng lên. $\rightarrow$ Hiệu ứng làm mờ bảo toàn ranh giới và cạnh tốt hơn các bộ lọc làm mờ đồng đều khác.
-  ![ảnh](/imgs/Gaussian%20Blurring.png)
+  ![ảnh](/assets/imgs_post/Gaussian%20Blurring.png)
   
   Ví dụ tính toán: Ma trận ảnh gốc với kích thước 5x5
 $$
@@ -146,7 +145,7 @@ $\Rightarrow$ **Pixel (2,2) sau khi bị làm mờ sẽ có giá trị là 25.0*
 3. Loại bỏ các điểm không phải cực đại (Non-maximum Suppression-NMS)
    
    Sau khi lấy được độ lớn và hướng của Gradient, quét toàn bộ hình ảnh để thực hiện loại bỏ bất kì pixel không tạo thành cạnh. Mỗi pixel sẽ được kiểm tra xem nó có phải là giá trị cực đại local trong vùng lân cận của nó theo hướng Gradient hay không. 
-   ![ảnh](/imgs/NMS.png)
+   ![ảnh](/assets/imgs_post/NMS.png)
 	Điểm A nằm trên cạnh (theo hướng thẳng đứng). Hướng gradient vuông góc với cạnh. Điểm B và C theo hướng gradient. Vì vậy, điểm A được kiểm tra với điểm B và C để xem liệu nó có tạo thành cực đại cục bộ hay không.
 	Nếu có, A sẽ được xem xét để nối, nếu không A sẽ được đặt về 0 (xóa).
 	Sau giai đoạn này, hình ảnh nhận được là một ảnh binary có các cạnh mỏng. 
@@ -157,7 +156,7 @@ $\Rightarrow$ **Pixel (2,2) sau khi bị làm mờ sẽ có giá trị là 25.0*
     Hai giá trị ngưỡng, minVal và maxVal dùng để xác định rất cả các cạnh tìm được ở bước 3, thì cạnh nào thật sự là cạnh cần tìm, cạnh nào không. 
     Bất kỳ cạnh nào có độ dốc cường độ lớn hơn maxVal chắc chắn là cạnh và những cạnh dưới minVal chắc chắn là không phải cạnh, do đó bị loại bỏ.
    Những cạnh nằm giữa hai ngưỡng này được phân loại là cạnh hoặc không phải cạnh dựa trên khả năng kết nối của chúng. Nếu chúng được kết nối với các pixel "sure-edge", chúng được coi là một phần của các cạnh. Nếu không, chúng cũng bị loại bỏ.
-		   ![ảnh](/imgs/Pasted%20image%2020250622230935.png)
+		   ![ảnh](/assets/imgs_post/Pasted%20image%2020250622230935.png)
 Giai đoạn này cũng loại bỏ các điểm ảnh nhiễu nhỏ dựa trên giả định rằng các cạnh là các đường dài.
 $\Rightarrow$ Cuối cùng chúng ta có được các cạnh sắc nét trong hình ảnh.
 
@@ -181,7 +180,7 @@ title('Cạnh được phát hiện bởi Canny');
 colormap(gray);
 ```
 
-![ảnh](/imgs/Pasted%20image%2020250622235341.png)
+![ảnh](/assets/imgs_post/Pasted%20image%2020250622235341.png)
 
 
 ```python
@@ -200,7 +199,7 @@ if __name__ == "__main__":
 	cv2.destroyAllWindows()
 ```
 
-![ảnh](/imgs/result_edge_detection.png)
+![ảnh](/assets/imgs_post/result_edge_detection.png)
 Phương pháp sử dụng cho ví dụ trên là Canny Edge Detection, một thuật toán phát hiện cạnh của ảnh khá phổ biến được phát triển bởi **John F.Canny** vào năm 1986 [Wiki](https://en.wikipedia.org/wiki/Canny_edge_detector)
  
 
@@ -212,13 +211,13 @@ Contouring là kĩ thuật căn bản của CV và xử lý ảnh (Image Process
 
 Quá trình phát triển các thuật toán phát hiện biên - Contour/Boundary Detection
 
-![imgs](/imgs/Pasted%20image%2020250706113754.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706113754.png)
 
 Trong đó vòng 45 năm có rất nhiều thuật toán xác định đường biên của ảnh. Trong đó hiệu suất cao nhất là thuật toán **"Human"** là tốt nhất và thường được coi là chuẩn mực để so sánh với các thuật toán khác. Thuật toán **"Multiscale-Ren(2008)"** đạt performance khá tốt và gần với **Human**, là một trong những phương pháp tính toán hiệu quả.
 
 Vấn đề của bài toán Contour Detection và Segmentation là có liên quan đến nhau nhưng không giống hệt nhau. Tổng quát chung, các thuật toán dò đường viền không đảm bảo việc tạo ra các viền khép kín vì vậy chúng không nhất thiết đảm bảo một phân vùng các đối tượng vùng trong ảnh. Nhưng nhờ việc khôi phục các đường viền khép kín từ các ranh giới 
 
-![imgs](/imgs/Pasted%20image%2020250706114539.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706114539.png)
 
 Các phương pháp ban đầu để phát hiện đường viền nhằm mục đích định lượng sự hiện diện của đường biên tại một vị trí hình ảnh nhất định thông qua các phép đo cục bộ.
 
@@ -336,7 +335,7 @@ title('Kết quả phân vùng bằng Region Growing');
 Kết quả phân vùng (ma trận nhãn): 1 1 2 2 2 1 2 2 3 2 2 2 3 3 3 2 3 3 3 3 2 2 2 2 3
 ```
 
-![imgs](/imgs/Pasted%20image%2020250706222338.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706222338.png)
 
 
 
@@ -458,29 +457,29 @@ title('Vùng được phân đoạn bằng Region Growing');
 >>
 ```
 
-![imgs](/imgs/Pasted%20image%2020250706232618.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706232618.png)
 
-![imgs](/imgs/Pasted%20image%2020250706232607.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706232607.png)
 
 
 **Phân vùng ảnh (image segmentation)** là một bước nền tảng trong xử lý ảnh, đặc biệt trong các ứng dụng nhận dạng đối tượng, theo dõi chuyển động, trích xuất đặc trưng và truy vấn cơ sở dữ liệu hình ảnh. Mục tiêu của phân vùng là chia ảnh thành các vùng đồng nhất và liên kết, dựa trên đặc trưng màu sắc, hình dạng hoặc kết cấu, mà không cần đến kiến thức bổ sung về các đối tượng cụ thể trong ảnh. Đối với ảnh màu, các vùng đồng nhất thường liên quan đến sự tương đồng về màu sắc hoặc kết cấu màu. Khác với pixel đơn lẻ, các vùng sau khi phân đoạn có thể được mô tả bằng các thuộc tính hình học và thống kê, điều này giúp cho các bước xử lý tiếp theo trở nên hiệu quả hơn.
 
 Một trong những kỹ thuật được áp dụng phổ biến trong phân đoạn ảnh màu là **phân cụm trong không gian màu**. Đây là phương pháp chia ảnh thành các nhóm pixel (cluster) có màu sắc tương tự nhau, bằng cách sử dụng các thuật toán phân cụm như **k-means**. Trong kỹ thuật này, mỗi pixel được xem là một điểm trong không gian ba chiều RGB, và thuật toán tìm cách gom các điểm này vào các cụm sao cho khoảng cách nội bộ trong từng cụm là nhỏ nhất. K-means yêu cầu người dùng xác định trước số lượng cụm k và các tâm cụm khởi tạo, điều này ảnh hưởng đáng kể đến kết quả. Các bước của thuật toán bao gồm gán mỗi pixel vào cụm gần nhất, cập nhật tâm cụm và lặp lại cho đến khi hội tụ. Tuy nhiên, do không xét đến thông tin không gian (tức vị trí của pixel trong ảnh), kỹ thuật này dễ bị ảnh hưởng bởi nhiễu và có thể gây ra hiện tượng phân đoạn quá mức (oversegmentation).
 
-![imgs](/imgs/Pasted%20image%2020250706233415.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706233415.png)
 
-![imgs](/imgs/Pasted%20image%2020250706233426.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706233426.png)
 
 
 Một hướng tiếp cận khác có tính chất xây dựng hơn là **kỹ thuật phân vùng dựa trên vùng (region-based techniques)**, trong đó nổi bật là **Region Growing**. Phương pháp này bắt đầu từ một hoặc nhiều điểm hạt giống (seeds), sau đó mở rộng vùng bằng cách thêm các pixel lân cận có đặc trưng màu sắc tương tự. Trong phiên bản cổ điển, điều kiện đồng nhất (homogeneity criterion) thường dựa trên khoảng cách Euclidean giữa màu sắc của pixel xét và màu trung bình của vùng hiện tại. Nếu khoảng cách này nhỏ hơn ngưỡng định sẵn, pixel được thêm vào vùng, và thông số vùng được cập nhật. Quá trình tiếp tục cho đến khi không còn pixel nào thỏa mãn điều kiện mở rộng. Phân vùng theo cách này có ưu điểm là vừa xét đến độ tương đồng màu, vừa xét đến mối liên kết không gian, cho ra kết quả tự nhiên hơn so với phân cụm thuần túy.
 
-![imgs](/imgs/Pasted%20image%2020250706233437.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706233437.png)
 
 Hai biến thể chính của region growing là **có hạt giống (seeded)** và **không có hạt giống (unseeded)**. Ở phương pháp có hạt giống, người dùng hoặc hệ thống sẽ xác định trước các điểm bắt đầu vùng (seeds), sau đó từng vùng sẽ được mở rộng dựa trên điều kiện đồng nhất. Hiệu quả của phương pháp này phụ thuộc rất lớn vào vị trí của các seed. Nếu seed được đặt vào điểm nhiễu hoặc ở rìa đối tượng, kết quả phân đoạn có thể bị sai lệch hoặc chia thành nhiều vùng không mong muốn. Để khắc phục điều này, các kỹ thuật lựa chọn seed tự động đã được đề xuất, như dựa trên histogram màu, vị trí đỉnh của ảnh Voronoi (liên quan đến khoảng cách từ rìa đối tượng), hoặc các điểm thu hút thị giác từ mô hình chú ý (visual attention models).
 
 Phương pháp **unseeded region growing** là một dạng tự động hoàn toàn. Mỗi pixel trong ảnh ban đầu được xem như một vùng đơn lẻ. Sau đó, các pixel được hợp nhất dần với các vùng lân cận nếu thỏa mãn tiêu chí về màu sắc và liên kết không gian. Việc hợp nhất này có thể được thực hiện qua quét ảnh theo nhiều hướng, như từ trái qua phải hoặc ngược lại. Tuy nhiên, kết quả của unseeded region growing có thể phụ thuộc vào thứ tự quét pixel, do đó các kỹ thuật song song hoặc tái thiết kế thuật toán là cần thiết nếu muốn đảm bảo tính độc lập với thứ tự xử lý.
 
-![imgs](/imgs/Pasted%20image%2020250706233451.png)
+![imgs](/assets/imgs_post/Pasted%20image%2020250706233451.png)
 
 Sau bước phân đoạn ban đầu, nhiều ảnh sẽ có hiện tượng **phân đoạn quá mức (oversegmentation)** do nhiễu hoặc do các chi tiết nhỏ. Để cải thiện kết quả, các bước **xử lý hậu kỳ (postprocessing)** được áp dụng. Kỹ thuật phổ biến là loại bỏ hoặc hợp nhất các vùng nhỏ dựa trên ngưỡng diện tích hoặc độ tương đồng màu với vùng lân cận. Việc lựa chọn ngưỡng cần phải linh hoạt vì nếu quá lớn sẽ loại bỏ luôn cả những chi tiết quan trọng, còn nếu quá nhỏ thì không hiệu quả. Một số phương pháp dùng tiêu chí như histogram màu, khoảng cách Fisher, hoặc đồ thị vùng lân cận (Region Adjacency Graph – RAG) để xác định vùng nào nên hợp nhất.
 

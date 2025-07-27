@@ -9,7 +9,7 @@ Categories:
 - "etc": other
 
 
-Layout Post:
+### Layout Post:
 
 ---
 layout: post
@@ -20,3 +20,13 @@ categories: ["AI & ML"]
 
 ---
 
+
+### Add imgs to post
+
+To add an image to a post in _post: please add the image to assets/imgs_post and add a link to that image in this folder in the post.
+
+### Run
+
+```
+bundle exec jekyll serve
+```
