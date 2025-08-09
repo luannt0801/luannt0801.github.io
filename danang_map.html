@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e0abdbbdfe0f0ae5039c30e87789efdb {
+                #map_4b4378514459ca162cee59ba7e7ffe87 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -50,18 +50,20 @@
             </script>
 
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_e0abdbbdfe0f0ae5039c30e87789efdb" ></div>
+            <div class="folium-map" id="map_4b4378514459ca162cee59ba7e7ffe87" ></div>
         
 </body>
 <script>
     
     
-            var map_e0abdbbdfe0f0ae5039c30e87789efdb = L.map(
-                "map_e0abdbbdfe0f0ae5039c30e87789efdb",
+            var map_4b4378514459ca162cee59ba7e7ffe87 = L.map(
+                "map_4b4378514459ca162cee59ba7e7ffe87",
                 {
                     center: [16.0678, 108.2208],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +80,7 @@
 
         
     
-            var tile_layer_b8f0f881f9523428837b40966d2c0c55 = L.tileLayer(
+            var tile_layer_817ab9fe56eae07e89da4a4996f141ce = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,17 +97,17 @@
             );
         
     
-            tile_layer_b8f0f881f9523428837b40966d2c0c55.addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            tile_layer_817ab9fe56eae07e89da4a4996f141ce.addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-            var marker_b62edd0c122c074bfd2ca8bcb23e107f = L.marker(
+            var marker_d54cc46d3b7217df24262b4349b24a46 = L.marker(
                 [16.1205, 108.30616],
                 {
 }
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-            var icon_9be926d2e73dd2f2bedfde40225a87cc = L.AwesomeMarkers.icon(
+            var icon_8d391ad73264421aaa9f98dcfd63e6e2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -116,24 +118,24 @@
             );
         
     
-        var popup_5315c61e342a483fc54145e51e24c1d7 = L.popup({
+        var popup_a144401c6f3aba66d22c56d243760ca0 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var i_frame_93614fa3b8587499da773e1fb2876d67 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+SW50ZXJDb250aW5lbnRhbCBEYW5hbmcgU3VuIFBlbmluc3VsYSBSZXNvcnQ8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkLDo2kgYmnhu4NuIHJpw6puZyBj4bunYSByZXNvcnQ8L2I+IOKAlCB0cm9uZyBraHUgbmdo4buJIGTGsOG7oW5nPC9saT48bGk+PGI+QsOhbiDEkeG6o28gU8ahbiBUcsOgIC0gTGluaCDhu6huZzwvYj4g4oCUIH4yMOKAkzMwIHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
-                popup_5315c61e342a483fc54145e51e24c1d7.setContent(i_frame_93614fa3b8587499da773e1fb2876d67);
+                var i_frame_47cd3c93725b572ee29e6e212769dcbf = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+SW50ZXJDb250aW5lbnRhbCBEYW5hbmcgU3VuIFBlbmluc3VsYSBSZXNvcnQ8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkLDo2kgYmnhu4NuIHJpw6puZyBj4bunYSByZXNvcnQ8L2I+IOKAlCB0cm9uZyBraHUgbmdo4buJIGTGsOG7oW5nPC9saT48bGk+PGI+QsOhbiDEkeG6o28gU8ahbiBUcsOgIC0gTGluaCDhu6huZzwvYj4g4oCUIH4yMOKAkzMwIHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_a144401c6f3aba66d22c56d243760ca0.setContent(i_frame_47cd3c93725b572ee29e6e212769dcbf);
             
         
 
-        marker_b62edd0c122c074bfd2ca8bcb23e107f.bindPopup(popup_5315c61e342a483fc54145e51e24c1d7)
+        marker_d54cc46d3b7217df24262b4349b24a46.bindPopup(popup_a144401c6f3aba66d22c56d243760ca0)
         ;
 
         
     
     
-            marker_b62edd0c122c074bfd2ca8bcb23e107f.bindTooltip(
+            marker_d54cc46d3b7217df24262b4349b24a46.bindTooltip(
                 `<div>
                      InterContinental Danang Sun Peninsula Resort
                  </div>`,
@@ -143,17 +145,17 @@
             );
         
     
-                marker_b62edd0c122c074bfd2ca8bcb23e107f.setIcon(icon_9be926d2e73dd2f2bedfde40225a87cc);
+                marker_d54cc46d3b7217df24262b4349b24a46.setIcon(icon_8d391ad73264421aaa9f98dcfd63e6e2);
             
     
-            var marker_e00929967946c8d9f2bae36a1ea83ca7 = L.marker(
+            var marker_37b78fe53d1796108bad58863533e3e8 = L.marker(
                 [16.0773137, 108.2235344],
                 {
 }
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-            var icon_5435b3fba3ad478a5050379f639dc63c = L.AwesomeMarkers.icon(
+            var icon_e89e42da01f32869ed6f333077abbd28 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -164,24 +166,24 @@
             );
         
     
-        var popup_cb32d36308aa67e3db65a2e88de9484f = L.popup({
+        var popup_a5e8f26baf0cd54f1fbafe291441424c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var i_frame_17bb17da05021608b950ac76dc984775 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+Tm92b3RlbCBEYW5hbmcgUHJlbWllciBIYW4gUml2ZXI8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkPhuqd1IFLhu5NuZyAoRHJhZ29uIEJyaWRnZSk8L2I+IOKAlCB+NeKAkzEwIHBow7p0IGzDoWkgeGU8L2xpPjxsaT48Yj5DaOG7oyBIw6BuIChIYW4gTWFya2V0KTwvYj4g4oCUIGtob+G6o25nIDUgcGjDunQgxJFpIGLhu5k8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
-                popup_cb32d36308aa67e3db65a2e88de9484f.setContent(i_frame_17bb17da05021608b950ac76dc984775);
+                var i_frame_c5fbe663fea09fe6b43c30e6458857a0 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+Tm92b3RlbCBEYW5hbmcgUHJlbWllciBIYW4gUml2ZXI8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkPhuqd1IFLhu5NuZyAoRHJhZ29uIEJyaWRnZSk8L2I+IOKAlCB+NeKAkzEwIHBow7p0IGzDoWkgeGU8L2xpPjxsaT48Yj5DaOG7oyBIw6BuIChIYW4gTWFya2V0KTwvYj4g4oCUIGtob+G6o25nIDUgcGjDunQgxJFpIGLhu5k8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_a5e8f26baf0cd54f1fbafe291441424c.setContent(i_frame_c5fbe663fea09fe6b43c30e6458857a0);
             
         
 
-        marker_e00929967946c8d9f2bae36a1ea83ca7.bindPopup(popup_cb32d36308aa67e3db65a2e88de9484f)
+        marker_37b78fe53d1796108bad58863533e3e8.bindPopup(popup_a5e8f26baf0cd54f1fbafe291441424c)
         ;
 
         
     
     
-            marker_e00929967946c8d9f2bae36a1ea83ca7.bindTooltip(
+            marker_37b78fe53d1796108bad58863533e3e8.bindTooltip(
                 `<div>
                      Novotel Danang Premier Han River
                  </div>`,
@@ -191,17 +193,17 @@
             );
         
     
-                marker_e00929967946c8d9f2bae36a1ea83ca7.setIcon(icon_5435b3fba3ad478a5050379f639dc63c);
+                marker_37b78fe53d1796108bad58863533e3e8.setIcon(icon_e89e42da01f32869ed6f333077abbd28);
             
     
-            var marker_20284b99cc494c60cec67c67f56d2fc9 = L.marker(
+            var marker_d422e42f76aa8fe9b464a5a94b363758 = L.marker(
                 [16.048297, 108.226951],
                 {
 }
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-            var icon_7431c1068736b92282a6a9ad0e3eead6 = L.AwesomeMarkers.icon(
+            var icon_9148169d6c28e7d9e7dc4ea56a0713ab = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -212,24 +214,24 @@
             );
         
     
-        var popup_689fab6a3c7c42786058da9c6cccf3ca = L.popup({
+        var popup_c9ed34ec0b016cdedab6073760d7fe58 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var i_frame_80fcb5f8571aaebd9f961cb183bf77a3 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+R3JhbmQgTWVyY3VyZSBEYW5hbmc8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkPhuqd1IFLhu5NuZzwvYj4g4oCUIH424oCTMTAgcGjDunQgbMOhaSB4ZTwvbGk+PGxpPjxiPkLDo2kgYmnhu4NuIE3hu7kgS2jDqjwvYj4g4oCUIH414oCTMTAgcGjDunQgbMOhaSB4ZTwvbGk+PC91bD48c21hbGw+R2hpIGNow7o6IGtob+G6o25nIGPDoWNoIGzDoCDGsOG7m2MgbMaw4bujbmc7IGtp4buDbSB0cmEgYuG6o24gxJHhu5MvbmjDoCBuZ2jhu4kgxJHhu4MgY8OzIHThu41hIMSR4buZIGNow61uaCB4w6FjLjwvc21hbGw+" width="300" style="border:none !important;" height="150"></iframe>`)[0];
-                popup_689fab6a3c7c42786058da9c6cccf3ca.setContent(i_frame_80fcb5f8571aaebd9f961cb183bf77a3);
+                var i_frame_5291b88a255a92cb1bd7ad4eb24da2e9 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+R3JhbmQgTWVyY3VyZSBEYW5hbmc8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkPhuqd1IFLhu5NuZzwvYj4g4oCUIH424oCTMTAgcGjDunQgbMOhaSB4ZTwvbGk+PGxpPjxiPkLDo2kgYmnhu4NuIE3hu7kgS2jDqjwvYj4g4oCUIH414oCTMTAgcGjDunQgbMOhaSB4ZTwvbGk+PC91bD48c21hbGw+R2hpIGNow7o6IGtob+G6o25nIGPDoWNoIGzDoCDGsOG7m2MgbMaw4bujbmc7IGtp4buDbSB0cmEgYuG6o24gxJHhu5MvbmjDoCBuZ2jhu4kgxJHhu4MgY8OzIHThu41hIMSR4buZIGNow61uaCB4w6FjLjwvc21hbGw+" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_c9ed34ec0b016cdedab6073760d7fe58.setContent(i_frame_5291b88a255a92cb1bd7ad4eb24da2e9);
             
         
 
-        marker_20284b99cc494c60cec67c67f56d2fc9.bindPopup(popup_689fab6a3c7c42786058da9c6cccf3ca)
+        marker_d422e42f76aa8fe9b464a5a94b363758.bindPopup(popup_c9ed34ec0b016cdedab6073760d7fe58)
         ;
 
         
     
     
-            marker_20284b99cc494c60cec67c67f56d2fc9.bindTooltip(
+            marker_d422e42f76aa8fe9b464a5a94b363758.bindTooltip(
                 `<div>
                      Grand Mercure Danang
                  </div>`,
@@ -239,17 +241,17 @@
             );
         
     
-                marker_20284b99cc494c60cec67c67f56d2fc9.setIcon(icon_7431c1068736b92282a6a9ad0e3eead6);
+                marker_d422e42f76aa8fe9b464a5a94b363758.setIcon(icon_9148169d6c28e7d9e7dc4ea56a0713ab);
             
     
-            var marker_89fb10f1f48490aa704a305ce9ced876 = L.marker(
+            var marker_318cd0aaee7656839d37454fbee27c38 = L.marker(
                 [16.0406291, 108.250121],
                 {
 }
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-            var icon_2615fbc657f2c211c0220baa9565528f = L.AwesomeMarkers.icon(
+            var icon_0c6060892467f4c7cb69dfe5ce2dd948 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -260,24 +262,24 @@
             );
         
     
-        var popup_ae43d8abc4cee1532a8fd443a9ce4a55 = L.popup({
+        var popup_fcdc3495799579d1b5a8c1e494b97103 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var i_frame_1060ff93bd866505602e2d5a6a2721e9 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+UHVsbG1hbiBEYW5hbmcgQmVhY2ggUmVzb3J0PC9oND48Yj7EkOG7i2EgxJFp4buDbSB2dWkgY2jGoWkgZ+G6p24gxJHDszo8L2I+PHVsPjxsaT48Yj5Cw6NpIGJp4buDbiBN4bu5IEtow6o8L2I+IOKAlCBuZ2F5IGfhuqduPC9saT48bGk+PGI+TmfFqSBIw6BuaCBTxqFuIChNYXJibGUgTW91bnRhaW5zKTwvYj4g4oCUIH4xNeKAkzIwIHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
-                popup_ae43d8abc4cee1532a8fd443a9ce4a55.setContent(i_frame_1060ff93bd866505602e2d5a6a2721e9);
+                var i_frame_dd9ce39495746fda7a29f43c285a4ce4 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+UHVsbG1hbiBEYW5hbmcgQmVhY2ggUmVzb3J0PC9oND48Yj7EkOG7i2EgxJFp4buDbSB2dWkgY2jGoWkgZ+G6p24gxJHDszo8L2I+PHVsPjxsaT48Yj5Cw6NpIGJp4buDbiBN4bu5IEtow6o8L2I+IOKAlCBuZ2F5IGfhuqduPC9saT48bGk+PGI+TmfFqSBIw6BuaCBTxqFuIChNYXJibGUgTW91bnRhaW5zKTwvYj4g4oCUIH4xNeKAkzIwIHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_fcdc3495799579d1b5a8c1e494b97103.setContent(i_frame_dd9ce39495746fda7a29f43c285a4ce4);
             
         
 
-        marker_89fb10f1f48490aa704a305ce9ced876.bindPopup(popup_ae43d8abc4cee1532a8fd443a9ce4a55)
+        marker_318cd0aaee7656839d37454fbee27c38.bindPopup(popup_fcdc3495799579d1b5a8c1e494b97103)
         ;
 
         
     
     
-            marker_89fb10f1f48490aa704a305ce9ced876.bindTooltip(
+            marker_318cd0aaee7656839d37454fbee27c38.bindTooltip(
                 `<div>
                      Pullman Danang Beach Resort
                  </div>`,
@@ -287,17 +289,17 @@
             );
         
     
-                marker_89fb10f1f48490aa704a305ce9ced876.setIcon(icon_2615fbc657f2c211c0220baa9565528f);
+                marker_318cd0aaee7656839d37454fbee27c38.setIcon(icon_0c6060892467f4c7cb69dfe5ce2dd948);
             
     
-            var marker_5d3d010145bbf2cda9adf53c7e252b07 = L.marker(
+            var marker_fba60b1daa9db2d11cad7e1edd934717 = L.marker(
                 [16.0635, 108.2416],
                 {
 }
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-            var icon_e5009f61d01725424406f909395b3136 = L.AwesomeMarkers.icon(
+            var icon_4d28feec05ad95d19fdc22b7a326c23e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -308,24 +310,24 @@
             );
         
     
-        var popup_1917c365d6d3ba6f44e3cecec48ac599 = L.popup({
+        var popup_df8ebe422f3dae6746b972265bc25250 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var i_frame_3d1da1ae75bb886d533810d418ba7955 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+RnVyYW1hIFJlc29ydCBEYSBOYW5nIChraHUgduG7sWMgTXkgS2hlKTwvaDQ+PGI+xJDhu4thIMSRaeG7g20gdnVpIGNoxqFpIGfhuqduIMSRw7M6PC9iPjx1bD48bGk+PGI+TeG7uSBLaMOqIEJlYWNoPC9iPiDigJQgbmdheSBj4bqhbmggYsOjaSBiaeG7g248L2xpPjxsaT48Yj5D4bqndSBS4buTbmc8L2I+IOKAlCBraG/huqNuZyAxMOKAkzE1IHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
-                popup_1917c365d6d3ba6f44e3cecec48ac599.setContent(i_frame_3d1da1ae75bb886d533810d418ba7955);
+                var i_frame_2a65b27c2c693e61cc7d7c9b5f70c9bf = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+RnVyYW1hIFJlc29ydCBEYSBOYW5nIChraHUgduG7sWMgTXkgS2hlKTwvaDQ+PGI+xJDhu4thIMSRaeG7g20gdnVpIGNoxqFpIGfhuqduIMSRw7M6PC9iPjx1bD48bGk+PGI+TeG7uSBLaMOqIEJlYWNoPC9iPiDigJQgbmdheSBj4bqhbmggYsOjaSBiaeG7g248L2xpPjxsaT48Yj5D4bqndSBS4buTbmc8L2I+IOKAlCBraG/huqNuZyAxMOKAkzE1IHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_df8ebe422f3dae6746b972265bc25250.setContent(i_frame_2a65b27c2c693e61cc7d7c9b5f70c9bf);
             
         
 
-        marker_5d3d010145bbf2cda9adf53c7e252b07.bindPopup(popup_1917c365d6d3ba6f44e3cecec48ac599)
+        marker_fba60b1daa9db2d11cad7e1edd934717.bindPopup(popup_df8ebe422f3dae6746b972265bc25250)
         ;
 
         
     
     
-            marker_5d3d010145bbf2cda9adf53c7e252b07.bindTooltip(
+            marker_fba60b1daa9db2d11cad7e1edd934717.bindTooltip(
                 `<div>
                      Furama Resort Da Nang (khu vực My Khe)
                  </div>`,
@@ -335,76 +337,288 @@
             );
         
     
-                marker_5d3d010145bbf2cda9adf53c7e252b07.setIcon(icon_e5009f61d01725424406f909395b3136);
+                marker_fba60b1daa9db2d11cad7e1edd934717.setIcon(icon_4d28feec05ad95d19fdc22b7a326c23e);
             
     
-            var circle_marker_12ade1b155a87bbf0264ca61587b449d = L.circleMarker(
-                [16.06111, 108.22667],
-                {"bubblingMouseEvents": true, "color": null, "dashArray": null, "dashOffset": null, "fill": true, "fillColor": null, "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            tile_layer_817ab9fe56eae07e89da4a4996f141ce.addTo(map_4b4378514459ca162cee59ba7e7ffe87);
         
     
-        var popup_dd2c77348cffc281f01019e02948c033 = L.popup({
-  "maxWidth": "100%",
+                marker_d54cc46d3b7217df24262b4349b24a46.setIcon(icon_8d391ad73264421aaa9f98dcfd63e6e2);
+            
+    
+                marker_37b78fe53d1796108bad58863533e3e8.setIcon(icon_e89e42da01f32869ed6f333077abbd28);
+            
+    
+                marker_d422e42f76aa8fe9b464a5a94b363758.setIcon(icon_9148169d6c28e7d9e7dc4ea56a0713ab);
+            
+    
+                marker_318cd0aaee7656839d37454fbee27c38.setIcon(icon_0c6060892467f4c7cb69dfe5ce2dd948);
+            
+    
+                marker_fba60b1daa9db2d11cad7e1edd934717.setIcon(icon_4d28feec05ad95d19fdc22b7a326c23e);
+            
+    
+            var tile_layer_758090559c147c69794a26e6e2e6fc47 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_fff77a64695890b44ba18082b2091c5c = new L.Control.MiniMap(
+                tile_layer_758090559c147c69794a26e6e2e6fc47,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -4,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_4b4378514459ca162cee59ba7e7ffe87.addControl(mini_map_fff77a64695890b44ba18082b2091c5c);
+        
+    
+            var marker_0a71e9a1931a018230fb20b36e801a1c = L.marker(
+                [16.1205, 108.30616],
+                {
+}
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
+        
+    
+            var icon_9d2acd125c84945981eca2679328b38f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "hotel",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fa64febe68c46b39c879b8b5070f249 = L.popup({
+  "maxWidth": 300,
 });
 
         
             
-                var html_5b1a1195c6c119d722fb8ab8975a446e = $(`<div id="html_5b1a1195c6c119d722fb8ab8975a446e" style="width: 100.0%; height: 100.0%;">Dragon Bridge: Cầu biểu tượng có trình diễn phun lửa (cuối tuần)</div>`)[0];
-                popup_dd2c77348cffc281f01019e02948c033.setContent(html_5b1a1195c6c119d722fb8ab8975a446e);
+                var i_frame_be7b495bfae5d6f0dbc4965b14293da2 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+SW50ZXJDb250aW5lbnRhbCBEYW5hbmcgU3VuIFBlbmluc3VsYSBSZXNvcnQ8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkLDo2kgYmnhu4NuIHJpw6puZyBj4bunYSByZXNvcnQ8L2I+IOKAlCB0cm9uZyBraHUgbmdo4buJIGTGsOG7oW5nPC9saT48bGk+PGI+QsOhbiDEkeG6o28gU8ahbiBUcsOgIC0gTGluaCDhu6huZzwvYj4g4oCUIH4yMOKAkzMwIHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_1fa64febe68c46b39c879b8b5070f249.setContent(i_frame_be7b495bfae5d6f0dbc4965b14293da2);
             
         
 
-        circle_marker_12ade1b155a87bbf0264ca61587b449d.bindPopup(popup_dd2c77348cffc281f01019e02948c033)
+        marker_0a71e9a1931a018230fb20b36e801a1c.bindPopup(popup_1fa64febe68c46b39c879b8b5070f249)
         ;
 
         
     
     
-            var circle_marker_eefbe5c9b448ea1a3d8ff6810f5547b8 = L.circleMarker(
-                [16.025944, 108.253472],
-                {"bubblingMouseEvents": true, "color": null, "dashArray": null, "dashOffset": null, "fill": true, "fillColor": null, "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            marker_0a71e9a1931a018230fb20b36e801a1c.bindTooltip(
+                `<div>
+                     InterContinental Danang Sun Peninsula Resort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
         
     
-        var popup_b5356bd3a65e1d0e69dcfcb34169ecdb = L.popup({
-  "maxWidth": "100%",
+                marker_0a71e9a1931a018230fb20b36e801a1c.setIcon(icon_9d2acd125c84945981eca2679328b38f);
+            
+    
+            var marker_1d89d79458b622bb9717874d1d77e832 = L.marker(
+                [16.0773137, 108.2235344],
+                {
+}
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
+        
+    
+            var icon_dc7d41754c3b254db396e4b1feddb66a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "hotel",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01be4070734abedf464220cf70673b35 = L.popup({
+  "maxWidth": 300,
 });
 
         
             
-                var html_cd24dc264a5e73812f60124d4666f9b4 = $(`<div id="html_cd24dc264a5e73812f60124d4666f9b4" style="width: 100.0%; height: 100.0%;">Marble Mountains (Ngũ Hành Sơn): Quần thể núi đá vôi & chùa, cách trung tâm thành phố khoảng 15 phút</div>`)[0];
-                popup_b5356bd3a65e1d0e69dcfcb34169ecdb.setContent(html_cd24dc264a5e73812f60124d4666f9b4);
+                var i_frame_69fb3cd1b1c3fa0f92266150a57e7122 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+Tm92b3RlbCBEYW5hbmcgUHJlbWllciBIYW4gUml2ZXI8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkPhuqd1IFLhu5NuZyAoRHJhZ29uIEJyaWRnZSk8L2I+IOKAlCB+NeKAkzEwIHBow7p0IGzDoWkgeGU8L2xpPjxsaT48Yj5DaOG7oyBIw6BuIChIYW4gTWFya2V0KTwvYj4g4oCUIGtob+G6o25nIDUgcGjDunQgxJFpIGLhu5k8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_01be4070734abedf464220cf70673b35.setContent(i_frame_69fb3cd1b1c3fa0f92266150a57e7122);
             
         
 
-        circle_marker_eefbe5c9b448ea1a3d8ff6810f5547b8.bindPopup(popup_b5356bd3a65e1d0e69dcfcb34169ecdb)
+        marker_1d89d79458b622bb9717874d1d77e832.bindPopup(popup_01be4070734abedf464220cf70673b35)
         ;
 
         
     
     
-            var circle_marker_4044b6d72a46a3b7ceea6a36391430dd = L.circleMarker(
-                [15.9989, 107.9953],
-                {"bubblingMouseEvents": true, "color": null, "dashArray": null, "dashOffset": null, "fill": true, "fillColor": null, "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_e0abdbbdfe0f0ae5039c30e87789efdb);
+            marker_1d89d79458b622bb9717874d1d77e832.bindTooltip(
+                `<div>
+                     Novotel Danang Premier Han River
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
         
     
-        var popup_edc1e49f92a8d0f439eaa22681eff5c6 = L.popup({
-  "maxWidth": "100%",
+                marker_1d89d79458b622bb9717874d1d77e832.setIcon(icon_dc7d41754c3b254db396e4b1feddb66a);
+            
+    
+            var marker_b97361d9247ae96f0478443c44e2d29e = L.marker(
+                [16.048297, 108.226951],
+                {
+}
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
+        
+    
+            var icon_77bfe0af0e22ddf1a772c1813ba3a773 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "hotel",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ba812401cdcc90ad5a7d7934364f30f = L.popup({
+  "maxWidth": 300,
 });
 
         
             
-                var html_daa54391195e4413ce1becb9ad581769 = $(`<div id="html_daa54391195e4413ce1becb9ad581769" style="width: 100.0%; height: 100.0%;">Golden Bridge - Bà Nà Hills: Cầu Vàng nổi tiếng tại Sun World Ba Na Hills (khoảng 40–50 km về phía tây)</div>`)[0];
-                popup_edc1e49f92a8d0f439eaa22681eff5c6.setContent(html_daa54391195e4413ce1becb9ad581769);
+                var i_frame_7bbf87c9891f04de74ae2db8faf070c7 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+R3JhbmQgTWVyY3VyZSBEYW5hbmc8L2g0PjxiPsSQ4buLYSDEkWnhu4NtIHZ1aSBjaMahaSBn4bqnbiDEkcOzOjwvYj48dWw+PGxpPjxiPkPhuqd1IFLhu5NuZzwvYj4g4oCUIH424oCTMTAgcGjDunQgbMOhaSB4ZTwvbGk+PGxpPjxiPkLDo2kgYmnhu4NuIE3hu7kgS2jDqjwvYj4g4oCUIH414oCTMTAgcGjDunQgbMOhaSB4ZTwvbGk+PC91bD48c21hbGw+R2hpIGNow7o6IGtob+G6o25nIGPDoWNoIGzDoCDGsOG7m2MgbMaw4bujbmc7IGtp4buDbSB0cmEgYuG6o24gxJHhu5MvbmjDoCBuZ2jhu4kgxJHhu4MgY8OzIHThu41hIMSR4buZIGNow61uaCB4w6FjLjwvc21hbGw+" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_7ba812401cdcc90ad5a7d7934364f30f.setContent(i_frame_7bbf87c9891f04de74ae2db8faf070c7);
             
         
 
-        circle_marker_4044b6d72a46a3b7ceea6a36391430dd.bindPopup(popup_edc1e49f92a8d0f439eaa22681eff5c6)
+        marker_b97361d9247ae96f0478443c44e2d29e.bindPopup(popup_7ba812401cdcc90ad5a7d7934364f30f)
         ;
 
         
     
+    
+            marker_b97361d9247ae96f0478443c44e2d29e.bindTooltip(
+                `<div>
+                     Grand Mercure Danang
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b97361d9247ae96f0478443c44e2d29e.setIcon(icon_77bfe0af0e22ddf1a772c1813ba3a773);
+            
+    
+            var marker_bcfb222201f513a3a070bffb0f6060e1 = L.marker(
+                [16.0406291, 108.250121],
+                {
+}
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
+        
+    
+            var icon_db4f0872db5920b49c55d7f2205679a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "hotel",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d6a7254b972b505b83cffe59c5a2e7a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_3ba683830c3c9d4f795e9a89a9d8a2e1 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+UHVsbG1hbiBEYW5hbmcgQmVhY2ggUmVzb3J0PC9oND48Yj7EkOG7i2EgxJFp4buDbSB2dWkgY2jGoWkgZ+G6p24gxJHDszo8L2I+PHVsPjxsaT48Yj5Cw6NpIGJp4buDbiBN4bu5IEtow6o8L2I+IOKAlCBuZ2F5IGfhuqduPC9saT48bGk+PGI+TmfFqSBIw6BuaCBTxqFuIChNYXJibGUgTW91bnRhaW5zKTwvYj4g4oCUIH4xNeKAkzIwIHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_d6a7254b972b505b83cffe59c5a2e7a8.setContent(i_frame_3ba683830c3c9d4f795e9a89a9d8a2e1);
+            
+        
+
+        marker_bcfb222201f513a3a070bffb0f6060e1.bindPopup(popup_d6a7254b972b505b83cffe59c5a2e7a8)
+        ;
+
+        
+    
+    
+            marker_bcfb222201f513a3a070bffb0f6060e1.bindTooltip(
+                `<div>
+                     Pullman Danang Beach Resort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bcfb222201f513a3a070bffb0f6060e1.setIcon(icon_db4f0872db5920b49c55d7f2205679a1);
+            
+    
+            var marker_409a31b9aa840b45c0936574cea6d874 = L.marker(
+                [16.0635, 108.2416],
+                {
+}
+            ).addTo(map_4b4378514459ca162cee59ba7e7ffe87);
+        
+    
+            var icon_c46da17d3fabb64af927712c3fedeae3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "hotel",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d695cb98347bb6257d1c1183cf5867f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_dbe9669164ae9a532bbc796b3c15e48e = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8aDQ+RnVyYW1hIFJlc29ydCBEYSBOYW5nIChraHUgduG7sWMgTXkgS2hlKTwvaDQ+PGI+xJDhu4thIMSRaeG7g20gdnVpIGNoxqFpIGfhuqduIMSRw7M6PC9iPjx1bD48bGk+PGI+TeG7uSBLaMOqIEJlYWNoPC9iPiDigJQgbmdheSBj4bqhbmggYsOjaSBiaeG7g248L2xpPjxsaT48Yj5D4bqndSBS4buTbmc8L2I+IOKAlCBraG/huqNuZyAxMOKAkzE1IHBow7p0IGzDoWkgeGU8L2xpPjwvdWw+PHNtYWxsPkdoaSBjaMO6OiBraG/huqNuZyBjw6FjaCBsw6AgxrDhu5tjIGzGsOG7o25nOyBraeG7g20gdHJhIGLhuqNuIMSR4buTL25ow6Agbmdo4buJIMSR4buDIGPDsyB04buNYSDEkeG7mSBjaMOtbmggeMOhYy48L3NtYWxsPg==" width="300" style="border:none !important;" height="150"></iframe>`)[0];
+                popup_d695cb98347bb6257d1c1183cf5867f6.setContent(i_frame_dbe9669164ae9a532bbc796b3c15e48e);
+            
+        
+
+        marker_409a31b9aa840b45c0936574cea6d874.bindPopup(popup_d695cb98347bb6257d1c1183cf5867f6)
+        ;
+
+        
+    
+    
+            marker_409a31b9aa840b45c0936574cea6d874.bindTooltip(
+                `<div>
+                     Furama Resort Da Nang (khu vực My Khe)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_409a31b9aa840b45c0936574cea6d874.setIcon(icon_c46da17d3fabb64af927712c3fedeae3);
+            
 </script>
 </html>
