@@ -28,5 +28,6 @@ To add an image to a post in _post: please add the image to assets/imgs_post and
 ### Run
 
 ```
+bundle install
 bundle exec jekyll serve
 ```
