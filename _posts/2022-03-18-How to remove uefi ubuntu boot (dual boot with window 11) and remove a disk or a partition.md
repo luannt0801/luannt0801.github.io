@@ -6,248 +6,170 @@ date: 2022-03-18 22:00:00 +0700
 title: How to remove uefi ubuntu boot (dual boot with window 11) and remove a disk or a partition
 layout: post
 ---
-https://www.veeble.com/kb/uninstall-ubuntu-from-dual-boot-in-windows-in-uefi-system/
+Cách để xóa UEFI boot của Ubuntu sau khi cài dual boot Ubuntu với Window 11.  Mặc dù đã gỡ bỏ cài đặt OS ubuntu trên ổ cứng nhưng thư mục boot của Ubuntu vẫn còn đó và khi vào Win có thể hiện ra thông báo (hoặc không) của GRUB bootloader. Cách giải quyết thường là gõ `exit()` là sẽ quay về boot của Window. 
 
-I see what you did — you ran:
+Hướng dẫn dưới đây chỉ cách xóa hoàn toàn cái boot UEFI gây khó chịu cho người OCD :D.
+Để gỡ bỏ hoàn toàn cần thực hiện các bước dưới đây:
+- Xóa bỏ phân vùng (partition) của hệ điều hành Ubuntu trong ổ cứng
+- Xóa UEFI boot của Ubuntu để ngăn GRUB bootloader xuất hiện mỗi khi bật máy tính
+Chú ý: Chỉ áp dụng khi cài dual boot nhưng phân vùng Ubuntu và Window ở hai phân vùng riêng biệt, chúng nó chỉ chung bootloader thôi `¯\_(ツ)_/¯`
 
+Sau đây sẽ là hướng dẫn chi tiết
+```bash
+░░░░░░░░░░░░░░░░░░░░░▄▀░░▌
+░░░░░░░░░░░░░░░░░░░▄▀▐░░░▌
+░░░░░░░░░░░░░░░░▄▀▀▒▐▒░░░▌
+░░░░░▄▀▀▄░░░▄▄▀▀▒▒▒▒▌▒▒░░▌                  For
+░░░░▐▒░░░▀▄▀▒▒▒▒▒▒▒▒▒▒▒▒▒█                    Window \'user
+░░░░▌▒░░░░▒▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄
+░░░░▐▒░░░░░▒▒▒▒▒▒▒▒▒▌▒▐▒▒▒▒▒▀▄
+░░░░▌▀▄░░▒▒▒▒▒▒▒▒▐▒▒▒▌▒▌▒▄▄▒▒▐              I love Ubuntu :D
+░░░▌▌▒▒▀▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒█▄█▌▒▒▌
+░▄▀▒▐▒▒▒▒▒▒▒▒▒▒▒▄▀█▌▒▒▒▒▒▀▀▒▒▐░░░▄
+▀▒▒▒▒▌▒▒▒▒▒▒▒▄▒▐███▌▄▒▒▒▒▒▒▒▄▀▀▀▀
+▒▒▒▒▒▐▒▒▒▒▒▄▀▒▒▒▀▀▀▒▒▒▒▄█▀░░▒▌▀▀▄▄
+▒▒▒▒▒▒█▒▄▄▀▒▒▒▒▒▒▒▒▒▒▒░░▐▒▀▄▀▄░░░░▀
+▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▄▒▒▒▒▄▀▒▒▒▌░░▀▄
+▒▒▒▒▒▒▒▒▀▄▒▒▒▒▒▒▒▒▀▀▀▀▒▒▒▄▀
 ```
+
+# Xóa phân vùng Ubuntu trên Window
+
+Có nhiều cách để xóa, có thể dùng `disk manager` trên Win để xóa cả phân vùng. Ở đây ta sẽ dùng `diskpart` xóa nhằm mục đích trông nó ngầu hơn.
+
+1. Trước tiên cần mở `Command Promt` với quyền **Administrator** và sử dụng lệnh
+```
+diskpart
+```
+để vào ứng dụng `diskpart`. Giới thiệu `diskpart` thì nó là 1 extension - tiện ích sử dụng CLI tích hợp của Microsoft Windows để quản lý các disk, partition và volumn. Nó cho phép người dùng thực hiện các tác vụ như tạo, xóa, định dạng và thay đổi kích thước partition, etc. 
+
+2. Liệt kê các disk đang có trong máy
+```cmd
+list disk
+```
+3. Chọn disk chứa phân vùng cài đặt Ubuntu, phần này lưu ý chọn đúng tên disk. Chọn sai là cook.
+```
+select disk X
+```
+4. Liệt kê các phân vùng trong disk đã chọn
+```bash
+list partition
+```
+Lệnh này được thực hiện, kết quả sẽ cho ra các phân vùng trong disk như sau
+```
+Partition 1    System    100 MB
+Partition 2    Reserved   16 MB
+Partition 3    Primary   200 GB
+Partition 4    Primary   100 GB
+```
+và Ubuntu thường nằm ở phân vùng **Primary** kiểu ext4, không có nhãn NTFS.
+5. Chọn partition cần xóa bằng lệnh
+```
+select partition Y
+```
+X là tên disk, Y là số id của partition cần xóa nhé :3
+
+6.  Cuối cùng xóa phân vùng Y vừa chọn bằng lệnh
+```
+delete partition override
+```
+Lệnh `override` hơi nhạy cảm do nó ép xoá luôn, kể cả phân vùng đặc biệt. Thích thì tự search thêm.
+
+7. Thoát `diskpart` bằng lệnh
+```
+exit
+```
+
+# Xóa UEFI bootloader Ubuntu
+
+Mặc dù Ubuntu đã được gỡ khỏi ổ cứng bởi bước trên nhưng khi khởi động lại máy tính, máy tính vẫn có thể bị boot sang Ubuntu và vào GRUB bootloader gây khó chịu. Không khó chịu thì xem hướng dẫn này làm chi :<
+
+Khi đã gỡ Ubuntu nhưng vẫn còn thấy lựa chọn **Ubuntu** trong menu boot, là do:
+- Trong **UEFI Boot Manager** (NVRAM) vẫn còn entry của Ubuntu.
+- Trong **EFI System Partition** vẫn còn thư mục `ubuntu`.
+
+Vì vậy cần xóa cả **entry** và **file EFI** của Ubuntu. 
+
+#### Bước 1: Xóa entry Ubuntu trong Boot Manager
+
+1. Mở **Command Prompt** với quyền **Administrator**  
+    (Start → gõ `cmd` → chuột phải → Run as administrator).
+    
+2. Liệt kê tất cả các entry boot:
+```powershell
 bcdedit /enum firmware
 ```
 
-and noticed **multiple boot entries**, including two for **Ubuntu**. Then you deleted one (`{64fe5629-8867-11f0-93d6-806e6f6e6963}`), but you still have another one left:
-
-```
-identifier              {64fe562a-8867-11f0-93d6-806e6f6e6963}
-device                  partition=\Device\HarddiskVolume6
-path                    \EFI\ubuntu\shimx64.efi
-description             ubuntu
-```
-
-That means there are still Ubuntu boot entries in your firmware (UEFI NVRAM).
-
----
-
-✅ If your goal is to **remove Ubuntu completely from the boot menu**:
-
-1. Identify all `ubuntu` entries:
+3. Tìm các entry có `description` là **ubuntu**, ví dụ:
     
     ```
-    bcdedit /enum firmware
+    identifier              {64fe562a-8867-11f0-93d6-806e6f6e6963}
+    device                  partition=\Device\HarddiskVolume6
+    path                    \EFI\ubuntu\shimx64.efi
+    description             ubuntu
     ```
     
-2. Delete the leftover one:
+4. Xóa entry đó:
     
-    ```
+    ```powershell
     bcdedit /delete {64fe562a-8867-11f0-93d6-806e6f6e6963}
     ```
     
-3. Verify cleanup:
+5. Kiểm tra lại:
     
-    ```
+    ```powershell
     bcdedit /enum firmware
     ```
     
-    The `ubuntu` entry should no longer appear.
+    → Không còn thấy “ubuntu” nữa.
+####  Bước 2: Xóa thư mục Ubuntu trên EFI Partition
+
+1. Mount EFI partition (thường bị ẩn) thành ổ `S:`
     
-
----
-
-⚠️ Important note:  
-Even if you remove the entries from the firmware boot manager, the **actual Ubuntu EFI files** (`\EFI\ubuntu\shimx64.efi` etc.) may still remain on your EFI System Partition. If you want to clean those up too:
-
-- Mount the EFI partition in Windows:
-    
-    ```
+    ```powershell
     mountvol S: /s
     ```
     
-- Go to:
+2. Di chuyển vào thư mục EFI:
     
-    ```
-	cd /d S:\EFI
-    ```
-    
-- Delete the `ubuntu` folder:
-    
-    ```
-    rmdir /s S:\EFI\ubuntu
+    ```powershell
+    cd /d S:\EFI
     ```
     
-
-(⚠️ Be careful — only delete the `ubuntu` folder, not `Microsoft` or `Boot`.)
-
-Ah, I see what happened 🙂
-
-You mounted the EFI System Partition to `S:` correctly with:
-
-```
-mountvol S: /s
-```
-
-But then you typed:
-
-```
-S:\EFI
-```
-
-which Windows thinks is a command. In Windows, you need to **change directory** (`cd`) into it or open it in Explorer.
-
-Here’s how you can properly navigate and delete the Ubuntu EFI folder:
-
----
-
-### 1. Go to the EFI partition
-
-```
-cd /d S:\EFI
-```
-
-(The `/d` switch ensures it switches drives as well as directories.)
-
----
-
-### 2. List the contents
-
-```
-dir
-```
-
-You should see folders like:
-
-```
-Microsoft
-Boot
-ubuntu
-```
-
----
-
-### 3. Delete only the Ubuntu folder
-
-```
-rmdir /s /q ubuntu
-```
-
-- `/s` → removes all files and subfolders
+3. Liệt kê thư mục:
     
-- `/q` → quiet mode (no confirmation prompts)
-    
-
----
-
-### 4. Double-check cleanup
-
-```
-dir
-```
-
-You should only see `Microsoft` and `Boot` left (don’t delete those!).
-
----
-
-### 5. Unmount EFI partition (optional, but recommended)
-
-```
-mountvol S: /d
-```
-
-This makes the EFI partition hidden again (as it normally should be).
-
----
-
-👉 At this point, both the **firmware boot entry** (via `bcdedit /delete`) and the **EFI files** for Ubuntu are gone. Your system will be Windows-only.
-
-Do you want me to also show you how to **double-check in UEFI firmware (BIOS settings)** that no leftover “ubuntu” boot options remain?
-
-
----
-
-
-Bạn muốn dùng **diskpart** để xoá hẳn một phân vùng (partition).  
-⚠️ Lưu ý trước khi làm:
-
-- Xoá partition = mất toàn bộ dữ liệu trong đó, không thể khôi phục bằng cách thông thường.
-    
-- Nếu đó là phân vùng hệ thống (Windows đang chạy, EFI, Recovery) → máy có thể **không khởi động được**.
-    
-- Hãy chắc chắn partition bạn xoá là **phân vùng Linux/Ubuntu** hoặc phân vùng bạn không cần nữa.
-    
-
----
-
-### Các bước xoá phân vùng bằng Diskpart
-
-1. Mở Command Prompt với quyền **Administrator**.
-    
-    ```
-    diskpart
+    ```powershell
+    dir
     ```
     
-2. Liệt kê các ổ đĩa:
+    Ta sẽ thấy các folder như:
     
     ```
-    list disk
+    Microsoft
+    Boot
+    ubuntu
     ```
     
-    Xác định đúng số ổ đĩa (Disk 0, Disk 1, …).
+4. Xóa thư mục `ubuntu`:
     
-3. Chọn ổ đĩa chứa phân vùng Ubuntu:
-    
-    ```
-    select disk X
+    ```powershell
+    rmdir /s /q ubuntu
     ```
     
-    (thay `X` bằng số ổ đĩa, thường là `0` nếu chỉ có một ổ cứng).
+5. Kiểm tra lại bằng `dir` → chỉ còn `Microsoft` và `Boot`.
     
-4. Liệt kê phân vùng:
-    
+6. Unmount EFI partition (trả lại trạng thái ẩn):
+    ```powershell
+    mountvol S: /d
     ```
-    list partition
-    ```
-    
-    Bạn sẽ thấy các phân vùng, ví dụ:
-    
-    ```
-    Partition 1    System    100 MB
-    Partition 2    Reserved   16 MB
-    Partition 3    Primary   200 GB
-    Partition 4    Primary   100 GB
-    ```
-    
-    Ubuntu thường nằm ở phân vùng **Primary** kiểu ext4, không có nhãn NTFS.
-    
-5. Chọn phân vùng cần xoá:
-    
-    ```
-    select partition Y
-    ```
-    
-    (thay `Y` bằng số partition của Ubuntu).
-    
-6. Xoá phân vùng:
-    
-    ```
-    delete partition override
-    ```
-    
-    - `override` → ép xoá luôn, kể cả phân vùng đặc biệt.
-        
-7. Thoát Diskpart:
-    
-    ```
-    exit
-    ```
-    
 
----
+####  Bước 3: Kiểm tra lại trong BIOS/UEFI
 
-### Sau khi xoá phân vùng
+- Khởi động lại máy, vào BIOS/UEFI (thường nhấn **F2**, **DEL**, hoặc **F12** khi boot).
+- Trong tab **Boot options**, kiểm tra xem còn dòng “ubuntu” không.
+- Nếu còn → chọn nó và xóa thủ công (nhiều mainboard cho phép).
 
-- Phân vùng sẽ biến thành **Unallocated Space**.
-    
-- Nếu muốn, bạn có thể gộp nó vào ổ C: bằng **Disk Management** trong Windows (`diskmgmt.msc`).
-    
+# Ý chú?
 
----
+*Chú ý: Sau khi xóa cái này thì sau này không thể cắm USB vào cài dual boot Ubuntu với Window mà Ubuntu tự động nhận được phân vùng trống nữa nhé :))*
 
-👉 Bạn có muốn mình chỉ luôn cách **xoá đúng phân vùng Ubuntu mà không ảnh hưởng tới EFI và Windows Recovery** không?
