@@ -138,10 +138,9 @@ Với:
   - ReLU: $( \max(0, x))$
   - Softmax: chuyển giá trị thành xác suất.
 ### GAN (cơ bản)
-1. Bài này khác hay: https://nttuan8.com/bai-1-gioi-thieu-ve-gan/
-2. 
+1. [Bài này khá hay](https://nttuan8.com/bai-1-gioi-thieu-ve-gan/)
+2. [Pham dinh khanh](https://phamdinhkhanh.github.io/2020/07/13/GAN.html) 
 
-https://phamdinhkhanh.github.io/2020/07/13/GAN.html
 - Gồm **Generator** (tạo dữ liệu giả) và **Discriminator** (phân biệt thật – giả).
 - Hai mạng huấn luyện đối kháng nhau:
   - Generator cố gắng “đánh lừa” Discriminator.
@@ -274,6 +273,7 @@ với:
 - Biến thể của Adam tránh giảm learning rate quá nhanh.
 - Giữ giá trị cực đại của \( v_t \) thay vì giá trị hiện tại.
 
+
 | Optimizer | Learning Rate tự động | Momentum | Ưu điểm | Nhược điểm |
 |------------|------------------------|-----------|----------|-------------|
 | **SGD** | ❌ | ❌ | Đơn giản, dễ hiểu | Dễ mắc kẹt local minima |
@@ -284,6 +284,8 @@ với:
 | **Adam** | ✅ | ✅ | Phổ biến, hiệu quả cao | Dễ overfit nếu LR quá lớn |
 | **AdamW** | ✅ | ✅ | Có regularization | Tối ưu Transformer, CNN |
 | **Nadam** | ✅ | ✅ | Cải thiện Adam nhẹ | Không đáng kể trong hầu hết case |
+
+
 - **Adam / AdamW**: lựa chọn mặc định trong hầu hết các bài toán DL.
 - **SGD + Momentum**: dùng khi muốn kiểm soát kỹ quá trình tối ưu (ví dụ CNN, ResNet).
 - **RMSProp**: tốt cho RNN, LSTM.
