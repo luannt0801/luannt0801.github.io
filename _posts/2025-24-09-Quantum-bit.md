@@ -47,7 +47,7 @@ Theo cách này, các qubit vướng víu dường như có thể truyền thôn
 
 Vì bất kỳ hệ lượng tử hai cấp nào cũng có thể được sử dụng để tạo ra qubit, nên hiện nay có nhiều loại qubit đang được các nhà nghiên cứu phát triển—và một số qubit phù hợp hơn với một số ứng dụng nhất định.
 
-![](assets/imgs_post/cac loai qubit.png)
+![](/assets/imgs_post/cac loai qubit.png)
 
 
 # Qubit so với bit
