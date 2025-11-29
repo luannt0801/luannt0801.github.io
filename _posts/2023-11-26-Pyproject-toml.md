@@ -2,7 +2,6 @@
 layout: post
 author: Nguyen Thanh Luan
 title: How to write a pyproject.toml file?
-day create: 26-11-2023
 date: 26-11-2023
 categories:
   - Programming
