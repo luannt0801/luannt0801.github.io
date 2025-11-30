@@ -154,31 +154,25 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script>
-    async function updateCounters() {
-        const namespace = "luan-blog-0801";
-        const todayKey = new Date().toISOString().split("T")[0];
-        const yesterdayKey = new Date(Date.now() - 86400000).toISOString().split("T")[0];
+    <script type="module">
+    import { Counter } from 'https://cdn.jsdelivr.net/npm/counterapi/dist/counter.esm.min.js';
 
-        const totalRes = await fetch(`https://api.countapi.xyz/hit/${namespace}/total`);
-        const total = (await totalRes.json()).value;
+    const counter = new Counter({ workspace: 'luan_blog_workspace' });
 
-        await fetch(`https://api.countapi.xyz/hit/${namespace}/${todayKey}`);
+    async function updateCounter() {
+        try {
+        const res = await counter.up('luan_blog'); 
+        const value = res.value;
 
-        const todayRes = await fetch(`https://api.countapi.xyz/get/${namespace}/${todayKey}`);
-        const today = (await todayRes.json()).value || 0;
-
-        const yRes = await fetch(`https://api.countapi.xyz/get/${namespace}/${yesterdayKey}`);
-        const yesterday = (await yRes.json()).value || 0;
-
-        document.getElementById("total-views-value").innerText = total;
-        document.getElementById("today-views-value").innerText = today;
-        document.getElementById("yesterday-views-value").innerText = yesterday;
+        document.getElementById("total-views-value").innerText = value;
+        } catch (e) {
+        console.error("CounterAPI error:", e);
+        }
     }
 
-    // chạy khi page load
-    updateCounters();
+    updateCounter();
     </script>
+
   
      <link href="https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/themes/github.min.css" rel="stylesheet">
     <script src="/assets/js/scripts.js"></script>
