@@ -154,24 +154,36 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script type="module">
-    import { Counter } from 'https://cdn.jsdelivr.net/npm/counterapi/dist/counter.esm.min.js';
+    <script>
+    async function loadCounters() {
 
-    const counter = new Counter({ workspace: 'luan_blog_workspace' });
+        const base = "https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801";
 
-    async function updateCounter() {
         try {
-        const res = await counter.up('luan_blog'); 
-        const value = res.value;
+            /* Increase total counter */
+            const upRes = await fetch(`${base}/up`, {
+                method: "POST"
+            });
+            const upData = await upRes.json();
 
-        document.getElementById("total-views-value").innerText = value;
-        } catch (e) {
-        console.error("CounterAPI error:", e);
+            /* Display total views */
+            document.getElementById("total-views-value").innerText = upData.value;
+
+            /* Get stats: today, yesterday */
+            const statsRes = await fetch(`${base}/stats`);
+            const statsData = await statsRes.json();
+
+            document.getElementById("today-views-value").innerText = statsData.today ?? 0;
+            document.getElementById("yesterday-views-value").innerText = statsData.yesterday ?? 0;
+
+        } catch (err) {
+            console.error("CounterAPI error:", err);
         }
     }
 
-    updateCounter();
+    loadCounters();
     </script>
+
 
   
      <link href="https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/themes/github.min.css" rel="stylesheet">
