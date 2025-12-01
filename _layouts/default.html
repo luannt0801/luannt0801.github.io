@@ -156,32 +156,44 @@
 
     <script>
     async function loadCounters() {
-
         const base = "https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801";
 
         try {
-            /* Increase total counter */
-            const upRes = await fetch(`${base}/up`, { method: "GET" });
+            /* 1) Increase total counter */
+            const upRes = await fetch(`${base}/up`);
             const upData = await upRes.json();
 
             console.log("UP DATA:", upData);
 
-            /* Display total views */
-            const totalViews =
-                upData?.data?.up_count ??
-                upData?.up_count ??
-                0;
-
+            const totalViews = upData?.data?.up_count ?? 0;
             document.getElementById("total-views-value").innerText = totalViews;
 
-            /* Get stats: today + yesterday (CounterAPI không có stats sẵn) */
-            /* Ta tự xử lý:
-                - today = totalViews (tạm thời)
-                - yesterday = totalViews - 1 (tạm thời)
-            */
 
-            document.getElementById("today-views-value").innerText = totalViews;
-            document.getElementById("yesterday-views-value").innerText = Math.max(totalViews - 1, 0);
+            /* 2) Get stats */
+            const statsRes = await fetch(`${base}/stats`);
+            const statsData = await statsRes.json();
+
+            console.log("STATS DATA:", statsData);
+
+            const stats = statsData?.data?.stats ?? {};
+
+            /* Today */
+            const todayViews = stats?.today?.up ?? 0;
+            document.getElementById("today-views-value").innerText = todayViews;
+
+            /* Yesterday:
+            CounterAPI không có "yesterday" trực tiếp nhưng có weekdays.
+            Hôm nay là weekday nào → lấy hôm qua từ đó.
+            */
+            const weekdayMap = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+            const now = new Date();
+
+            const todayName = weekdayMap[now.getDay()];
+            const yesterdayIndex = (now.getDay() - 1 + 7) % 7;
+            const yesterdayName = weekdayMap[yesterdayIndex];
+
+            const yesterdayViews = stats.weekdays?.[yesterdayName]?.up ?? 0;
+            document.getElementById("yesterday-views-value").innerText = yesterdayViews;
 
         } catch (err) {
             console.error("CounterAPI error:", err);
@@ -190,6 +202,7 @@
 
     loadCounters();
     </script>
+
 
 
 
