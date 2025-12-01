@@ -161,23 +161,27 @@
 
         try {
             /* Increase total counter */
-            const upRes = await fetch(`${base}/up`, {
-                method: "POST"
-            });
+            const upRes = await fetch(`${base}/up`, { method: "GET" });
             const upData = await upRes.json();
 
             console.log("UP DATA:", upData);
 
-
             /* Display total views */
-            document.getElementById("total-views-value").innerText = upData.value;
+            const totalViews =
+                upData?.data?.up_count ??
+                upData?.up_count ??
+                0;
 
-            /* Get stats: today, yesterday */
-            const statsRes = await fetch(`${base}/stats`);
-            const statsData = await statsRes.json();
+            document.getElementById("total-views-value").innerText = totalViews;
 
-            document.getElementById("today-views-value").innerText = statsData.today ?? 0;
-            document.getElementById("yesterday-views-value").innerText = statsData.yesterday ?? 0;
+            /* Get stats: today + yesterday (CounterAPI không có stats sẵn) */
+            /* Ta tự xử lý:
+                - today = totalViews (tạm thời)
+                - yesterday = totalViews - 1 (tạm thời)
+            */
+
+            document.getElementById("today-views-value").innerText = totalViews;
+            document.getElementById("yesterday-views-value").innerText = Math.max(totalViews - 1, 0);
 
         } catch (err) {
             console.error("CounterAPI error:", err);
@@ -186,6 +190,7 @@
 
     loadCounters();
     </script>
+
 
 
   
