@@ -172,6 +172,8 @@
 
     <script>
     async function loadCounters() {
+        const upres = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/up")
+        await new Promise(r => setTimeout(r, 600));
         const statsRes = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/stats")
         const stats = await statsRes.json()
 
