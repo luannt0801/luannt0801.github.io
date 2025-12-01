@@ -21,6 +21,7 @@
     };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- CSS highlight cho code block -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/themes/github.min.css">
 </head>
@@ -34,23 +35,16 @@
             <div class="userid">@luannt0801</div>
         </div>
 
-        <div class="stat-box">
-            <div class="stat-item total-views">
-                <span>Total</span>
-                <!-- <strong>105,501</strong> -->
-                <strong id="total-views-value">0</strong>
-            </div>
-            <div class="stat-item today-views">
-                <span>Today</span>
-                <!-- <strong>1</strong> -->
-                <strong id="today-views-value">0</strong>
-            </div>
-            <div class="stat-item yesterday-views">
-                <span>Yesterday</span>
-                <!-- <strong>71</strong> -->
-                <strong id="yesterday-views-value">0</strong>
-            </div>
+        <div class="stat-item total-views">
+            <span>Total Views</span>
+            <strong id="total-views-value">0</strong>
         </div>
+
+        <div class="chart-box">
+            <canvas id="view-chart"></canvas>
+        </div>
+
+
 
         <!-- <div class="search-box"> -->
             <!-- <input type="text" placeholder="Find Nemo..."> -->
@@ -154,54 +148,96 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script>
+    <!-- <script>
     async function loadCounters() {
         const base = "https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801";
 
         try {
             /* 1) Increase total counter */
             const upRes = await fetch(`${base}/up`);
+            await new Promise(r => setTimeout(r, 2000));
             const upData = await upRes.json();
-
-            console.log("UP DATA:", upData);
 
             const totalViews = upData?.data?.up_count ?? 0;
             document.getElementById("total-views-value").innerText = totalViews;
-
-
-            /* 2) Get stats */
-            const statsRes = await fetch(`${base}/stats`);
-            const statsData = await statsRes.json();
-
-            console.log("STATS DATA:", statsData);
-
-            const stats = statsData?.data?.stats ?? {};
-
-            /* Today */
-            const todayViews = stats?.today?.up ?? 0;
-            document.getElementById("today-views-value").innerText = todayViews;
-
-            /* Yesterday:
-            CounterAPI không có "yesterday" trực tiếp nhưng có weekdays.
-            Hôm nay là weekday nào → lấy hôm qua từ đó.
-            */
-            const weekdayMap = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
-            const now = new Date();
-
-            const todayName = weekdayMap[now.getDay()];
-            const yesterdayIndex = (now.getDay() - 1 + 7) % 7;
-            const yesterdayName = weekdayMap[yesterdayIndex];
-
-            const yesterdayViews = stats.weekdays?.[yesterdayName]?.up ?? 0;
-            document.getElementById("yesterday-views-value").innerText = yesterdayViews;
-
         } catch (err) {
             console.error("CounterAPI error:", err);
         }
     }
 
     loadCounters();
+    </script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+    async function loadCounters() {
+        const statsRes = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/stats")
+        const stats = await statsRes.json()
+
+        const total = stats.data?.up_count ?? 0
+        const today = stats.data?.stats?.today?.up ?? 0
+
+        // Cập nhật số
+        document.getElementById("total-views-value").innerText = total
+
+        // Lấy 24h gần nhất
+        // const hours = stats.data.stats.temporal.hours
+        // const labels = Object.keys(hours)
+        // const values = labels.map(h => hours[h].up)
+
+        const hoursUTC = stats.data.stats.temporal.hours
+        const labels = Object.keys(hoursUTC).map(h => {
+            // Chuyển UTC -> VN (UTC+7)
+            const vnHour = (parseInt(h) + 7) % 24
+            return vnHour.toString().padStart(2, '0') + ":00"
+        })
+
+        const values = Object.keys(hoursUTC).map(h => hoursUTC[h].up)
+
+        drawLineChart(labels, values)
+    }
+
+    let chartInstance = null
+
+    function drawLineChart(labels, values) {
+        const ctx = document.getElementById("view-chart").getContext("2d")
+
+        if (chartInstance) chartInstance.destroy()
+
+        chartInstance = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Views / Hour (VN Time)",
+                    data: values,
+                    borderWidth: 1,
+                    tension: 0.4,
+                    pointRadius: 0.5,
+                    backgroundColor: 'rgba(255, 56, 56, 0.2)', // màu fill dưới đường
+                    borderColor: '#FF3838',                      // màu đường
+                    pointBackgroundColor: '#FF3838',            // màu chấm điểm
+                    pointBorderColor: '#FF3838'                 // màu viền chấm
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    y: { beginAtZero: true }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        })
+    }
+
+    loadCounters()
     </script>
+
+
+
 
 
 

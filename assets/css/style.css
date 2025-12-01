@@ -601,3 +601,25 @@ body {
   /* display: block; */
   /* overflow-x: auto; */
 /* } */
+
+
+
+.chart-box {
+    margin-top: 5px;
+    padding: 12px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    /* Giới hạn chiều rộng */
+    width: 100%;           
+    max-width: 250px;
+
+    /* Căn giữa */
+    display: flex;
+    justify-content: center;
+}
+#view-chart {
+    width: 200px !important;
+    height: 120px !important;
+}
