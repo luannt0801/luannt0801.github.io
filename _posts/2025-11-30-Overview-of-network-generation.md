@@ -30,43 +30,11 @@ AI đóng vai trò ngày càng quan trọng trong các thế hệ mạng từ 4G
 
 Kiến trúc mạng **4G LTE** gồm bốn phần chính: **UE**, **E-UTRAN (eNodeB)**, **EPC (MME, SGW, PGW)** và **OSS/BSS**. Trong giai đoạn 4G, AI chưa được “nhúng” sâu vào mạng như 5G/6G, nhưng vẫn có tác động mạnh mẽ trong tối ưu vận hành và chất lượng mạng.
 
-### 2. **E-UTRAN – eNodeB (vô tuyến)**
-- **Vai trò kiến trúc**: xử lý PHY/MAC, scheduling, HARQ, handover, đo đạc RSRP/RSRQ/SINR.
-- **AI tác động**:
-  - **Tối ưu công suất & tilt anten** (tự động tối ưu coverage và interference).
-  - **AI-based Scheduler** giúp phân bổ tài nguyên theo QoS, tải và dự đoán nhu cầu UE.
-  - **Dự đoán nghẽn trạm** để chuyển tải thông minh, giảm overload.
-  - **Tối ưu handover** dựa trên mô hình học máy để giảm drop & ping-pong.
-  - Phát hiện bất thường RF (nhiễu, mất đồng bộ, phần tử anten lỗi).
+- UE - User Equipment
+- E-UTRAN – eNodeB: Xử lý lớp PHY/MAC, scheduling, HARQ, handover, đo đạc RSRP/RSRQ/SINR.
+  Các bài toán ứng dụng AI: Tối ưu công suất, tilt | Scheudler | Handover optimize
+- EPC – Evolved Packet Core: gồm các thành phần MME, SGW/PGW, HSS
+- OSS/BSS
 
-### 3. **EPC – Evolved Packet Core**
-EPC gồm các thành phần chính:
-- **MME**: điều khiển signaling, mobility.
-- **SGW/PGW**: xử lý user-plane, định tuyến dữ liệu, QoS.
-- **HSS**: cơ sở dữ liệu thuê bao.
 
-#### AI tác động:
-- **Dự đoán Mobility Pattern** để tối ưu luồng signaling và load trên MME.
-- **Traffic Forecasting** để phân chia tải giữa SGW/PGW, tránh nghẽn lõi mạng.
-- **Phát hiện bất thường** (fraud, DDoS, lưu lượng bất thường).
-- **QoS Optimization**: AI phân loại dịch vụ để PGW cấp băng thông hợp lý.
-- **Predictive Maintenance**: dự báo lỗi phần cứng trong SGW/PGW, cải thiện độ tin cậy.
-
-### 4. **OSS/BSS – Vận hành và kinh doanh**
-- **Vai trò kiến trúc**: quản lý mạng, cấu hình, giám sát, chăm sóc khách hàng, billing.
-- **AI tác động**:
-  - **SON (Self-Organizing Networks)**: tự tối ưu cell, tự cấu hình, tự phục hồi.
-  - Phân tích KPI/KQI để nhận biết sớm khu vực suy giảm chất lượng.
-  - Mô hình AI dự đoán churn, tối ưu gói cước, cá nhân hóa dịch vụ.
-  - Automation O&M: đề xuất sửa lỗi, tối ưu tham số, cải thiện throughput & coverage.
-
-## Tổng kết
-AI trong 4G chủ yếu tập trung vào:
-- **Tối ưu vô tuyến (RF Optimization)**  
-- **Tối ưu traffic & QoS**  
-- **Dự đoán lỗi & tự động hóa vận hành (SON)**  
-- **Giảm tải và tăng hiệu quả lõi mạng EPC**  
-- **Phân tích hành vi người dùng và lưu lượng**  
-
-AI **không thay đổi kiến trúc 4G**, nhưng giúp mạng vận hành thông minh, hiệu quả và ổn định hơn, đặt nền tảng cho AI-native networks trong 5G và 6G.
 

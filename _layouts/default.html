@@ -166,6 +166,9 @@
             });
             const upData = await upRes.json();
 
+            console.log("UP DATA:", upData);
+
+
             /* Display total views */
             document.getElementById("total-views-value").innerText = upData.value;
 
