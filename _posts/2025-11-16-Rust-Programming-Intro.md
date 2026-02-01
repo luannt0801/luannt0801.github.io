@@ -1,6 +1,6 @@
 ---
 layout: post
-Author: Nguyen Thanh Luan
+author: Nguyen Thanh Luan
 Day: 16/11/2025
 date: 16-11-2025
 title: Học ngôn ngữ Rust

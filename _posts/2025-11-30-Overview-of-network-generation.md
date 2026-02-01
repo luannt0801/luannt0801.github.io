@@ -1,6 +1,6 @@
 ---
 layout: post
-Author: Nguyen Thanh Luan
+author: Nguyen Thanh Luan
 Day: 30-11-2025
 title: Overview of network generations (4G, 5G, 6G, etc.)
 categories:
@@ -35,6 +35,7 @@ Kiến trúc mạng **4G LTE** gồm bốn phần chính: **UE**, **E-UTRAN (eNo
   Các bài toán ứng dụng AI: Tối ưu công suất, tilt | Scheudler | Handover optimize
 - EPC – Evolved Packet Core: gồm các thành phần MME, SGW/PGW, HSS
 - OSS/BSS
+
 
 
 

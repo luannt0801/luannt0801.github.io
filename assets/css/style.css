@@ -8,6 +8,25 @@ body {
     display: flex; /* Use flexbox for main layout */
 }
 
+/* .main-content {
+    font-family: "Monaco", "JetBrains Mono", "Fira Code", monospace;
+    font-size: 16px;
+}*/
+
+pre {
+  padding: 14px 18px;
+  border-radius: 8px;
+  overflow-x: auto;
+  background: #1e1e1e; /* hoặc để theme quyết định */
+  color: #eee;
+}
+
+code {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /* Sidebar Styling */
 .sidebar {
     width: 260px;

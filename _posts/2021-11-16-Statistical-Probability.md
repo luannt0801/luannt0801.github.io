@@ -27,11 +27,136 @@ $$
 P(A) = \frac{n(A)}{n(\Omega)}
 $$
 trong đó, $n(A)$ là số kết quả thuận lợi cho biến cố A và $n(\Omega)$ là tổng số kết quả có thể xảy ra của phép thử.
-## 2. Tính chất cơ bản
+
+## 2. Không gian mẫu và biến cố
+
+- **Phép thử ngẫu nhiên**: phép thử có kết quả không thể dự đoán chính xác trước khi thực hiện  
+- **Không gian mẫu** \(\Omega\): tập hợp tất cả các kết quả có thể xảy ra của phép thử  
+- **Biến cố** A: một tập con của \(\Omega\)
+
+Phân loại biến cố:
+- Biến cố chắc chắn: \(A = \Omega\)  
+- Biến cố không thể: \(A = \varnothing\)  
+- Biến cố đơn: chỉ gồm một kết quả  
+- Biến cố phức: gồm nhiều kết quả  
+## 3. Tính chất cơ bản & các phép toán
+
+**Tính chất cơ bản**
  
 - Xác suất của một biến cố luôn nằm trong khoảng từ 0 đến 1: $0 \leq P(A) \leq 1$
 - Nếu hai biến cố A và B xung khắc, thì xác suất hợp của chúng bằng tổng xác suất của từng biến cố: $P(A \cup B) = P(A) + P(B)$
-- Xác suất của biến cố đối (biến cố A không xảy ra) là: $P(A)
+- Xác suất của biến cố đối (biến cố A không xảy ra) là: $P(\overline{\rm A}) = 1 - P(A)$ 
+
+**Các phép toán với xác suất**
+
+- **Hợp** của A và B:  
+$$
+A \cup B = \{ \omega : \omega \in A \text{ hoặc } \omega \in B \}
+$$
+
+- **Giao** của A và B:  
+$$
+A \cap B = \{ \omega : \omega \in A \text{ và } \omega \in B \}
+$$
+
+- **Biến cố đối** của A:  
+$$
+\overline{A} = \Omega \setminus A
+$$
+
+- Hai biến cố **xung khắc** nếu:  
+$$
+A \cap B = \varnothing
+$$
+**Quy tắc cộng xác suất**
+
+- Với hai biến cố bất kỳ A và B:
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$
+
+- Nếu A và B xung khắc:
+$$
+P(A \cup B) = P(A) + P(B)
+$$
+**Quy tắc nhân xác suất**
+
+- Xác suất giao của hai biến cố được xác định bởi:
+$$
+P(A \cap B) = P(A) \cdot P(B \mid A)
+$$
+- Tổng quát cho nhiều biến cố:
+$$
+P(A_1 \cap A_2 \cap \cdots \cap A_n)
+= P(A_1) \cdot P(A_2 \mid A_1) \cdots P(A_n \mid A_1 \cap \cdots \cap A_{n-1})$$
+**Xác suất có điều kiện**
+
+- Xác suất của B khi đã biết A xảy ra:
+$$
+P(B \mid A) = \frac{P(A \cap B)}{P(A)}, \quad P(A) > 0
+$$
+Ý nghĩa: đo mức độ khả năng xảy ra của B trong điều kiện A đã xảy ra.
+
+**Biến cố độc lập**
+- Hai biến cố A và B **độc lập** nếu:
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$
+Tương đương:
+$$
+P(B \mid A) = P(B)
+\quad \text{hoặc} \quad
+P(A \mid B) = P(A)
+$$
+## 4. Các công thức xác suất
+
+- Công thức xác suất toàn phần
+
+Giả sử $\{A_1, A_2, \dots, A_n\}$ là một phân hoạch của $\Omega$, với $P(A_i) > 0.  
+Khi đó, với mọi biến cố B:
+$$
+P(B) = \sum_{i=1}^n P(B \mid A_i) \cdot P(A_i)
+$$
+- Công thức Bayes (dạng cổ điển)
+Với phân hoạch $\{A_1, A_2, \dots, A_n\}$:
+$$
+P(A_k \mid B) =
+\frac{P(B \mid A_k)\, P(A_k)}
+{\sum_{i=1}^n P(B \mid A_i)\, P(A_i)}
+$$
+
+Công thức Bayes cho phép **cập nhật xác suất** của nguyên nhân $A_k$ khi đã quan sát kết quả B.
+
+## 5. Các mô hình xác suất rời rạc cơ bản
+- **Phân phối Bernoulli**:
+$$
+P(X=1)=p,\quad P(X=0)=1-p
+$$
+- **Phân phối Nhị thức (Binomial)**:
+$$
+P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}
+$$
+- **Phân phối Hình học (Geometric)**:
+$$
+P(X=k) = (1-p)^{k-1} p
+$$
+- **Phân phối Poisson**:
+$$
+P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
+$$
+Các mô hình này là nền tảng cho việc mô tả hiện tượng ngẫu nhiên rời rạc trong xác suất cổ điển.
+
+
+
+
+
+
+
+
+
+
+
+
 # Xác suất hiện đại
 
 
