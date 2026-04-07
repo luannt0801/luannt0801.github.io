@@ -90,3 +90,96 @@ git pull origin main
 
 
 At last, you can `git push origin main --force` j4f =)))))))))))))))
+
+---
+
+## Git worktree
+
+
+Kiểm tra các worktree hiện có
+
+```
+git worktree list
+```
+
+Tạo worktree mới và tạo luôn branch mới từ một branch gốc
+
+```
+git worktree add -b <branch-name> <path> <base-branch>
+```
+
+Ví dụ
+
+```
+git worktree add -b dev/rl-agent /home/luan/viettel/WORKING/Wormbat_behide/dev/wombat main
+```
+
+Tạo worktree từ branch đã tồn tại
+
+```
+git worktree add <path> <branch-name>
+```
+
+Ví dụ
+
+```
+git worktree add ../dev/wombat dev/rl-agent
+```
+
+Xoá worktree
+
+```
+git worktree remove <path>
+```
+
+Ví dụ
+
+```
+git worktree remove /home/luan/viettel/WORKING/Wormbat_behide/dev/wombat
+```
+
+Dọn dẹp metadata worktree khi thư mục đã bị xoá thủ công
+
+```
+git worktree prune
+```
+
+Xoá branch sau khi đã remove worktree
+
+```
+git branch -D <branch-name>
+```
+
+Ví dụ
+
+```
+git branch -D dev/rl-agent
+```
+
+Đổi tên branch
+
+```
+git branch -m <old-name> <new-name>
+```
+
+Ví dụ
+
+```
+git branch -m dev develop
+```
+
+Xem danh sách branch
+
+```
+git branch
+```
+
+Ví dụ workflow đầy đủ
+
+```
+git worktree add -b dev/rl-agent ../dev/wombat main
+git worktree list
+git worktree remove ../dev/wombat
+git branch -D dev/rl-agent
+git worktree prune
+```

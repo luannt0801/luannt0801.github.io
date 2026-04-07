@@ -171,3 +171,11 @@ Các mô hình này là nền tảng cho việc mô tả hiện tượng ngẫu 
 
 # Exponential
 
+
+
+
+
+
+
+
+
