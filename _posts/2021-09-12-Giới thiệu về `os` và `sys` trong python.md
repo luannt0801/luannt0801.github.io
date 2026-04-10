@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git Command
+title: Giới thiệu về `os` và `sys` trong python
 date: 2020-01-05 10:00:00 +0700
 author: Nguyen Thanh Luan
 categories:
