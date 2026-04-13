@@ -1,13 +1,10 @@
 ---
-
 layout: post
 title: Thư viện Pytorch - basic
 date: 2022-10-23 21:32:00 +0700
 author: Nguyen Thanh Luan
 categories:
-
-* Programming
-
+    - Programming
 ---
 
 

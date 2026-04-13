@@ -1,13 +1,10 @@
 ---
-
 layout: post
-title: PyTorch: RNN, Transformer, Reinforcement Learning, optimize GPU & Distributed
+title: PyTorch - RNN, Transformer, Reinforcement Learning, optimize GPU & Distributed
 date: 2022-1-15 23:00:00 +0700
 author: Nguyen Thanh Luan
 categories:
-
-* Programming
-
+    - Programming
 ---
 
 
