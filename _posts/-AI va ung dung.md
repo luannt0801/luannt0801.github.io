@@ -3,5 +3,5 @@
 
 ## Random forest
 
-![[Pasted image 20260311201100.png]]
+![[assets/imgs_post/Pasted image 20260311201100.png]]
 

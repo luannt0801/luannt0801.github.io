@@ -183,3 +183,26 @@ git worktree remove ../dev/wombat
 git branch -D dev/rl-agent
 git worktree prune
 ```
+
+
+#### Git xử lý submodule
+
+Khi repo có submodule, clone về và checkout sang branch mới thì branch mới này không có clone kèm theo bản submodule.
+
+Sau khi chuyển sang branch mới, bạn cần thông báo cho Git rằng "hãy khởi tạo và tải dữ liệu cho các submodule dựa trên commit được ghi lại trong branch này".
+
+Hãy chạy lệnh sau trong terminal:
+
+Bash
+
+```
+git submodule update --init --recursive
+```
+
+**Giải thích lệnh:**
+
+- `update`: Cập nhật submodule lên commit đã được lưu trong repository chính.
+- `--init`: Khởi tạo submodule nếu nó chưa từng được khởi tạo trong thư mục này.
+- `--recursive`: Nếu submodule của bạn có chứa submodule con, lệnh này sẽ thực hiện cho tất cả chúng.
+
+

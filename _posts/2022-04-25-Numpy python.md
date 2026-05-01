@@ -436,3 +436,13 @@ First 5 elements: [0 2 4 6 8]
 * Nên tránh loop Python khi xử lý dữ liệu lớn
 
 NumPy là công cụ không thể thiếu cho bất kỳ Data Scientist, AI Engineer hay Software Engineer nào khi làm việc với dữ liệu số và tính toán hiệu năng cao trong Python.
+
+
+----
+
+# Advanced
+
+1. Hàm `np.memmap`
+
+	Hàm Memory-mapped files được sử dụng để truy cập các segment - phân đoạn nhỏ của tệp lớn trên disk mà không cần đọc toàn bộ file và bộ nhớ RAM. Bản ghi của numpy là các đối tượng như mảng.  Khác với module `mmap` của Python thì các object là dạng file.
+
