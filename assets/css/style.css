@@ -17,7 +17,7 @@ pre {
   padding: 14px 18px;
   border-radius: 8px;
   overflow-x: auto;
-  background: #1e1e1e; /* hoặc để theme quyết định */
+  background: transparent; /* hoặc để theme quyết định */
   color: #eee;
 }
 
