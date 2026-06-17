@@ -75,4 +75,3 @@ SSD kiến trúc tuần tự và dự đoán trên nhiều kích thước khác 
 
 
 RetinaNet
-

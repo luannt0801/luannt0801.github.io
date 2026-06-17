@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note C code :v
+title: Note C code ôn tập phỏng vấn
 date: 08-11-2025
 author: Nguyen Thanh Luan
 categories:
