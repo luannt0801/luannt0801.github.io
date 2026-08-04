@@ -9,6 +9,7 @@ categories:
 ## Window 11
 
 1. Script để auto mở các tab powershell mới
+
 ```bash
 # ==========================================
 # SCRIPT: Mở N tab Windows Terminal + tự động chạy lệnh mặc định
