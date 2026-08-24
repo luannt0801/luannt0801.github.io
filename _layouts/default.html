@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>{{ page.title | default: site.title }}</title>
@@ -12,15 +13,15 @@
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
     <!-- This is for highligh code block -->
     <script>
-    MathJax = {
-        tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        },
-        svg: {
-        fontCache: 'global'
-        }
-    };
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -31,7 +32,7 @@
 <body>
 
     <div class="sidebar">
-        <div class="text-center profile-section"> 
+        <div class="text-center profile-section">
             <img src="/assets/imgs/Dudu.jpeg" alt="Avatar" class="profile-img">
             <div class="username">Luan Nguyen</div>
             <div class="userid">@luannt0801</div>
@@ -49,34 +50,35 @@
 
 
         <!-- <div class="search-box"> -->
-            <!-- <input type="text" placeholder="Find Nemo..."> -->
-            <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
+        <!-- <input type="text" placeholder="Find Nemo..."> -->
+        <!-- <button type="submit"><i class="fas fa-search"></i></button> -->
         <!-- </div> -->
 
-        <div class="category-title"><a href="/">Categories</a> <span class="category-count">({% assign total_posts = site.posts | size %}{{ total_posts }})</span></div>
+        <div class="category-title"><a href="/">Categories</a> <span class="category-count">({% assign total_posts =
+                site.posts | size %}{{ total_posts }})</span></div>
         <ul class="category-list">
             {% assign counted_posts = 0 %}
             {% for category in site.categories %}
-                {% assign category_name = category | first %}
-                {% assign posts_in_category = category | last | size %}
-                {% assign counted_posts = counted_posts | plus: posts_in_category %}
-                
-                <li>
-                    <span class="emoji">
-                        {% case category_name %}
-                            {% when "AI & ML" %} 🐬
-                            {% when "Programming" %} 💻
-                            {% when "Computer Science" %} 🤖
-                            {% when "Mathematics" %}🧮
-                            {% when "Project" %} 🛠️
-                            {% when "Books" %} 💡
-                            {% when "Network" %} 🛜
-                            {% else %} 📦
-                        {% endcase %}
-                    </span>
-                    <a href="/categories/{{ category_name | slugify }}">{{ category_name }}</a>
-                    <span>({{ posts_in_category }})</span>
-                </li>
+            {% assign category_name = category | first %}
+            {% assign posts_in_category = category | last | size %}
+            {% assign counted_posts = counted_posts | plus: posts_in_category %}
+
+            <li>
+                <span class="emoji">
+                    {% case category_name %}
+                    {% when "AI & ML" %} 🐬
+                    {% when "Programming" %} 💻
+                    {% when "Computer Science" %} 🤖
+                    {% when "Mathematics" %}🧮
+                    {% when "Project" %} 🛠️
+                    {% when "Books" %} 💡
+                    {% when "Network" %} 🛜
+                    {% else %} 📦
+                    {% endcase %}
+                </span>
+                <a href="/categories/{{ category_name | slugify }}">{{ category_name }}</a>
+                <span>({{ posts_in_category }})</span>
+            </li>
             {% endfor %}
 
             {% assign etc_count = total_posts | minus: counted_posts %}
@@ -87,23 +89,23 @@
         </ul>
 
         <div class="category-title">Menu Blog</div>
-        <ul class="category-list footer-menu"> 
+        <ul class="category-list footer-menu">
             <li><a href="/">Home Page</a></li>
             <!-- <li><a href="#">Notebooks</a></li> -->
             <li><a href="https://github.com/luannt0801" target="_blank">GitHub</a></li>
             <li><a href="https://www.youtube.com/@luannguyen.02" target="_blank">Youtube</a></li>
-            <li><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank">LinkedIn</a></li> 
+            <li><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank">LinkedIn</a></li>
         </ul>
-        
+
         <div class="category-title">About me</div>
         <ul class="category-list footer-menu">
             <li><a href="/about.html" target="_blank">Nguyen Thanh Luan</a></li>
         </ul>
 
-        <!-- <div class="category-title">Travel with bubu</div>
+        <div class="category-title">Travel Viet Nam</div>
         <ul class="category-list footer-menu">
-            <li><a href="/danang_map.html" target="_blank">Travel Da Nang</a></li>
-        </ul> -->
+            <li><a href="/danang_map.html" target="_blank">Travel Viet Nam</a></li>
+        </ul>
 
         <!-- <div class="category-title">Travel with bubu</div>
         <ul class="category-list footer-menu">
@@ -119,27 +121,27 @@
 
         <!-- <div class="category-title">Notices</div> -->
         <!-- <ul class="category-list"> -->
-            <!-- <li><span class="emoji">🐧</span> <a href="mailto:ntl080102@gmail.com">Contact ME</a></li>  -->
-             <!-- <a href="/_layouts/about.html" target="_blank">About Luan</a> -->
+        <!-- <li><span class="emoji">🐧</span> <a href="mailto:ntl080102@gmail.com">Contact ME</a></li>  -->
+        <!-- <a href="/_layouts/about.html" target="_blank">About Luan</a> -->
         <!-- </ul> -->
-        
+
         <!-- <div class="gif-box" style="text-align: center; margin: 10px 0;">
         <img src="/assets/imgs/pig_study.gif" alt="Fun GIF" style="width: 120px; height: 120px; border-radius: 8px;">
         </div> -->
-        
+
         <div class="foot-sidebar">
-          <div class="footer-title">Welcome to Luan's Blog</div>
-          <div class="footer-links">
-            <!-- <a href="https://github.com/luannt0801" target="_blank">GitHub</a> -->
-            <!-- <a href="mailto:ntl080102@gmail.com">Mail</a> -->
-          </div>
-          <div class="footer-copy">
-            © 2025 by luannt0801
-          </div>
+            <div class="footer-title">Welcome to Luan's Blog</div>
+            <div class="footer-links">
+                <!-- <a href="https://github.com/luannt0801" target="_blank">GitHub</a> -->
+                <!-- <a href="mailto:ntl080102@gmail.com">Mail</a> -->
+            </div>
+            <div class="footer-copy">
+                © 2025 by luannt0801
+            </div>
         </div>
-        
-      </div>
-    
+
+    </div>
+
     <div id="scrollProgress"></div>
 
     <div class="main-content">
@@ -173,71 +175,71 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-    async function loadCounters() {
-        const upres = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/up")
-        await new Promise(r => setTimeout(r, 600));
-        const statsRes = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/stats")
-        const stats = await statsRes.json()
+        async function loadCounters() {
+            const upres = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/up")
+            await new Promise(r => setTimeout(r, 600));
+            const statsRes = await fetch("https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801/stats")
+            const stats = await statsRes.json()
 
-        const total = stats.data?.up_count ?? 0
-        const today = stats.data?.stats?.today?.up ?? 0
+            const total = stats.data?.up_count ?? 0
+            const today = stats.data?.stats?.today?.up ?? 0
 
-        // Cập nhật số
-        document.getElementById("total-views-value").innerText = total
+            // Cập nhật số
+            document.getElementById("total-views-value").innerText = total
 
-        // Lấy 24h gần nhất
-        // const hours = stats.data.stats.temporal.hours
-        // const labels = Object.keys(hours)
-        // const values = labels.map(h => hours[h].up)
+            // Lấy 24h gần nhất
+            // const hours = stats.data.stats.temporal.hours
+            // const labels = Object.keys(hours)
+            // const values = labels.map(h => hours[h].up)
 
-        const hoursUTC = stats.data.stats.temporal.hours
-        const labels = Object.keys(hoursUTC).map(h => {
-            // Chuyển UTC -> VN (UTC+7)
-            const vnHour = (parseInt(h) + 7) % 24
-            return vnHour.toString().padStart(2, '0') + ":00"
-        })
+            const hoursUTC = stats.data.stats.temporal.hours
+            const labels = Object.keys(hoursUTC).map(h => {
+                // Chuyển UTC -> VN (UTC+7)
+                const vnHour = (parseInt(h) + 7) % 24
+                return vnHour.toString().padStart(2, '0') + ":00"
+            })
 
-        const values = Object.keys(hoursUTC).map(h => hoursUTC[h].up)
+            const values = Object.keys(hoursUTC).map(h => hoursUTC[h].up)
 
-        drawLineChart(labels, values)
-    }
+            drawLineChart(labels, values)
+        }
 
-    let chartInstance = null
+        let chartInstance = null
 
-    function drawLineChart(labels, values) {
-        const ctx = document.getElementById("view-chart").getContext("2d")
+        function drawLineChart(labels, values) {
+            const ctx = document.getElementById("view-chart").getContext("2d")
 
-        if (chartInstance) chartInstance.destroy()
+            if (chartInstance) chartInstance.destroy()
 
-        chartInstance = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Views / Hour (VN Time)",
-                    data: values,
-                    borderWidth: 1,
-                    tension: 0.4,
-                    pointRadius: 0.5,
-                    backgroundColor: 'rgba(255, 56, 56, 0.2)', // màu fill dưới đường
-                    borderColor: '#FF3838',                      // màu đường
-                    pointBackgroundColor: '#FF3838',            // màu chấm điểm
-                    pointBorderColor: '#FF3838'                 // màu viền chấm
-                }]
-            },
-            options: {
-                responsive: false,
-                scales: {
-                    y: { beginAtZero: true }
+            chartInstance = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Views / Hour (VN Time)",
+                        data: values,
+                        borderWidth: 1,
+                        tension: 0.4,
+                        pointRadius: 0.5,
+                        backgroundColor: 'rgba(255, 56, 56, 0.2)', // màu fill dưới đường
+                        borderColor: '#FF3838',                      // màu đường
+                        pointBackgroundColor: '#FF3838',            // màu chấm điểm
+                        pointBorderColor: '#FF3838'                 // màu viền chấm
+                    }]
                 },
-                plugins: {
-                    legend: { display: false }
+                options: {
+                    responsive: false,
+                    scales: {
+                        y: { beginAtZero: true }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
                 }
-            }
-        })
-    }
+            })
+        }
 
-    loadCounters()
+        loadCounters()
     </script>
 
 
@@ -246,8 +248,9 @@
 
 
 
-  
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/themes/github.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/rouge/3.26.0/themes/github.min.css" rel="stylesheet">
     <script src="/assets/js/scripts.js"></script>
 </body>
+
 </html>

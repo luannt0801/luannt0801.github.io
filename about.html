@@ -4,81 +4,423 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Luan</title>
+    <link rel="icon" href="/assets/imgs/Dudu.jpeg">
     <link rel="stylesheet" href="/assets/css/about_luan_style.css">
 </head>
 <body>
     <div class="desktop">
         <div class="top-bar">
-            <span class="app-title">Home</span>
-            <span class="menu-items">File</span>
-            <span class="menu-items">Help</span>
+            <span class="app-title">Luan's Portfolio</span>
+            <span class="menu-items" onclick="alert('Click a desktop icon or a taskbar button below to open a section.')">File</span>
+            <span class="menu-items" onclick="alert('Nguyen Thanh Luan — AI Researcher/Engineer. Built as a Windows 95 style portfolio.')">Help</span>
             <span class="menu-items">^</span>
-            <span class="time-info">We planted 928 trees 24 Mar 1993 | 9:35 AM</span>
+            <span class="time-info" id="clock-text">--:--:--</span>
         </div>
 
         <div class="icon-container">
-            <div class="desktop-icon">
-                <img src="icons/icon_comic.png" alt="Comic">
-                <span>Comic</span>
+            <div class="desktop-icon" onclick="openWindow('home')">
+                <div class="icon-tile">🏠</div>
+                <span>Home</span>
             </div>
-            <div class="desktop-icon">
-                <img src="icons/icon_playlist.png" alt="Playlist">
-                <span>Playlist</span>
+            <div class="desktop-icon" onclick="openWindow('education')">
+                <div class="icon-tile">🎓</div>
+                <span>Education</span>
             </div>
-            <div class="desktop-icon">
-                <img src="icons/icon_wishes.png" alt="Wishes">
-                <span>Wishes</span>
+            <div class="desktop-icon" onclick="openWindow('experience')">
+                <div class="icon-tile">💼</div>
+                <span>Experience</span>
             </div>
-            <div class="desktop-icon">
-                <img src="icons/icon_playme.png" alt="Play Me">
-                <span>Play Me</span>
+            <div class="desktop-icon" onclick="openWindow('projects')">
+                <div class="icon-tile">🚀</div>
+                <span>Projects</span>
             </div>
-            <div class="desktop-icon">
-                <img src="icons/icon_guestbook.png" alt="Guest Book">
-                <span>Guest Book</span>
+            <div class="desktop-icon" onclick="openWindow('publications')">
+                <div class="icon-tile">📄</div>
+                <span>Publications</span>
             </div>
-            <div class="desktop-icon">
-                <img src="icons/icon_tree.png" alt="Tree">
-                <span>Tree</span>
+            <div class="desktop-icon" onclick="openWindow('skills')">
+                <div class="icon-tile">🛠️</div>
+                <span>Skills</span>
             </div>
+            <div class="desktop-icon" onclick="openWindow('contact')">
+                <div class="icon-tile">✉️</div>
+                <span>Contact</span>
             </div>
+        </div>
 
-        <div class="window active">
+        <!-- Home / Intro window -->
+        <div class="window portfolio-window open" id="window-home">
             <div class="title-bar">
                 <div class="title-bar-text">Nguyen Thanh Luan</div>
                 <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>
+                    <button aria-label="Close" onclick="closeWindow('home')"></button>
                 </div>
             </div>
             <div class="window-body">
-                <h3>Well, that was crazy!</h3>
-                <p>You've already planted 928 trees</p>
-                <p>Take a look at stats:</p>
+                <h3>Nguyen Thanh Luan</h3>
+                <p><strong>AI Researcher/Engineer</strong> &middot; Telecom &amp; Machine Learning &middot; Ha Noi, Viet Nam</p>
+                <div class="field-row" style="justify-content: center; margin: 10px 0;">
+                    <img src="/assets/imgs/Dudu.jpeg" alt="Nguyen Thanh Luan" style="width:96px;height:96px;object-fit:cover;border:1px solid #808080;box-shadow:1px 1px #dfdfdf inset;">
+                </div>
+                <p>
+                    AI Researcher/Engineer at Viettel Software, working on AI/ML-based optimization for
+                    radio access networks. AI Team Leader at Future Internet Laboratory, researching
+                    Federated Learning, Split Learning and Reinforcement Learning for edge-cloud and
+                    network-security applications. Currently pursuing an MSc in Telecommunication
+                    Engineering at Ha Noi University of Science and Technology.
+                </p>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <img src="icons/icon_co2.png" alt="CO2">
-                        <span>5.52t</span>
-                        <small>CO2 absorbed per year</small>
+                        <span class="emoji">📧</span>
+                        <small><a href="mailto:ntl080102@gmail.com">Email</a></small>
                     </div>
                     <div class="stat-item">
-                        <img src="icons/icon_forest.png" alt="Forest">
-                        <span>1.02ha.</span>
-                        <small>Forest area</small>
+                        <span class="emoji">📞</span>
+                        <small><a href="tel:+84962481318">Call</a></small>
                     </div>
                     <div class="stat-item">
-                        <img src="icons/icon_paper.png" alt="Paper">
-                        <span>53.3t</span>
-                        <small>Amount of paper returned</small>
+                        <span class="emoji">🔗</span>
+                        <small><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank" rel="noopener">LinkedIn</a></small>
+                    </div>
+                    <div class="stat-item">
+                        <span class="emoji">🐙</span>
+                        <small><a href="https://github.com/luannt0801" target="_blank" rel="noopener">GitHub</a></small>
                     </div>
                 </div>
-                <p>You can still explore the features of holiday95!</p>
-                <div class="field-row" style="justify-content: center; margin-top: 20px;">
-                    <button>Let's go!</button>
+                <div class="field-row" style="justify-content: center; gap: 10px; margin-top: 20px;">
+                    <button onclick="openWindow('projects')">🚀 View Projects</button>
+                    <button onclick="openWindow('contact')">✉️ Contact Me</button>
                 </div>
             </div>
         </div>
+
+        <!-- Education window -->
+        <div class="window portfolio-window" id="window-education">
+            <div class="title-bar">
+                <div class="title-bar-text">Education.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('education')"></button>
+                </div>
+            </div>
+            <div class="window-body" id="education-body"></div>
+        </div>
+
+        <!-- Experience window -->
+        <div class="window portfolio-window" id="window-experience">
+            <div class="title-bar">
+                <div class="title-bar-text">Experience.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('experience')"></button>
+                </div>
+            </div>
+            <div class="window-body" id="experience-body"></div>
+        </div>
+
+        <!-- Publications window -->
+        <div class="window portfolio-window" id="window-publications">
+            <div class="title-bar">
+                <div class="title-bar-text">Publications.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('publications')"></button>
+                </div>
+            </div>
+            <div class="window-body" id="publications-body"></div>
+        </div>
+
+        <!-- Projects window -->
+        <div class="window portfolio-window" id="window-projects">
+            <div class="title-bar">
+                <div class="title-bar-text">Projects.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('projects')"></button>
+                </div>
+            </div>
+            <div class="window-body" id="projects-body"></div>
+        </div>
+
+        <!-- Skills window -->
+        <div class="window portfolio-window" id="window-skills">
+            <div class="title-bar">
+                <div class="title-bar-text">Skills.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('skills')"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="skills-block">
+                    <h4>Languages</h4>
+                    <p>Python, C/C++, Java, HTML/CSS</p>
+                </div>
+                <div class="skills-block">
+                    <h4>Technologies</h4>
+                    <p>OS - Ubuntu, Docker, VSphere, AWS Architect</p>
+                </div>
+                <div class="skills-block">
+                    <h4>Knowledge</h4>
+                    <ul class="entry-list">
+                        <li>Network (Core: switching, routing L2/L3; CCNA; BGP &amp; Access: 3GPP, LTE/4G, 5G), OSS/BSS, Security in network (DDoS, DGA)</li>
+                        <li>AI: Computer Vision, Transformer Models, NLP, LLM, Reinforcement Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact window -->
+        <div class="window portfolio-window" id="window-contact">
+            <div class="title-bar">
+                <div class="title-bar-text">Contact.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="closeWindow('contact')"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>Based in Ha Noi, Viet Nam &mdash; open to research collaborations and interesting engineering problems.</p>
+                <div class="field-row" style="justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 14px;">
+                    <button onclick="window.location.href='mailto:ntl080102@gmail.com'">📧 Email</button>
+                    <button onclick="window.location.href='tel:+84962481318'">📞 Call</button>
+                    <button onclick="window.open('https://www.linkedin.com/in/luannguyenthanh1802/','_blank')">🔗 LinkedIn</button>
+                    <button onclick="window.open('https://github.com/luannt0801','_blank')">🐙 GitHub</button>
+                    <button onclick="window.open('https://luannt0801.github.io/','_blank')">🌐 Portfolio</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-taskbar">
+            <button class="start-btn" onclick="openWindow('home')">🏠 Start</button>
+            <button class="taskbar-app-btn active-app" id="task-home" onclick="openWindow('home')">Home</button>
+            <button class="taskbar-app-btn" id="task-education" onclick="openWindow('education')">Education</button>
+            <button class="taskbar-app-btn" id="task-experience" onclick="openWindow('experience')">Experience</button>
+            <button class="taskbar-app-btn" id="task-projects" onclick="openWindow('projects')">Projects</button>
+            <button class="taskbar-app-btn" id="task-publications" onclick="openWindow('publications')">Publications</button>
+            <button class="taskbar-app-btn" id="task-skills" onclick="openWindow('skills')">Skills</button>
+            <button class="taskbar-app-btn" id="task-contact" onclick="openWindow('contact')">Contact</button>
+        </div>
     </div>
+
+    <script>
+        // ------------------------------------------------------------------
+        // Content data — edit these arrays to update the site. Each list
+        // renders itself into its window automatically, so adding an entry
+        // is just pushing a new object below (no HTML editing needed).
+        // ------------------------------------------------------------------
+
+        const education = [
+            {
+                date: 'Jul 2017 – Jun 2020',
+                title: 'Bien Hoa High School for the Gifted — Specialized students in Physics',
+                highlights: [
+                    'First prize in Provincial Physics Competition in 2018, 2020.',
+                    'Participated in the national team of excellent Physics students.'
+                ]
+            },
+            {
+                date: 'Oct 2020 – Sep 2024',
+                title: 'Ha Noi University of Science and Technology — Talented Engineer Program',
+                highlights: [
+                    'Major: Electronics and Telecommunications.',
+                    'A Travel Grant worth $2000 to attend the SIGCOMM 2024 conference (ranked A), held in Sydney, Australia.'
+                ]
+            },
+            {
+                date: 'Mar 2025 – Now',
+                title: 'Ha Noi University of Science and Technology — MSc of Telecommunication Engineering',
+                highlights: [
+                    'Major: Telecommunications and Multimedia.',
+                    'CPA (up to now): 4.0/4.0'
+                ]
+            }
+            // add new education entries here
+        ];
+
+        const experience = [
+            {
+                date: 'Mar 2025 – Now',
+                title: 'Viettel Software — AI Researcher/Engineer',
+                highlights: [
+                    'Research and develop AI/ML-based optimization methods for radio access network (RAN) performance and resource management in cellular networks.'
+                ]
+            },
+            {
+                date: 'Jun 2024 – Dec 2024',
+                title: 'DTS Communication Technologies Corporation — Solution Engineer',
+                highlights: [
+                    'Deployed a 4G telecom package activation system for Mobifone, using SOAP to bridge the OSS/BSS system with activation-management software and orchestrating to Network Elements; the system handled up to 4 million requests per day with PostgreSQL for registered users.',
+                    'Deployed the IP Backbone network system for Mobifone.'
+                ]
+            },
+            {
+                date: 'Jan 2023 – Now',
+                title: 'Future Internet Laboratory — AI Team Leader',
+                highlights: [
+                    'A decentralized machine learning system based on Federated Learning to train secure, accurate models, addressing non-IID data, class imbalance, and heterogeneity in training devices.',
+                    'Split Learning: an automated system to partition large AI models (CV, LLM) for training across multiple devices with varying performance in edge-cloud computing systems.',
+                    'Applying AI to detect anomalies and cyberattacks (e.g., DDoS, DGA).',
+                    'Reinforcement learning models optimized for serverless systems.'
+                ]
+            }
+            // add new experience entries here
+        ];
+
+        const publications = [
+            {
+                date: 'August 2024',
+                title: 'On the Impact of Heterogeneity on Federated Learning at the Edge with DGA Malware Detection',
+                authors: 'Ma Viet Duc, Nguyen Thanh Luan, Nguyen Tien Tai, Nguyen Pham Trung Hieu, Nguyen Ngoc Minh, Pham Trung Hieu, Vu Hai, Nguyen Huu Thanh',
+                link: 'https://dl.acm.org/doi/10.1145/3674213.3674215',
+                doi: '10.1145/3674213.3674215'
+            }
+            // add new publications here
+        ];
+
+        const projects = [
+            {
+                name: 'Fed_CSP',
+                repo: 'https://github.com/luannt0801/Fed_CSP.git',
+                title: 'Dynamic Federated Learning - DGA Malware Detection',
+                desc: 'An optimization algorithm for federated learning addressing the risks of centralized AI training: data security and long training time on large datasets. Detects abnormal DGA attack traffic (LSTM model) and classifies MRI brain tumor images (custom model).',
+                tools: 'PyTorch, MQTT Mosquitto, Docker',
+                img: '/assets/imgs/projects/fed_csp.png',
+                imgName: 'fed_csp.png'
+            },
+            {
+                name: 'RL-5GAntOpt',
+                repo: 'https://github.com/luannt0801/reinforcement__learning.git',
+                title: 'Reinforcement Learning for 5G antenna optimization',
+                desc: 'Real-time optimization of transmission power for 5G BTS stations in urban areas.',
+                tools: 'Q-Learning, pygame, gymnasium',
+                img: '/assets/imgs/projects/rl_5gantopt.png',
+                imgName: 'rl_5gantopt.png'
+            },
+            {
+                name: 'SignLang-ViViT',
+                repo: 'https://github.com/luannt0801/SignLang-ViViT.git',
+                title: 'Sign language recognition from video — ViViT model',
+                desc: 'Helps translate sign language from video to Vietnamese using a Video Vision Transformer, supporting communication for people with disabilities.',
+                tools: 'YOLOv8, PyTorch',
+                img: '/assets/imgs/projects/signlang_vivit.png',
+                imgName: 'signlang_vivit.png'
+            },
+            {
+                name: 'hospital-manager',
+                repo: 'https://github.com/luannt0801/hospital-manager.git',
+                title: 'Hospital management website',
+                desc: 'Patients can schedule appointments and store records; doctors can manage patients, prescriptions, and schedules.',
+                tools: 'Django, HTML/CSS, MongoDB',
+                img: '/assets/imgs/projects/hospital_manager.png',
+                imgName: 'hospital_manager.png'
+            },
+            {
+                name: 'grocery-app',
+                repo: 'https://github.com/luannt0801/grocery-app.git',
+                title: 'Grocery Store Shopping App',
+                desc: 'Customers place orders, shop for items, and make payments. Managers/staff manage inventory, promotions, and invoices.',
+                tools: 'Tkinter, SQLite3',
+                img: '/assets/imgs/projects/grocery_app.png',
+                imgName: 'grocery_app.png'
+            }
+            // add new projects here — just push a new object with the same fields
+            // (drop the matching screenshot into assets/imgs/projects/, see README.md there)
+        ];
+
+        // ------------------------------------------------------------------
+        // Rendering
+        // ------------------------------------------------------------------
+
+        function renderEntries(containerId, items) {
+            document.getElementById(containerId).innerHTML = items.map(item => `
+                <div class="entry-block">
+                    <div class="entry-header">
+                        <span class="entry-title">${item.title}</span>
+                        <span class="entry-date">${item.date}</span>
+                    </div>
+                    <ul class="entry-list">${item.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+                </div>
+            `).join('');
+        }
+
+        function renderPublications() {
+            document.getElementById('publications-body').innerHTML = publications.map(pub => `
+                <div class="entry-block">
+                    <div class="entry-header">
+                        <span class="entry-title">${pub.title}</span>
+                        <span class="entry-date">${pub.date}</span>
+                    </div>
+                    <p style="margin:6px 0 0 0;">${pub.authors}</p>
+                    <p class="entry-link" style="margin:4px 0 0 0;"><a href="${pub.link}" target="_blank" rel="noopener">${pub.doi}</a></p>
+                </div>
+            `).join('');
+        }
+
+        function renderProjects() {
+            document.getElementById('projects-body').innerHTML = projects.map(p => `
+                <div class="project-card">
+                    <div class="project-thumb-wrap">
+                        <img class="project-thumb" src="${p.img}" alt="${p.name} screenshot"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="project-thumb-placeholder">🖼️<br>add screenshot:<br>${p.imgName}</div>
+                    </div>
+                    <div class="project-info">
+                        <h4><a href="${p.repo}" target="_blank" rel="noopener">${p.name}</a></h4>
+                        <p style="margin:0;">${p.title}</p>
+                        <p style="margin:6px 0 0 0;">${p.desc}</p>
+                        <span class="project-tools">Tools: ${p.tools}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        renderEntries('education-body', education);
+        renderEntries('experience-body', experience);
+        renderPublications();
+        renderProjects();
+
+        // ------------------------------------------------------------------
+        // Window / taskbar interaction
+        // ------------------------------------------------------------------
+
+        const sections = ['home', 'education', 'experience', 'projects', 'publications', 'skills', 'contact'];
+
+        function openWindow(id) {
+            sections.forEach(s => {
+                const win = document.getElementById('window-' + s);
+                if (win) win.classList.toggle('open', s === id);
+                const btn = document.getElementById('task-' + s);
+                if (btn) btn.classList.toggle('active-app', s === id);
+            });
+        }
+
+        function closeWindow(id) {
+            const win = document.getElementById('window-' + id);
+            if (win) win.classList.remove('open');
+            const btn = document.getElementById('task-' + id);
+            if (btn) btn.classList.remove('active-app');
+        }
+
+        // ------------------------------------------------------------------
+        // Live clock (top bar)
+        // ------------------------------------------------------------------
+
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock-text').textContent =
+                now.toLocaleDateString() + ' | ' + now.toLocaleTimeString();
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
