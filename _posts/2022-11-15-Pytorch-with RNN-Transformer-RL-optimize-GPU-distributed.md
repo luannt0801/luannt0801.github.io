@@ -4,7 +4,7 @@ title: PyTorch - RNN, Transformer, Reinforcement Learning, optimize GPU & Distri
 date: 2022-1-15 23:00:00 +0700
 author: Nguyen Thanh Luan
 categories:
-    - Programming
+    - AI & ML
 ---
 
 
