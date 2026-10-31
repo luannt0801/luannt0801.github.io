@@ -1,28 +1,22 @@
 // assets/js/scripts.js
 
-// --- Counter View ---
-async function updateStats() {
-    // Ensure the elements exist before trying to update them
-    const totalViewsElement = document.getElementById("total-views-value"); // Changed ID for clarity
-    const todayViewsElement = document.getElementById("today-views-value"); // Changed ID for clarity
-    const yesterdayViewsElement = document.getElementById("yesterday-views-value"); // Changed ID for clarity
+// --- Theme toggle (light / dark) ---
+function currentTheme() {
+    const explicit = document.documentElement.getAttribute("data-theme");
+    if (explicit) return explicit;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
 
-    if (totalViewsElement && todayViewsElement && yesterdayViewsElement) {
-        try {
-            // Replace 'your-username' with your actual counter.dev username or project name
-            const res = await fetch("https://api.counter.dev/your-username");
-            const data = await res.json();
-            totalViewsElement.textContent = data.total.toLocaleString(); // Format with commas
-            todayViewsElement.textContent = data.today.toLocaleString();
-            yesterdayViewsElement.textContent = data.yesterday.toLocaleString();
-        } catch (error) {
-            console.error("Error fetching counter stats:", error);
-            // Optionally, set default/fallback values or hide the section
-            totalViewsElement.textContent = "0";
-            todayViewsElement.textContent = "0";
-            yesterdayViewsElement.textContent = "0";
-        }
-    }
+function updateThemeIcon() {
+    const icon = document.querySelector("#theme-toggle i");
+    if (icon) icon.className = currentTheme() === "dark" ? "fas fa-sun" : "fas fa-moon";
+}
+
+function toggleTheme() {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) { }
+    updateThemeIcon();
 }
 
 
@@ -97,8 +91,10 @@ function scrollProgressBar() {
 
 // --- Initialize all functionalities on DOMContentLoaded ---
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Initialize Counter View
-    updateStats();
+    // Theme toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+    updateThemeIcon();
 
     // Initialize Slideshow if elements exist
     if (document.querySelector('.slideshow-container')) {

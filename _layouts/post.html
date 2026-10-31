@@ -1,11 +1,98 @@
 ---
 layout: default
+body_class: page page--post
 ---
-<article class="post-detail">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta"> {{ page.date | date: "%b %-d, %Y" }}</p>
-    <p class="post-meta"> By {{ page.author }}</p>
-    <div class="post-content">
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-header__title">{{ page.title | default: "Untitled" }}</h1>
+        {% if page.subtitle and page.subtitle != "" %}
+        <p class="post-header__subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        <div class="byline">
+            <img class="byline__avatar" src="{{ '/assets/imgs/Dudu.jpeg' | relative_url }}" alt="{{ page.author | default: site.author }}">
+            <div>
+                <div class="byline__author">{{ page.author | default: site.author }}</div>
+                <div class="meta">
+                    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+                    <span class="meta__sep"></span>
+                    <span>{% include reading-time.html content=content %}</span>
+                    {% for category in page.categories %}
+                    {% assign category_slug = category | slugify %}
+                    <span class="meta__sep"></span>
+                    <a href="{{ '/categories/' | append: category_slug | append: '/' | relative_url }}">{{ category }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="byline__actions">{% include share.html %}</div>
+        </div>
+
+        {% if page.cover %}
+        <figure class="post-cover">
+            <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title }}">
+        </figure>
+        {% endif %}
+
+        <details class="toc-mobile" hidden>
+            <summary>Contents</summary>
+            <nav class="toc" aria-label="Table of contents"></nav>
+        </details>
+    </header>
+
+    <div class="prose post-content">
         {{ content }}
     </div>
+
+    <aside class="toc-desktop" hidden>
+        <nav class="toc" aria-label="Table of contents">
+            <div class="toc__title">Contents</div>
+        </nav>
+    </aside>
+
+    <footer class="post-footer">
+        <div class="post-footer__row">
+            <div class="post-tags">
+                {% for tag in page.tags %}<span class="tag">#{{ tag }}</span>{% endfor %}
+            </div>
+            {% include share.html %}
+        </div>
+
+        {% if page.previous or page.next %}
+        <nav class="post-nav" aria-label="Previous and next posts">
+            {% if page.previous %}
+            <a class="post-nav__link post-nav__link--prev" href="{{ page.previous.url | relative_url }}">
+                <span class="post-nav__label">← Older</span>
+                <span class="post-nav__title">{{ page.previous.title | default: "Untitled" }}</span>
+            </a>
+            {% endif %}
+            {% if page.next %}
+            <a class="post-nav__link post-nav__link--next" href="{{ page.next.url | relative_url }}">
+                <span class="post-nav__label">Newer →</span>
+                <span class="post-nav__title">{{ page.next.title | default: "Untitled" }}</span>
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+
+        {% assign primary_category = page.categories | first %}
+        {% if primary_category %}
+        {% assign related_count = 0 %}
+        {% capture related_items %}
+        {% for post in site.categories[primary_category] %}
+        {% if post.url != page.url and related_count < 3 %}
+        {% assign related_count = related_count | plus: 1 %}
+        {% include post-card.html post=post %}
+        {% endif %}
+        {% endfor %}
+        {% endcapture %}
+        {% if related_count > 0 %}
+        <section class="related">
+            <h2 class="related__heading">More in {{ primary_category }}</h2>
+            <ul class="post-list">{{ related_items }}</ul>
+        </section>
+        {% endif %}
+        {% endif %}
+    </footer>
 </article>
+
+<script src="{{ '/assets/js/post.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

@@ -1,0 +1,29 @@
+{% assign p = include.post %}
+<li class="post-card">
+    <div class="post-card__body">
+        <h2 class="post-card__title"><a href="{{ p.url | relative_url }}">{{ p.title | default: "Untitled" }}</a></h2>
+        <p class="post-card__excerpt">
+            {%- if p.subtitle and p.subtitle != "" -%}
+            {{ p.subtitle }}
+            {%- elsif p.description and p.description != "" -%}
+            {{ p.description }}
+            {%- else -%}
+            {{ p.excerpt | strip_html | truncatewords: 40 }}
+            {%- endif -%}
+        </p>
+        <div class="meta">
+            <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time>
+            <span class="meta__sep"></span>
+            <span>{% include reading-time.html content=p.content %}</span>
+            {% if p.categories.size > 0 %}
+            <span class="meta__sep"></span>
+            <span>{{ p.categories | join: ", " }}</span>
+            {% endif %}
+        </div>
+    </div>
+    {% if p.cover %}
+    <a href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        <img class="post-card__thumb" src="{{ p.cover | relative_url }}" alt="" loading="lazy">
+    </a>
+    {% endif %}
+</li>

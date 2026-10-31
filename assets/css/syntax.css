@@ -1,217 +1,350 @@
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
-  color: #75715e;
-  font-style: italic;
+/* ==========================================================================
+   Code blocks + Rouge syntax highlighting
+   GitHub README look: Primer "prettylights" colors, light and dark following
+   the site theme. Token colors are variables so both themes share one rule set.
+   ========================================================================== */
+
+:root {
+    --font-code: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+    --code-bg: #f6f8fa;
+    --code-text: #1f2328;
+    --code-muted: #59636e;
+    --code-border: #d1d9e0;
+    --code-btn-bg: #f6f8fa;
+    --code-btn-hover: #eff2f5;
+    --code-inline-bg: rgba(129, 139, 152, 0.12);
+    --code-success: #1a7f37;
+
+    --tok-comment: #59636e;
+    --tok-keyword: #cf222e;
+    --tok-string: #0a3069;
+    --tok-constant: #0550ae;
+    --tok-entity: #6639ba;
+    --tok-variable: #953800;
+    --tok-tag: #116329;
+    --tok-deleted: #82071e;
+    --tok-deleted-bg: #ffebe9;
+    --tok-inserted: #116329;
+    --tok-inserted-bg: #dafbe1;
 }
-.highlight .cm {
-  color: #75715e;
-  font-style: italic;
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --code-bg: #151b23;
+        --code-text: #f0f6fc;
+        --code-muted: #9198a1;
+        --code-border: #3d444d;
+        --code-btn-bg: #212830;
+        --code-btn-hover: #262c36;
+        --code-inline-bg: rgba(101, 108, 118, 0.2);
+        --code-success: #3fb950;
+
+        --tok-comment: #9198a1;
+        --tok-keyword: #ff7b72;
+        --tok-string: #a5d6ff;
+        --tok-constant: #79c0ff;
+        --tok-entity: #d2a8ff;
+        --tok-variable: #ffa657;
+        --tok-tag: #7ee787;
+        --tok-deleted: #ffdcd7;
+        --tok-deleted-bg: #67060c;
+        --tok-inserted: #aff5b4;
+        --tok-inserted-bg: #033a16;
+    }
 }
-.highlight .c1 {
-  color: #75715e;
-  font-style: italic;
+
+:root[data-theme="dark"] {
+    --code-bg: #151b23;
+    --code-text: #f0f6fc;
+    --code-muted: #9198a1;
+    --code-border: #3d444d;
+    --code-btn-bg: #212830;
+    --code-btn-hover: #262c36;
+    --code-inline-bg: rgba(101, 108, 118, 0.2);
+    --code-success: #3fb950;
+
+    --tok-comment: #9198a1;
+    --tok-keyword: #ff7b72;
+    --tok-string: #a5d6ff;
+    --tok-constant: #79c0ff;
+    --tok-entity: #d2a8ff;
+    --tok-variable: #ffa657;
+    --tok-tag: #7ee787;
+    --tok-deleted: #ffdcd7;
+    --tok-deleted-bg: #67060c;
+    --tok-inserted: #aff5b4;
+    --tok-inserted-bg: #033a16;
 }
-.highlight .cp {
-  color: #75715e;
-  font-weight: bold;
+
+/* ---------- Block (works even before / without JS) ---------- */
+pre {
+    margin: 0;
+    padding: 16px;
+    max-width: 100%;
+    overflow-x: auto;
+    background: var(--code-bg);
+    color: var(--code-text);
+    border-radius: 6px;
+    font-family: var(--font-code);
+    font-size: 85%;
+    line-height: 1.45;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    font-variant-ligatures: none;
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
+    scrollbar-width: thin;
+    scrollbar-color: var(--code-border) transparent;
 }
-.highlight .cs {
-  color: #75715e;
-  font-weight: bold;
-  font-style: italic;
+
+pre::-webkit-scrollbar {
+    height: 8px;
 }
-.highlight .err {
-  color: #960050;
-  background-color: #1e0010;
+
+pre::-webkit-scrollbar-thumb {
+    background: var(--code-border);
+    border-radius: 4px;
 }
-.highlight .gi {
-  color: #ffffff;
-  background-color: #324932;
+
+pre::-webkit-scrollbar-track {
+    background: transparent;
 }
-.highlight .gd {
-  color: #ffffff;
-  background-color: #493131;
+
+pre code {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 100%;
+    color: inherit;
+    white-space: inherit;
 }
-.highlight .ge {
-  font-style: italic;
-}
-.highlight .ges {
-  font-weight: bold;
-  font-style: italic;
-}
-.highlight .gr {
-  color: #aa0000;
-}
-.highlight .gt {
-  color: #aa0000;
-}
-.highlight .gh {
-  color: #999999;
-}
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-  font-weight: bold;
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .k, .highlight .kv {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .kc {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .kd {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .kp {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .kr {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .kt {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .kn {
-  color: #f92672;
-  font-weight: bold;
-}
-.highlight .ow {
-  color: #f92672;
-  font-weight: bold;
-}
-.highlight .o {
-  color: #f92672;
-  font-weight: bold;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .sa {
-  color: #66d9ef;
-  font-weight: bold;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sc {
-  color: #e6db74;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .sr {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .ss {
-  color: #e6db74;
-}
-.highlight .s, .highlight .dl {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-  font-weight: bold;
-}
-.highlight .nd {
-  color: #a6e22e;
-  font-weight: bold;
-}
-.highlight .ne {
-  color: #a6e22e;
-  font-weight: bold;
-}
-.highlight .nf, .highlight .fm {
-  color: #a6e22e;
-  font-weight: bold;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .bp {
-  color: #f8f8f2;
-}
-.highlight .nb {
-  color: #f8f8f2;
-}
-.highlight .ni {
-  color: #f8f8f2;
-}
-.highlight .nn {
-  color: #f8f8f2;
-}
-.highlight .vc {
-  color: #f8f8f2;
-}
-.highlight .vg {
-  color: #f8f8f2;
-}
-.highlight .vi {
-  color: #f8f8f2;
-}
-.highlight .nv, .highlight .vm {
-  color: #f8f8f2;
-}
-.highlight .w {
-  color: #f8f8f2;
-}
-.highlight .nl {
-  color: #f8f8f2;
-  font-weight: bold;
-}
-.highlight .nt {
-  color: #f92672;
-}
+
+.highlighter-rouge,
 .highlight {
-  color: #f8f8f2;
-  background-color: #49483e;
+    max-width: 100%;
+    min-width: 0;
 }
+
+.prose .highlighter-rouge,
+.prose > pre {
+    margin: 1.5em 0;
+}
+
+/* ---------- Enhanced block (post.js) ---------- */
+.code-block {
+    position: relative;
+    margin: 1.5em 0;
+    max-width: 100%;
+    min-width: 0;
+    background: var(--code-bg);
+    border-radius: 6px;
+    font-family: var(--font-sans, sans-serif);
+}
+
+.code-body {
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.code-body pre {
+    flex: 1 1 auto;
+    min-width: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.code-block:not(.has-title) .code-body pre {
+    /* keep the first line clear of the language label / buttons */
+    padding-right: 16px;
+}
+
+/* Language label: small, muted, top-right; gives way to the buttons on hover */
+.code-lang {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    z-index: 1;
+    font-family: var(--font-code);
+    font-size: 10.5px;
+    line-height: 14px;
+    color: var(--code-muted);
+    text-transform: lowercase;
+    pointer-events: none;
+    transition: opacity 0.15s;
+}
+
+.code-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.code-block:hover .code-actions,
+.code-block:focus-within .code-actions {
+    opacity: 1;
+}
+
+.code-block:hover .code-lang,
+.code-block:focus-within .code-lang {
+    opacity: 0;
+}
+
+.code-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid var(--code-border);
+    border-radius: 6px;
+    background: var(--code-btn-bg);
+    color: var(--code-muted);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.code-btn:hover {
+    background: var(--code-btn-hover);
+    color: var(--code-text);
+}
+
+.code-btn[aria-pressed="true"] {
+    color: var(--code-text);
+    border-color: var(--code-muted);
+}
+
+.code-btn.is-done {
+    color: var(--code-success);
+    border-color: var(--code-success);
+}
+
+/* Touch screens have no hover: keep the buttons visible */
+@media (hover: none) {
+    .code-actions {
+        opacity: 1;
+    }
+
+    .code-lang {
+        display: none;
+    }
+}
+
+/* Thin file-name bar, only for blocks with data-title */
+.code-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 8px 0 16px;
+    border-bottom: 1px solid var(--code-border);
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--code-text);
+}
+
+.code-title__name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.code-title__lang {
+    color: var(--code-muted);
+    text-transform: lowercase;
+}
+
+.code-title .code-actions {
+    position: static;
+    margin-left: auto;
+    opacity: 1;
+}
+
+/* Line numbers (opt-in via {: .line-numbers}) */
+.code-gutter {
+    flex: 0 0 auto;
+    padding: 16px 0 16px 16px;
+    color: var(--code-muted);
+    font-family: var(--font-code);
+    font-size: 85%;
+    line-height: 1.45;
+    text-align: right;
+    white-space: pre;
+    user-select: none;
+    opacity: 0.7;
+}
+
+.code-block.is-wrapped pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.code-block.is-wrapped pre code {
+    width: auto;
+}
+
+/* Wrapped lines no longer match the gutter, so hide it while wrapped */
+.code-block.is-wrapped .code-gutter {
+    display: none;
+}
+
+li .code-block,
+li .highlighter-rouge {
+    margin: 0.8em 0;
+}
+
+/* ---------- Rouge tokens (Primer prettylights) ---------- */
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm,
+.highlight .c1, .highlight .cs, .highlight .cpf { color: var(--tok-comment); }
+.highlight .cp { color: var(--tok-keyword); }
+
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp,
+.highlight .kr, .highlight .kv, .highlight .ow { color: var(--tok-keyword); }
+.highlight .kc, .highlight .kt { color: var(--tok-constant); }
+
+.highlight .o { color: var(--tok-constant); }
+.highlight .p, .highlight .pi { color: var(--code-text); }
+
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl,
+.highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx,
+.highlight .s1 { color: var(--tok-string); }
+.highlight .se, .highlight .si { color: var(--tok-constant); }
+.highlight .sr { color: var(--tok-tag); }
+.highlight .ss { color: var(--tok-constant); }
+
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh,
+.highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: var(--tok-constant); }
+
+.highlight .nf, .highlight .fm, .highlight .nd, .highlight .nl { color: var(--tok-entity); }
+.highlight .nc, .highlight .ne { color: var(--tok-variable); }
+.highlight .nn { color: var(--code-text); }
+.highlight .nb, .highlight .bp, .highlight .no { color: var(--tok-constant); }
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi,
+.highlight .vm, .highlight .ni { color: var(--tok-variable); }
+.highlight .nt { color: var(--tok-tag); }
+.highlight .na { color: var(--tok-constant); }
+
+.highlight .gd { color: var(--tok-deleted); background: var(--tok-deleted-bg); }
+.highlight .gi { color: var(--tok-inserted); background: var(--tok-inserted-bg); }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: 600; }
+.highlight .gh, .highlight .gu { color: var(--tok-constant); font-weight: 600; }
+.highlight .gp, .highlight .go { color: var(--code-muted); }
+.highlight .gp { user-select: none; }
+.highlight .gr, .highlight .gt, .highlight .err { color: var(--tok-deleted); }

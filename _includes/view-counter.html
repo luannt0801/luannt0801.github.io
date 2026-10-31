@@ -1,0 +1,62 @@
+<div class="view-counter">
+    <div class="view-counter__stat">
+        <span class="view-counter__label">Total views</span>
+        <strong id="total-views-value">0</strong>
+    </div>
+    <div class="view-counter__chart">
+        <canvas id="view-chart" width="220" height="90" aria-label="Views per hour"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+    async function loadCounters() {
+        const base = "https://api.counterapi.dev/v2/luan_blog_workspace/luan_blog_0801";
+        try {
+            await fetch(`${base}/up`);
+            await new Promise(r => setTimeout(r, 600));
+            const statsRes = await fetch(`${base}/stats`);
+            const stats = await statsRes.json();
+
+            document.getElementById("total-views-value").innerText = stats.data?.up_count ?? 0;
+
+            // Convert UTC hours -> VN time (UTC+7)
+            const hoursUTC = stats.data?.stats?.temporal?.hours ?? {};
+            const labels = Object.keys(hoursUTC).map(h => ((parseInt(h) + 7) % 24).toString().padStart(2, "0") + ":00");
+            const values = Object.keys(hoursUTC).map(h => hoursUTC[h].up);
+
+            drawLineChart(labels, values);
+        } catch (err) {
+            console.error("CounterAPI error:", err);
+        }
+    }
+
+    function drawLineChart(labels, values) {
+        if (typeof Chart === "undefined") return;
+        new Chart(document.getElementById("view-chart").getContext("2d"), {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Views / Hour (VN Time)",
+                    data: values,
+                    borderWidth: 1,
+                    tension: 0.4,
+                    pointRadius: 0.5,
+                    fill: true,
+                    backgroundColor: "rgba(255, 56, 56, 0.15)",
+                    borderColor: "#FF3838",
+                    pointBackgroundColor: "#FF3838",
+                    pointBorderColor: "#FF3838"
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: { x: { display: false }, y: { beginAtZero: true, ticks: { maxTicksLimit: 3 } } },
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    loadCounters();
+</script>

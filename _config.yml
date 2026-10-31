@@ -58,8 +58,6 @@
 title: Luan Nguyen's Blog
 description: A personal blog by Luan Nguyen
 author: Nguyen Thanh Luan
-paginate: 5 # Number of posts per page on the index (optional, but good for pagination)
-paginate_path: "/blog/page:num/" # Path for pagination
 
 markdown: kramdown
 highlighter: rouge
@@ -83,3 +81,7 @@ exclude:
   - Gemfile.lock
   - node_modules/
   - vendor/
+  - _templates/
+  - tools/
+  - README.md
+  - luan_cv.tex

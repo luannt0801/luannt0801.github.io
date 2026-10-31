@@ -1,0 +1,19 @@
+{%- comment -%}
+Responsive embed. Usage in a post:
+  {% include embed.html youtube="dQw4w9WgXcQ" caption="Optional caption" %}
+  {% include embed.html src="https://example.com/embed" ratio="4/3" %}
+{%- endcomment -%}
+{%- if include.youtube -%}
+{%- assign embed_src = "https://www.youtube-nocookie.com/embed/" | append: include.youtube -%}
+{%- else -%}
+{%- assign embed_src = include.src -%}
+{%- endif -%}
+<figure class="embed">
+    <div class="embed__frame" style="aspect-ratio: {{ include.ratio | default: '16/9' }}">
+        <iframe src="{{ embed_src }}" title="{{ include.caption | default: 'Embedded content' }}" loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    {%- if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {%- endif %}
+</figure>

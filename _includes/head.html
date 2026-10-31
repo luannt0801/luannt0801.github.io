@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.title != "" %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: page.subtitle | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<link rel="icon" href="{{ '/assets/imgs/Dudu.jpeg' | relative_url }}">
+
+<!-- Apply saved / OS theme before first paint to avoid a flash -->
+<script>
+    (function () {
+        var theme = null;
+        try { theme = localStorage.getItem("theme"); } catch (e) { }
+        if (theme === "light" || theme === "dark") {
+            document.documentElement.setAttribute("data-theme", theme);
+        }
+    })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap&subset=vietnamese">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<!-- ?v= changes on every build so browsers never keep a stale stylesheet -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+
+<!-- MathJax for $...$ and $$...$$ -->
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: { fontCache: 'global' }
+    };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" async></script>

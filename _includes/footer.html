@@ -1,0 +1,29 @@
+<footer class="site-footer">
+    <div class="site-footer__inner">
+        <div class="site-footer__about">
+            <div class="site-footer__title">Welcome to Luan's Blog</div>
+            <p>Notes on AI, programming and computer science.</p>
+            {% include view-counter.html %}
+        </div>
+
+        <div class="site-footer__col">
+            <div class="site-footer__heading">Blog</div>
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="{{ '/about.html' | relative_url }}">About me</a></li>
+                <li><a href="{{ '/travel_vn.html' | relative_url }}">Travel Viet Nam</a></li>
+            </ul>
+        </div>
+
+        <div class="site-footer__col">
+            <div class="site-footer__heading">Elsewhere</div>
+            <ul>
+                <li><a href="https://github.com/luannt0801" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.youtube.com/@luannguyen.02" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="mailto:ntl080102@gmail.com">Mail</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="site-footer__copy">© {{ site.time | date: "%Y" }} by luannt0801</div>
+</footer>
