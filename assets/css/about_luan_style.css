@@ -244,3 +244,211 @@ button:active {
 .field-row {
     display: flex;
 }
+
+/* ==========================================================================
+   Portfolio extensions (about.html)
+   ========================================================================== */
+
+/* Fallback desktop background: bg_homealone_sepia.png does not exist,
+   so paint a classic Win95 teal pattern instead of leaving it blank. */
+.desktop {
+    background-image: repeating-linear-gradient(45deg, #017575 0px, #017575 2px, #008080 2px, #008080 42px);
+    filter: none;
+}
+
+/* --- Desktop icon tiles (emoji glyphs instead of missing .png icons) --- */
+.icon-tile {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+/* --- Multi-window portfolio layout --- */
+.window {
+    display: none;
+}
+
+.window.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.window.portfolio-window {
+    width: min(760px, 92vw);
+    max-height: 82vh;
+}
+
+.portfolio-window .window-body {
+    text-align: left;
+    overflow-y: auto;
+    max-height: calc(82vh - 26px);
+}
+
+.portfolio-window .window-body h3,
+.portfolio-window .window-body p {
+    text-align: left;
+}
+
+.portfolio-window .window-body > p:first-child {
+    margin-top: 0;
+}
+
+/* --- Repeating entries (Education / Experience / Publications) --- */
+.entry-block {
+    margin-bottom: 14px;
+}
+
+.entry-block:last-child {
+    margin-bottom: 0;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+}
+
+.entry-title {
+    font-weight: bold;
+}
+
+.entry-date {
+    font-size: 0.85em;
+    color: #333;
+    white-space: nowrap;
+}
+
+.entry-list {
+    margin: 6px 0 0 18px;
+    padding: 0;
+}
+
+.entry-list li {
+    margin-bottom: 4px;
+}
+
+.entry-link {
+    font-size: 0.85em;
+}
+
+/* --- Projects grid --- */
+.project-card {
+    display: flex;
+    gap: 10px;
+    border: 1px solid #808080;
+    background: #fff;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-shadow: 1px 1px #dfdfdf inset;
+}
+
+.project-card:last-child {
+    margin-bottom: 0;
+}
+
+.project-thumb-wrap {
+    position: relative;
+    width: 100px;
+    height: 75px;
+    flex-shrink: 0;
+}
+
+.project-thumb {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border: 1px solid #808080;
+    background: #eee;
+}
+
+.project-thumb-placeholder {
+    width: 100px;
+    height: 75px;
+    border: 1px dashed #808080;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.62em;
+    line-height: 1.3;
+    color: #555;
+    background: repeating-linear-gradient(45deg, #eee, #eee 6px, #e2e2e2 6px, #e2e2e2 12px);
+    padding: 2px;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 1em;
+}
+
+.project-tools {
+    font-style: italic;
+    font-size: 0.85em;
+    display: block;
+    margin-top: 4px;
+}
+
+/* --- Skills lists --- */
+.skills-block {
+    margin-bottom: 12px;
+}
+
+.skills-block:last-child {
+    margin-bottom: 0;
+}
+
+.skills-block h4 {
+    margin: 0 0 4px 0;
+}
+
+/* --- Stat-item emoji sizing (Home window quick links) --- */
+.stat-item .emoji {
+    font-size: 22px;
+    display: block;
+}
+
+/* --- Bottom taskbar --- */
+.bottom-taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #c0c0c0;
+    border-top: 1px solid #fff;
+    box-shadow: 0 -1px #808080 inset;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 5px;
+    z-index: 150;
+}
+
+.taskbar-app-btn {
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+.taskbar-app-btn.active-app {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-shadow: none;
+    background: #d4d4d4;
+}

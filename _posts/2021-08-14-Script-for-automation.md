@@ -51,8 +51,8 @@ Write-Host "Đã mở $N tab, mỗi tab đã chạy lệnh mặc định tại: 
 *Powershell*
 ```bash
 # 1. Khai báo URL repo và tên thư mục muốn tạo
-$repoUrl   = "https://github.com/wormbat-behide/Wombat.git"
-$targetDir = "Wombat"
+$repoUrl   = "https://github.com/wormbat-behide/RF-Aware-3D-Digital-Map.git"
+$targetDir = "RF-Aware-3D-Digital-Map"
 
 # 2. Clone bare repo
 git clone --bare $repoUrl "$targetDir/.bare"
