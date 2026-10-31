@@ -58,6 +58,9 @@
 title: Luan Nguyen's Blog
 description: A personal blog by Luan Nguyen
 author: Nguyen Thanh Luan
+# Post dates are written in Vietnam time; without this, GitHub Pages (UTC)
+# treats a post dated "today" as a future post and skips it until 07:00.
+timezone: Asia/Ho_Chi_Minh
 
 markdown: kramdown
 highlighter: rouge
