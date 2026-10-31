@@ -63,12 +63,14 @@ new()
 
 ---
 Một vài câu hỏi note by Luân:
-![](/assets/imgs_post/Pasted%20image%2020251108104205.png)
-![](/assets/imgs_post/Pasted%20image%2020251108104221.png)
-![](/assets/imgs_post/Pasted%20image%2020251108104228.png)
-![](/assets/imgs_post/Pasted%20image%2020251108104236.png)
-![](/assets/imgs_post/Pasted%20image%2020251108104258.png)![](/assets/imgs_post/Pasted%20image%2020251108104242.png)
-![](/assets/imgs_post/Pasted%20image%2020251108104329.png)
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104205.png)
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104221.png)
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104228.png)
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104236.png)
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104258.png)
+
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104242.png)
+![](/assets/imgs_post/note-c-code/pasted-image-20251108104329.png)
 
 ---
 

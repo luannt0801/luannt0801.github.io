@@ -22,7 +22,7 @@ AI đóng vai trò ngày càng quan trọng trong các thế hệ mạng từ 4G
 ### 4G
 
 1. Tổng quan kiến trúc mạng 4G
-![](/assets/imgs_post/Pasted image 20251130233944.png)
+![](/assets/imgs_post/overview-of-network-generation/pasted-image-20251130233944.png)
 (Telecom Forums)
 
 

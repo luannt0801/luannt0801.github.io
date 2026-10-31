@@ -16,7 +16,7 @@ categories:
  
  `Gradient descent` là thuật toán tối ưu nhằm tìm ra giá trị cực tiểu hoặc thấp nhất của 1 hàm mục tiêu (thường là hàm *loss* hoặc hàm *cost*) bằng cách lặp đi lặp lại việc cập nhật các tham số mô hình theo hướng ngược lại của gradient (hướng dốc nhất xuống) cho đến khi đạt được điểm tối ưu mong muốn.
  
-![](/assets/imgs_post/Pasted image 20251119001215.png)
+![](/assets/imgs_post/gradient-descent-and-gradient-ascent/pasted-image-20251119001215.png)
 
 ## 1.2 Phương pháp
 `Gradient descent` thường được dùng để tìm ra **giá trị cực tiểu** của một hàm mục tiêu (thường là _loss function_ hoặc _cost function_) bằng cách:
@@ -72,7 +72,7 @@ Gradient Ascent thường được sử dụng trong các bài toán mà ta mu�
 
 Tương tự Gradient Descent nhưng ngược hướng, thuật toán Gradient Ascent thực hiện các bước:
 
-![](/assets/imgs_post/Pasted image 20251119004951.png)
+![](/assets/imgs_post/gradient-descent-and-gradient-ascent/pasted-image-20251119004951.png)
 
 1. Khởi tạo tham số ở giá trị bất kỳ.
 2. Tính **gradient** của hàm tại tham số hiện tại.

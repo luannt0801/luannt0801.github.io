@@ -28,7 +28,7 @@ Quá trình phát triển
 mốc là năm 2013 
 
 - trước 2013: template chung là tạo ra 1 cái cửa sổ - sliding window trượt từ trái sang phải và trên xuống dưới. mỗi lần trượt -> đưa vào feature extraction -> mô hình học máy -> phân loại xem window này thuộc lớp nào?
-![[Pasted image 20260415194735.png]]
+![](/assets/imgs_post/object-detection/pasted-image-20260415194735.png)
 
 Vaasnd dề: trượt nhiều -> có nhiều cửa sổ trùng => giải pháp là sử dụng thuật toán NMS
 
@@ -42,7 +42,7 @@ Diện tích giao / diện tích hợp của từng box -> lớn nhất là pred
 
 #### Thuật toán Histogram of Orientation Gradients Detectors
 
-![[Pasted image 20260415195515.png]]
+![](/assets/imgs_post/object-detection/pasted-image-20260415195515.png)
 
 Không phân tích được 2 người chồng lần
 #### Thuật toán DPM - Deformable Part-based model
@@ -51,7 +51,7 @@ Không phân tích được 2 người chồng lần
 
 Các thuật toán học sâu: giải quyết vaasnd dề detect người ở xa, mặt quay nghiên nhỏ
 
-![[Pasted image 20260415195814.png]]
+![](/assets/imgs_post/object-detection/pasted-image-20260415195814.png)
 
 
 Đi vào 1 stage detection -> yolo
