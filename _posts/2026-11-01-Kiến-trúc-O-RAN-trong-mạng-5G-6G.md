@@ -18,7 +18,7 @@ published: true
 
 **O-RAN (Open Radio Access Network)** là kiến trúc mạng truy nhập vô tuyến mở, được phát triển và chuẩn hóa bởi O-RAN Alliance, nhằm thúc đẩy việc phân tách (disaggregation), ảo hóa (virtualization) và chuẩn hóa các thành phần RAN thông qua các giao diện mở (Open Interfaces). Khác với kiến trúc RAN truyền thống phụ thuộc vào giải pháp độc quyền của một nhà cung cấp, O-RAN cho phép tích hợp các thành phần đa nhà cung cấp (Multi-vendor), tăng khả năng tương tác và linh hoạt trong triển khai, vận hành mạng. Kiến trúc này nổi bật với hai thành phần điều khiển thông minh là Near-Real-Time RAN Intelligent Controller (Near-RT RIC) và Non-Real-Time RAN Intelligent Controller (Non-RT RIC), hỗ trợ quản lý, tối ưu hóa mạng thông qua các ứng dụng thông minh (xApps/rApps), kết hợp AI/ML và cơ chế điều khiển vòng kín (Closed-loop Automation). Nhờ đó, O-RAN tạo nền tảng cho việc tự động hóa vận hành RAN, tối ưu tài nguyên vô tuyến theo dữ liệu thời gian thực và thúc đẩy đổi mới trong nghiên cứu, triển khai mạng 5G và 6G.
 
-# Tại sao cần phát triển kiến trúc O-RAN
+## Tại sao cần phát triển kiến trúc O-RAN
 
 Khi mạng RAN ngày càng phát triển với các thế hệ mạng kế tiếp (5G, 6G) được xây dựng trên nền tảng các thiết bị của nhiều vendor khác nhau với công nghệ và các băng tần không đồng nhất. Đặc biệt là công nghệ 5G mới với nhiều công nghệ mới Massive Input Massive Output (MIMO), mmWave, giao tiếp thông qua sub-terahertz, network slicing, etc. _Điều này gây ra áp lực lớn đến chi phí vận hành và tối ưu của các nhà vận hành mạng trong quá trình nâng cấp và vận hành hạ tầng của họ để theo kịp các yêu cầu của thị trường, các yêu cầu của công nghệ mới và yêu cầu khách hàng._
 
@@ -36,7 +36,7 @@ Việc vận hành và tối ưu mạng bằng cách vận hành thông qua các
 
 3. **Vendor lock-in:** Đây là yếu tố ràng buộc mà không nhà vận hành nào muốn, các nhà mạng sẽ bị hạn chế trong việc lựa chọn vendor, giá cả (độc quyền), etc. 
 
-# Kiến trúc O-RAN
+## Kiến trúc O-RAN
 
 ![Kiến trúc O-RAN](https://docs.o-ran-sc.org/en/latest/_images/o-ran-architecture.png "Hình 1. O-RAN architecture overview")
 
@@ -48,7 +48,7 @@ Các thành phần `O-CU`, `O-DU` và `O-RU` phối hợp xử lý tín hiệu, 
 
 Nhờ các giao diện mở và khả năng tích hợp AI/ML, nhà mạng có thể tự động điều chỉnh cấu hình mạng, cải thiện chất lượng dịch vụ và giảm sự phụ thuộc vào một nhà cung cấp thiết bị duy nhất.
 
-# Các thành phần
+## Các thành phần
 
 | STT | Thành phần    | Tên đầy đủ                                | Mô tả                                                                                                                                                                                                      |
 | --- | ------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ Nhờ các giao diện mở và khả năng tích hợp AI/ML, nhà mạng có t
 | 10  | `O1*`         | O1 Infrastructure Management Interface    | Giao diện kết nối giữa SMO và khung quản lý cơ sở hạ tầng O-Cloud, hỗ trợ quản lý, giám sát và điều phối tài nguyên điện toán, lưu trữ và mạng cho các chức năng mạng ảo O-RAN.                            |
 | 11  | `xApp`        | Near-RT RIC Application                   | Ứng dụng phần mềm chạy trên nền tảng Near-RT RIC, cung cấp các chức năng điều khiển và tối ưu hóa RAN gần thời gian thực. Có thể được phát triển bởi nhà mạng, nhà cung cấp thiết bị hoặc bên thứ ba.      |
 
-# Ứng dụng
+## Ứng dụng
 
 - Tối ưu mạng vô tuyến: Tự động điều chỉnh công suất phát, góc nghiêng anten (Tilt), phân bổ tài nguyên vô tuyến và cấu hình cell nhằm cải thiện vùng phủ, dung lượng và chất lượng dịch vụ.
 - Tự động vận hành mạng: Ứng dụng AI/ML và cơ chế Closed-loop Automation để phát hiện bất thường, phân tích nguyên nhân và đề xuất hoặc thực thi các giải pháp tối ưu mạng.
@@ -75,7 +75,7 @@ Nhờ các giao diện mở và khả năng tích hợp AI/ML, nhà mạng có t
   ![AI/ML workflow in the O-RAN architecture. ](/assets/imgs_post/o-ran_in_5g_6g/{6B0326E7-2EE0-4AED-91DF-CFC8B7D64F45}.png "Hình 2. AI/ML workflow in the O-RAN architecture. ref [3]")
 - Hỗ trợ triển khai mạng 5G/6G: Tạo nền tảng linh hoạt, có khả năng mở rộng và tích hợp các công nghệ mới như Network Digital Twin, Federated Learning và AI-native RAN.
 
-# References
+## References
 
 [1] [3GPP ETSI TR 121 905 V14.1.1 (2017-07)](https://www.etsi.org/deliver/etsi_tr/121900_121999/121905/14.01.01_60/tr_121905v140101p.pdf)
 
