@@ -72,7 +72,7 @@ Nhờ các giao diện mở và khả năng tích hợp AI/ML, nhà mạng có t
 - Tiết kiệm năng lượng: Tối ưu công suất và tự động đưa các thành phần mạng vào chế độ tiết kiệm năng lượng khi lưu lượng thấp, đồng thời đảm bảo chất lượng dịch vụ.
 - Tích hợp multi-vendor: Sử dụng các giao diện mở để kết hợp thiết bị và giải pháp từ nhiều nhà cung cấp, giảm phụ thuộc vào hệ sinh thái độc quyền.
 - Phát triển ứng dụng AI/ML: Cho phép nhà mạng và bên thứ ba phát triển các ứng dụng xApp/rApp chuyên biệt, phục vụ các bài toán tối ưu hóa và tự động hóa RAN.
-  ![AI/ML workflow in the O-RAN architecture. ](F:/assets/imgs_post/o-ran_in_5g_6g/{6B0326E7-2EE0-4AED-91DF-CFC8B7D64F45}.png "Hình 2. AI/ML workflow in the O-RAN architecture. ref [3]")
+  ![AI/ML workflow in the O-RAN architecture. ](/assets/imgs_post/o-ran_in_5g_6g/{6B0326E7-2EE0-4AED-91DF-CFC8B7D64F45}.png "Hình 2. AI/ML workflow in the O-RAN architecture. ref [3]")
 - Hỗ trợ triển khai mạng 5G/6G: Tạo nền tảng linh hoạt, có khả năng mở rộng và tích hợp các công nghệ mới như Network Digital Twin, Federated Learning và AI-native RAN.
 
 # References
