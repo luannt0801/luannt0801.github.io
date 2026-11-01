@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kiến trúc O-RAN trong mạng 5G/6G"
-subtitle: "Nghiên cứu tìm hiểu và định nghĩa về kiến trúc O-RAN trong thế hệ mạng 5G, từ cơ sở lý thuyết đến thực tế từ các Network Operators / Vendors"
+subtitle: "Mô tả tổng quan kiến trúc O-RAN trong thế hệ mạng 5G, từ cơ sở lý thuyết đến thực tế từ các Network Operators / Vendors"
 date: 2026-11-01
 author: Nguyen Thanh Luan
 categories:
