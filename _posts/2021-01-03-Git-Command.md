@@ -11,7 +11,8 @@ categories:
 Git cũng hỗ trợ làm việc nhóm hiệu quả thông qua việc đồng bộ mã nguồn giữa các máy tính qua các kho lưu trữ từ xa như GitHub, GitLab,... Nhờ đó, Git trở thành công cụ không thể thiếu trong quy trình phát triển phần mềm hiện đại, giúp tăng tính linh hoạt, an toàn và minh bạch trong quản lý mã nguồn.
 
 Bài viết này mục đích lưu trữ các git command mà `ntl0801` thường dùng.
-# Git Command
+
+## Git Command
 
 `git rebase -i` dùng để check xem các commit nào chưa có trên main.
 
@@ -89,7 +90,38 @@ git pull origin main
 |`git tag <tagname>`|Gắn thẻ (tag) cho một commit cụ thể, thường dùng để đánh dấu phiên bản|
 
 
-At last, you can `git push origin main --force` j4f =)))))))))))))))
+
+## Các commit type phổ biến
+
+| Type       | Ý nghĩa                | Khi sử dụng                                               |
+| ---------- | ---------------------- | --------------------------------------------------------- |
+| `feat`     | Feature                | Thêm chức năng mới                                        |
+| `fix`      | Bug fix                | Sửa lỗi                                                   |
+| `docs`     | Documentation          | Thay đổi tài liệu                                         |
+| `style`    | Code style             | Format code, khoảng trắng, dấu phẩy, không thay đổi logic |
+| `refactor` | Refactoring            | Tái cấu trúc code, không thêm tính năng hoặc sửa bug      |
+| `perf`     | Performance            | Cải thiện hiệu năng                                       |
+| `test`     | Tests                  | Thêm hoặc cập nhật test                                   |
+| `build`    | Build system           | Thay đổi build system, dependencies                       |
+| `ci`       | Continuous Integration | Thay đổi CI/CD pipeline                                   |
+| `chore`    | Maintenance            | Công việc bảo trì, cấu hình chung                         |
+| `revert`   | Revert                 | Hoàn tác commit trước đó                                  |
+
+### Một số type mở rộng
+
+| Type       | Ý nghĩa                           |
+| ---------- | --------------------------------- |
+| `init`     | Khởi tạo project                  |
+| `config`   | Thay đổi cấu hình                 |
+| `deps`     | Cập nhật dependencies             |
+| `ui`       | Thay đổi giao diện người dùng     |
+| `api`      | Thay đổi API                      |
+| `security` | Cải thiện bảo mật                 |
+| `hotfix`   | Sửa lỗi khẩn cấp                  |
+| `release`  | Chuẩn bị hoặc phát hành phiên bản |
+| `merge`    | Merge các branch                  |
+| `wip`      | Work in progress                  |
+
 
 ---
 
