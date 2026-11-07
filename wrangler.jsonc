@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "luannt0801-github-io",
+  "compatibility_date": "2026-11-07",
+  "assets": {
+    "directory": "./_site"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
