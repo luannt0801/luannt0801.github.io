@@ -13,12 +13,14 @@ cover_alt: "Ảnh cover minh hoạ"
 published: true
 ---
 
-Viettel vừa trở thành nhà mạng đầu tiên tại Việt Nam đạt cấp độ tự trị cao nhất thế giới tính đến hiện nay, là nhà mạng đầu tiên tại Đông Nam Á chinh phục chứng chỉ ANL4 *(Nguồn: [Báo Viettel Family](https://vtnet.viettelfamily.com/news/vtnet-dat-chung-nhan-mang-tu-tri-cap-do-cao-nhat-the-gioi-hien-nay-tu-tm-forum))*.
-Mạng tự trị mức 4.0 tức là hệ thống vận hành mạng lưới của network operator hoàn toàn tự động ra quyết định tối ưu, g
+Viettel vừa trở thành nhà mạng đầu tiên tại Việt Nam đạt cấp độ tự trị mạng cao nhất hiện nay, đồng thời là nhà mạng đầu tiên tại Đông Nam Á đạt chứng nhận **ANL4** từ TM Forum. Đây là một dấu mốc quan trọng, khẳng định năng lực làm chủ công nghệ và tiên phong trong hành trình tự động hóa vận hành mạng viễn thông của Viettel.
 
+Mạng tự trị cấp độ 4 (Autonomous Networks Level 4 – ANL4) hướng tới khả năng vận hành mạng gần như hoàn toàn tự động. Hệ thống có thể chủ động giám sát, phát hiện vấn đề, phân tích nguyên nhân, đưa ra quyết định và thực thi các hành động điều chỉnh, tối ưu chất lượng mạng mà không cần sự can thiệp trực tiếp của con người trong các quy trình thuộc phạm vi tự trị.
 
-Mình cảm thấy khá vui và có chút thành tựu khi là người nghiên cứu và phát triển chính các thuật toán, mô hình AI giải quyết các bài toán trong tự động hóa mạng lưới.
+Với mình, đây không chỉ là một thành tựu đáng tự hào của Viettel, mà còn mang ý nghĩa cá nhân đặc biệt. Mình cảm thấy vui và có thêm động lực khi được trực tiếp tham gia nghiên cứu, phát triển các thuật toán và mô hình AI nhằm giải quyết những bài toán thực tế trong tự động hóa vận hành mạng lưới.
 
-## Bài toán tối ưu chất lượng mạng
+## Bài toán tối ưu chất lượng mạng (Network Quality Optimization)
 
-Dự án mà mình tham gia ngay từ những ngày đầu là dự án "Tối ưu chất lượng mạng - Network Quality Optimization".
+Đây là dự án mình tham gia ngay từ những ngày đầu: **Network Quality Optimization (NQO) – Tối ưu chất lượng mạng**.
+
+Mục tiêu của bài toán là tối ưu vùng phủ mạng 4G/5G ở các băng tần khác nhau sao cho đảm bảo được chất lượng vùng phủ và dung lượng mạng. Mở rộng ra còn là bài toán về cân bằng tài giữa các trạm phát sóng 4G/5G của nhà mạng.
