@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,15 @@
     <link rel="icon" href="/assets/imgs/Dudu.jpeg">
     <link rel="stylesheet" href="/assets/css/about_luan_style.css">
 </head>
+
 <body>
     <div class="desktop">
         <div class="top-bar">
             <span class="app-title">Luan's Portfolio</span>
-            <span class="menu-items" onclick="alert('Click a desktop icon or a taskbar button below to open a section.')">File</span>
-            <span class="menu-items" onclick="alert('Nguyen Thanh Luan — AI Researcher/Engineer. Built as a Windows 95 style portfolio.')">Help</span>
+            <span class="menu-items"
+                onclick="alert('Click a desktop icon or a taskbar button below to open a section.')">File</span>
+            <span class="menu-items"
+                onclick="alert('Nguyen Thanh Luan — Data Scientist. Built as a Windows 95 style portfolio.')">Help</span>
             <span class="menu-items">^</span>
             <span class="time-info" id="clock-text">--:--:--</span>
         </div>
@@ -60,13 +64,15 @@
             </div>
             <div class="window-body">
                 <h3>Nguyen Thanh Luan</h3>
-                <p><strong>AI Researcher/Engineer</strong> &middot; Telecom &amp; Machine Learning &middot; Ha Noi, Viet Nam</p>
+                <p><strong>AI Researcher/Engineer</strong> &middot; Telecom &amp; Machine Learning &middot; Ha Noi, Viet
+                    Nam</p>
                 <div class="field-row" style="justify-content: center; margin: 10px 0;">
-                    <img src="/assets/imgs/Dudu.jpeg" alt="Nguyen Thanh Luan" style="width:96px;height:96px;object-fit:cover;border:1px solid #808080;box-shadow:1px 1px #dfdfdf inset;">
+                    <img src="/assets/imgs/Dudu.jpeg" alt="Nguyen Thanh Luan"
+                        style="width:96px;height:96px;object-fit:cover;border:1px solid #808080;box-shadow:1px 1px #dfdfdf inset;">
                 </div>
                 <p>
-                    AI Researcher/Engineer at Viettel Software, working on AI/ML-based optimization for
-                    radio access networks. AI Team Leader at Future Internet Laboratory, researching
+                    AI Researcher/Engineer at Viettel Network, working on AI/ML-based optimization for
+                    radio access networks. Researcher at Future Internet Laboratory, researching
                     Federated Learning, Split Learning and Reinforcement Learning for edge-cloud and
                     network-security applications. Currently pursuing an MSc in Telecommunication
                     Engineering at Ha Noi University of Science and Technology.
@@ -82,7 +88,8 @@
                     </div>
                     <div class="stat-item">
                         <span class="emoji">🔗</span>
-                        <small><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank" rel="noopener">LinkedIn</a></small>
+                        <small><a href="https://www.linkedin.com/in/luannguyenthanh1802/" target="_blank"
+                                rel="noopener">LinkedIn</a></small>
                     </div>
                     <div class="stat-item">
                         <span class="emoji">🐙</span>
@@ -170,7 +177,8 @@
                 <div class="skills-block">
                     <h4>Knowledge</h4>
                     <ul class="entry-list">
-                        <li>Network (Core: switching, routing L2/L3; CCNA; BGP &amp; Access: 3GPP, LTE/4G, 5G), OSS/BSS, Security in network (DDoS, DGA)</li>
+                        <li>Network (Core: switching, routing L2/L3; CCNA; BGP &amp; Access: 3GPP, LTE/4G, 5G), OSS/BSS,
+                            Security in network (DDoS, DGA)</li>
                         <li>AI: Computer Vision, Transformer Models, NLP, LLM, Reinforcement Learning</li>
                     </ul>
                 </div>
@@ -188,11 +196,13 @@
                 </div>
             </div>
             <div class="window-body">
-                <p>Based in Ha Noi, Viet Nam &mdash; open to research collaborations and interesting engineering problems.</p>
+                <p>Based in Ha Noi, Viet Nam &mdash; open to research collaborations and interesting engineering
+                    problems.</p>
                 <div class="field-row" style="justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 14px;">
                     <button onclick="window.location.href='mailto:ntl080102@gmail.com'">📧 Email</button>
                     <button onclick="window.location.href='tel:+84962481318'">📞 Call</button>
-                    <button onclick="window.open('https://www.linkedin.com/in/luannguyenthanh1802/','_blank')">🔗 LinkedIn</button>
+                    <button onclick="window.open('https://www.linkedin.com/in/luannguyenthanh1802/','_blank')">🔗
+                        LinkedIn</button>
                     <button onclick="window.open('https://github.com/luannt0801','_blank')">🐙 GitHub</button>
                     <button onclick="window.open('https://luannt0801.github.io/','_blank')">🌐 Portfolio</button>
                 </div>
@@ -205,7 +215,8 @@
             <button class="taskbar-app-btn" id="task-education" onclick="openWindow('education')">Education</button>
             <button class="taskbar-app-btn" id="task-experience" onclick="openWindow('experience')">Experience</button>
             <button class="taskbar-app-btn" id="task-projects" onclick="openWindow('projects')">Projects</button>
-            <button class="taskbar-app-btn" id="task-publications" onclick="openWindow('publications')">Publications</button>
+            <button class="taskbar-app-btn" id="task-publications"
+                onclick="openWindow('publications')">Publications</button>
             <button class="taskbar-app-btn" id="task-skills" onclick="openWindow('skills')">Skills</button>
             <button class="taskbar-app-btn" id="task-contact" onclick="openWindow('contact')">Contact</button>
         </div>
@@ -249,7 +260,7 @@
         const experience = [
             {
                 date: 'Mar 2025 – Now',
-                title: 'Viettel Software — AI Researcher/Engineer',
+                title: 'Viettel Network — Data Scientist',
                 highlights: [
                     'Research and develop AI/ML-based optimization methods for radio access network (RAN) performance and resource management in cellular networks.'
                 ]
@@ -423,4 +434,5 @@
         setInterval(updateClock, 1000);
     </script>
 </body>
+
 </html>
