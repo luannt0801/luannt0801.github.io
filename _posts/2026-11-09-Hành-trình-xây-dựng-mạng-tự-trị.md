@@ -73,4 +73,4 @@ _Cheers!._
 
 ---
 
-![Wombat team](assets\imgs_post\an4-viettel\wombat-team.png "Wombat team")
+![Wombat team](/assets/imgs_post/an4-viettel/wombat-team.png "Wombat team")
