@@ -20,6 +20,8 @@ Tôi cảm thấy khá vui và có chút thành tựu khi là người nghiên c
 ## Bài toán tối ưu chất lượng mạng
 Dự án mà tôi tham gia ngay từ những ngày đầu vào làm việc tại team X là dự án _“Tối ưu chất lượng mạng truy nhập vô tuyến - RAN Network Quality Optimization”_.
 
+Team có mình là DS, còn lại là 3 dev, 1 tester và sếp - trưởng phòng cũng là dân toán, làm nghiên cứu, là người đầu tiên làm bài toán tối ưu này đặt nền móng rất nhiều.
+
 Bài toán đặt ra mục tiêu là điều chỉnh các tham số của các thiết bị phát trong trong mạng sao cho đảm bảo vùng phủ không bị chồng lấn hoặc gây ra vùng phủ lõm và tối đa được thông lượng mạng.
 
 - **Vùng lõm sóng**: Là vùng tín hiệu yếu, người dùng sẽ mất sóng tín hiệu 4G/5G. Giống như khi bạn đi vào thang máy thì tín hiệu sóng vô tuyến sẽ mất vậy
@@ -47,3 +49,28 @@ Việc tối ưu 1 khu vực tỉnh thành với cả trăm trạm phát sóng s
 
 Đây là overview để ta có góc nhìn về độ phức tạp của bài toán. 😂😂
 
+_(Thật ra còn nhiều thứ hơn nữa, ảnh hưởng rất nhiều tới mọi quyết định trong bài tối ưu này)_
+
+## Tháng 9/2026
+
+Tháng 9/2026 là 1 tháng phải nói là kinh khủng. Trong khoảng hơn 1 tháng này, tôi vừa nghiên cứu và triển khai các mô hình AI phân tích mạng, vừa hướng dẫn 2 bạn VDT (viettel digital talent - 2 bạn đều pass và đến nay bắt đầu làm việc nghiên cứu cùng.), vừa thi 2 chứng chỉ quốc tế, vừa báo cáo luận văn thạc sĩ.
+
+Ấy thế mà cũng xong hết, đều thành công (●'◡'●)
+
+Tính ra cũng thần kỳ, nghiên cứu từ AI Agent cũng làm được.
+
+Đã có nhiều thứ làm được trong năm 2026 này.
+
+Nhưng cũng cần phải cố gắng hơn để hoàn thiện thành kết quả cuối cùng mới có thể vui mừng được. 
+
+```
+ANL4 là 1 niềm vui nho nhỏ trong năm nay.
+```
+
+_Cũng nhờ đó nhận ra còn nhiều thiếu sót, cảm ơn sếp và các anh chị em._
+
+_Cheers!._
+
+---
+
+![Wombat team](assets\imgs_post\an4-viettel\wombat-team.png "Wombat team")
