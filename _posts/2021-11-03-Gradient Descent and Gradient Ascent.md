@@ -6,9 +6,9 @@ author: Nguyen Thanh Luan
 categories:
   - AI & ML
 ---
-# 1. Gradient Descent
+## 1. Gradient Descent
 
-## 1.1 Khái niệm
+### 1.1 Khái niệm
 `Gradient descent` is a method for unconstrained mathematical optimization. It is a first-order iterative algorithm for minimizing a differentiable multivariate function.
 
 - *Method for unconstrained mathematical optimization* mô tả việc tối ưu bằng cách tìm sự biến thiên nhằm xác định cực trị của hàm bằng cách xét duyệt các giá trị đầu vào của hàm đó mà không có bất kỳ sự giới hạn nào về ranh giới tìm kiếm, phạm vi của các giá trị đó (sự không ràng buộc). NOTE: Trái ngược là tìm kiếm giá trị tối ưu nằm trong 1 khoảng xác định hoặc giới hạn trong các điều kiện cụ thể.
@@ -18,7 +18,7 @@ categories:
  
 ![](/assets/imgs_post/gradient-descent-and-gradient-ascent/pasted-image-20251119001215.png)
 
-## 1.2 Phương pháp
+### 1.2 Phương pháp
 `Gradient descent` thường được dùng để tìm ra **giá trị cực tiểu** của một hàm mục tiêu (thường là _loss function_ hoặc _cost function_) bằng cách:
 
 1. Khởi tạo các tham số ở giá trị bất kỳ.
@@ -36,7 +36,7 @@ Trong đó:
 - $\nabla_\theta J(\theta)$: gradient
 - $\alpha$: _learning rate_ — tốc độ học, điều chỉnh bước nhảy
 
-## 1.3 Ứng dụng trong machine learning
+### 1.3 Ứng dụng trong machine learning
 
 ### Gradient Descent là nền tảng để huấn luyện hầu hết các mô hình học máy hiện đại:
 
@@ -55,9 +55,9 @@ Các biến thể được sử dụng tùy theo quy mô dữ liệu và đặc 
 - **Momentum**
 - **Adam, RMSProp, Adagrad,…**
 
-# 2. Gradient Ascent
+## 2. Gradient Ascent
 
-## **2.1 Khái niệm**
+### **2.1 Khái niệm**
 
 **Gradient Ascent** là một thuật toán tối ưu hóa được sử dụng để **tìm giá trị cực đại** của một hàm số khả vi nhiều biến. Đây là thuật toán **ngược lại** với Gradient Descent: thay vì đi theo hướng giảm nhanh nhất của hàm, Gradient Ascent **đi theo hướng tăng nhanh nhất**.
 
@@ -68,7 +68,7 @@ Gradient Ascent thường được sử dụng trong các bài toán mà ta mu�
 - hàm reward trong reinforcement learning
 - hàm đánh giá trong tối ưu hóa
 
-## **2.2 Phương pháp**
+### **2.2 Phương pháp**
 
 Tương tự Gradient Descent nhưng ngược hướng, thuật toán Gradient Ascent thực hiện các bước:
 
@@ -93,7 +93,7 @@ Trong đó:
 
 > Điểm khác biệt duy nhất so với Gradient Descent là **cộng** thay vì trừ.
 
-## **2.3 Ứng dụng trong Machine Learning**
+### **2.3 Ứng dụng trong Machine Learning**
 
 Gradient Ascent được dùng trong các bài toán cần **tối đa hóa** một hàm thay vì tối thiểu hóa.
 ### **Một số ứng dụng tiêu biểu:**
@@ -111,7 +111,7 @@ Gradient Ascent được dùng trong các bài toán cần **tối đa hóa** m�
     Tối đa hóa mutual information hoặc likelihood.
 - **Economics / Optimization**  
     Tối đa hóa lợi nhuận, hiệu suất hoặc giá trị của hàm tiện ích.
-## **2.4 Các biến thể của Gradient Ascent**
+### **2.4 Các biến thể của Gradient Ascent**
 
 Tương tự Gradient Descent, Gradient Ascent cũng có các biến thể phổ biến:
 
@@ -122,7 +122,7 @@ Tương tự Gradient Descent, Gradient Ascent cũng có các biến thể phổ
 - **Adam (ở dạng tối đa hóa)**
 - **RMSProp, Adagrad,… (dạng ascent)**
 
-# **3. So sánh Gradient Descent vs Gradient Ascent**
+## **3. So sánh Gradient Descent vs Gradient Ascent**
 
 
 | Thuật toán       | Mục tiêu     | Công thức cập nhật                                            |

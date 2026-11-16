@@ -6,9 +6,11 @@ author: Nguyen Thanh Luan
 categories:
   - Mathematics
 ---
-Là một data scientist, cũng như một researcher, tôi cảm thấy việc cần ôn tập - hệ thống lại các kiến thức về xác xuất thống kê là điều cần thiết để hỗ trợ trong công việc và học tập. Trong công việc, việc phân tích các pattern dữ liệu, đánh giá tỉ lệ xuất hiện mẫu, pattern trong dữ liệu nhằm suy đoán các vấn đề, kiểm định các insight có xuất hiện hay không trong bài toán của công ty. Tương tự trong việc làm research, cần đưa ra các mô hình thống kê, mô phỏng, và tối ưu dựa trên các tiến trình Gauss Process, etc. Đây là động lực cho tôi thực hiện bài viết và hệ thống lại kiến thức đối với bản thân.
+Là một data scientist, cũng như một researcher, tôi cảm thấy việc cần ôn tập - hệ thống lại các kiến thức về xác xuất thống kê là điều cần thiết để hỗ trợ trong công việc và học tập. Trong công việc, việc phân tích, đánh giá tỉ lệ xuất hiện mẫu, tìm kiếm các pattern trong dữ liệu nhằm suy đoán các vấn đề, kiểm định các insight có xuất hiện hay không trong bài toán của công ty. Tương tự trong việc làm research, cần đưa ra các mô hình thống kê, mô phỏng, và tối ưu dựa trên các tiến trình Gauss Process, etc. Đây là động lực cho tôi thực hiện bài viết và hệ thống lại kiến thức đối với bản thân.
 
 ---
+
+## Tổng quan
 
 Xác suất thống kê là ngành nghiên cứu các hiện tượng ngẫu nhiên, từ mô tả sự bất định đến suy luận về quy luật ẩn sau dữ liệu.
 
@@ -18,7 +20,7 @@ Ngược lại, _xác suất thống kê hiện đại_ mở rộng mạnh mẽ 
 
 Tổng quan lại, xác suất – thống kê là công cụ cốt lõi để hiểu và ra quyết định trong điều kiện không chắc chắn; nó giúp dự đoán, tối ưu hóa và định lượng rủi ro trong khoa học, kỹ thuật, kinh tế, y sinh và nhiều lĩnh vực khác, đóng vai trò then chốt trong thế kỷ dữ liệu ngày nay.
 
-## A. Xác suất cổ điển
+## A. Xác suất thống kê cổ điển
 
 Xác suất thống kê cổ điển tập trung vào các mô hình, phương pháp và định lý nền tảng dùng để suy luận từ mẫu sang tổng thể trong những điều kiện giả định lý tưởng. Các loại thống kê chủ đạo gồm:
 - **Thống kê mô tả**: tính trung bình, phương sai, độ lệch chuẩn…
@@ -42,18 +44,18 @@ trong đó, $n(A)$ là số kết quả thuận lợi cho biến cố A và $n(\
 ### 2. Không gian mẫu và biến cố
 
 - **Phép thử ngẫu nhiên**: phép thử có kết quả không thể dự đoán chính xác trước khi thực hiện  
-- **Không gian mẫu** \(\Omega\): tập hợp tất cả các kết quả có thể xảy ra của phép thử  
-- **Biến cố** A: một tập con của \(\Omega\)
+- **Không gian mẫu** $\Omega$: tập hợp tất cả các kết quả có thể xảy ra của phép thử  
+- **Biến cố** A: một tập con của $\Omega$
 
 Phân loại biến cố:
-- Biến cố chắc chắn: \(A = \Omega\)  
-- Biến cố không thể: \(A = \varnothing\)  
+- Biến cố chắc chắn: $A = \Omega$  
+- Biến cố không xảy ra: $A = \varnothing$  
 - Biến cố đơn: chỉ gồm một kết quả  
 - Biến cố phức: gồm nhiều kết quả  
 ### 3. Tính chất cơ bản & các phép toán
 
 **Tính chất cơ bản**
- 
+
 - Xác suất của một biến cố luôn nằm trong khoảng từ 0 đến 1: $0 \leq P(A) \leq 1$
 - Nếu hai biến cố A và B xung khắc, thì xác suất hợp của chúng bằng tổng xác suất của từng biến cố: $P(A \cup B) = P(A) + P(B)$
 - Xác suất của biến cố đối (biến cố A không xảy ra) là: $P(\overline{\rm A}) = 1 - P(A)$ 
@@ -157,18 +159,7 @@ P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
 $$
 Các mô hình này là nền tảng cho việc mô tả hiện tượng ngẫu nhiên rời rạc trong xác suất cổ điển.
 
-
-
-
-
-
-
-
-
-
-
-
-## B. Xác suất hiện đại
+## B. Xác suất thống kê hiện đại
 
 
 - $f(x)=2πσ2​1​exp(−2σ2(x−μ)2​)$
