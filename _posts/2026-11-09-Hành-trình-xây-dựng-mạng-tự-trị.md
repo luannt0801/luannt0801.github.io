@@ -13,16 +13,16 @@ cover_alt: "Ảnh cover minh hoạ"
 published: true
 ---
 
-Viettel vừa trở thành nhà mạng đầu tiên tại Việt Nam đạt cấp độ tự trị cao nhất thế giới tính đến hiện nay, là nhà mạng đầu tiên tại Đông Nam Á chinh phục chứng chỉ ANL4 *(Nguồn: [Báo Viettel Family](https://vtnet.viettelfamily.com/news/vtnet-dat-chung-nhan-mang-tu-tri-cap-do-cao-nhat-the-gioi-hien-nay-tu-tm-forum))*. Mạng tự trị cấp độ 4 (Autonomous Networks Level 4 – ANL4) hướng tới khả năng vận hành mạng gần như hoàn toàn tự động. Hệ thống có thể chủ động giám sát, phát hiện vấn đề, phân tích nguyên nhân, đưa ra quyết định và thực thi các hành động điều chỉnh, tối ưu chất lượng mạng mà không cần sự can thiệp trực tiếp của con người. Điều này đòi hỏi các thuật toán, mô hình AI đưa ra có khả năng chính xác cao, xử lý với dữ liệu lớn của toàn mạng lưới với hàng triệu thuê bao.
+Viettel vừa trở thành nhà mạng đầu tiên tại Việt Nam đạt cấp độ tự trị cao nhất thế giới tính đến hiện nay, là nhà mạng đầu tiên tại Đông Nam Á chinh phục chứng chỉ ANL4 *(Nguồn: [Báo Viettel Family](https://vtnet.viettelfamily.com/news/vtnet-dat-chung-nhan-mang-tu-tri-cap-do-cao-nhat-the-gioi-hien-nay-tu-tm-forum))*.
+
+Mạng tự trị cấp độ 4 (Autonomous Networks Level 4 – ANL4) hướng tới khả năng vận hành mạng gần như hoàn toàn tự động. Hệ thống có thể chủ động giám sát, phát hiện vấn đề, phân tích nguyên nhân, đưa ra quyết định và thực thi các hành động điều chỉnh, tối ưu chất lượng mạng mà không cần sự can thiệp trực tiếp của con người. Điều này đòi hỏi các thuật toán, mô hình AI đưa ra có khả năng chính xác cao, xử lý với dữ liệu lớn của toàn mạng lưới với hàng triệu thuê bao.
 
 Tôi cảm thấy khá vui và có chút thành tựu khi là người nghiên cứu và phát triển chính các thuật toán, mô hình AI giải quyết các bài toán trong tự động hóa mạng lưới.
 
 ## Bài toán tối ưu chất lượng mạng
 Dự án mà tôi tham gia ngay từ những ngày đầu vào làm việc tại team X là dự án _“Tối ưu chất lượng mạng truy nhập vô tuyến - RAN Network Quality Optimization”_.
 
-Team có mình là DS, còn lại là 3 dev, 1 tester và sếp - trưởng phòng cũng là dân toán, làm nghiên cứu, là người đầu tiên làm bài toán tối ưu này đặt nền móng rất nhiều.
-
-Bài toán đặt ra mục tiêu là điều chỉnh các tham số của các thiết bị phát trong trong mạng sao cho đảm bảo vùng phủ không bị chồng lấn hoặc gây ra vùng phủ lõm và tối đa được thông lượng mạng.
+Bài toán đặt ra mục tiêu là điều chỉnh các tham số (Công suất phát, góc nghiêng, ...) của các thiết bị phát trong trong mạng sao cho đảm bảo vùng phủ không bị chồng lấn hoặc gây ra vùng phủ lõm và tối đa được thông lượng mạng.
 
 - **Vùng lõm sóng**: Là vùng tín hiệu yếu, người dùng sẽ mất sóng tín hiệu 4G/5G. Giống như khi bạn đi vào thang máy thì tín hiệu sóng vô tuyến sẽ mất vậy
 - **Vùng chồng lấn**: Vùng tín hiệu nhiễu, bởi 2 thiết bị phát sóng chung băng tần đè lên nhau. Tín hiệu của người dùng trong khu vực này sẽ không đạt được băng thông cao. (xem video bằng 4G/5G bị lag chẳng hạn)
@@ -45,7 +45,11 @@ Các vật cản trong không gian (tòa nhà, cây cối, đặc tính địa h
 - Thu hẹp vùng phủ trạm $\rightarrow$ gây ra vùng lõm sóng.
 
 
-Việc tối ưu 1 khu vực tỉnh thành với cả trăm trạm phát sóng san sát và đồng thời tìm ra 1 bộ tham số tối ưu cho hàng trăm trạm trong khu vực để đạt tới trạng thái tối ưu nhất: Ít lõm nhất, ít chồng lấn nhất, tối đa dung lượng mạng của mỗi người dùng trong khu vực khiến cho bài toán trở thành 1 bài tối ưu NP-hard.
+Việc tối ưu 1 khu vực tỉnh thành với cả trăm trạm phát sóng san sát và đồng thời tìm ra 1 bộ tham số tối ưu cho hàng trăm trạm trong khu vực để đạt tới trạng thái tối ưu nhất: Ít lõm nhất, ít chồng lấn nhất, tối đa dung lượng mạng của mỗi người dùng trong khu vực khiến cho bài toán trở thành 1 bài tối ưu khá khó nhằn.
+
+Ngoài ra là các bài toán về việc xây dựng các mô hình AI, thuật toán phát hiện các vấn đề về vùng phủ như vùng phủ bị suy giảm, chồng lấn, ... Cũng như các mô hình khoanh vùng dựa trên các knowledge graph, phân tích nguyên nhân gốc rễ (RCA - Root cause analysis).
+
+Khó khăn hơn nữa là đảm bảo độ chính xác cao của các thuật toán, bởi chỉ cần thuật toán cho kết quả tối ưu sai, không tốt sẽ có nguy cơ gây mất vùng phủ toàn khu vực, làm người dùng mất kết nối 4G/5G hoàn toàn.
 
 Đây là overview để ta có góc nhìn về độ phức tạp của bài toán. 😂😂
 

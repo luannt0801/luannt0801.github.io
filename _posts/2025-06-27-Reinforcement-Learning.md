@@ -18,12 +18,14 @@ Reinforcement learning (RL) là thuật toán học máy cho phép thuật toán
 Bài viết này sẽ mô tả tổng quan sự phát triển của RL và hệ thống lại các thành phần toán học trong của nó. 
 
 
-## Lịch sử của học tăng cường
+## A. Lịch sử phát triển
 
-## Phân loại học tăng cường
 
-## Công thức hóa học tăng cường
 
-## Xây dựng agent chơi game 
+## B. Phân loại học tăng cường
+
+
+
+## C. Mô hình hóa bài toán
 
 
