@@ -61,7 +61,7 @@ Tháng 9/2026 là 1 tháng phải nói là kinh khủng. Trong khoảng hơn 1 t
 
 Ấy thế mà cũng xong hết, đều thành công (●'◡'●)
 
-Tính ra cũng thần kỳ, nghiên cứu từ AI Agent cũng làm được.
+Tính ra cũng thần kỳ, nghiên cứu và triển khai từ AI agent tới các mô hình phân tích, thuật toán tối ưu mạng cũng làm được.
 
 Đã có nhiều thứ làm được trong năm 2026 này.
 
