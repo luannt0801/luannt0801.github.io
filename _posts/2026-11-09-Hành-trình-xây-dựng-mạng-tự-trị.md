@@ -32,9 +32,7 @@ Hãy tưởng tượng thay vì phải có kỹ sư liên tục theo dõi hàng 
 
 Tôi cảm thấy khá vui và có chút thành tựu khi là người nghiên cứu và phát triển chính các thuật toán, mô hình AI giải quyết các bài toán trong tự động hóa mạng lưới.
 
-## Bài toán tối ưu chất lượng mạng
- 
-### Tổng quan về bài toán _“Tối ưu chất lượng mạng truy nhập vô tuyến - RAN Network Quality Optimization”_.
+## Tổng quan về bài toán _“Tối ưu chất lượng mạng truy nhập vô tuyến - RAN Network Quality Optimization”_.
 
 Để dễ hình dung, hãy thử tưởng tượng bạn đang sử dụng điện thoại để xem YouTube, gọi video hoặc lướt Facebook bằng mạng 4G/5G. Chất lượng mạng mà bạn trải nghiệm phụ thuộc rất nhiều vào các trạm phát sóng xung quanh. Mỗi trạm phát sóng giống như một chiếc đèn chiếu sáng, chỉ khác là thay vì phát ra ánh sáng, nó phát ra sóng vô tuyến để điện thoại của chúng ta có thể kết nối Internet.
 
@@ -49,7 +47,7 @@ Nếu các trạm phát sóng được cấu hình không hợp lý, chúng có 
 
 Mục tiêu của bài toán là làm sao để người dùng có thể sử dụng mạng nhanh và ổn định nhất, đồng thời hạn chế tối đa vùng mất sóng và vùng bị ảnh hưởng bởi các trạm lân cận. 
 
-### Tại sao đây là một bài toán khó?
+## Tại sao đây là một bài toán khó?
 
 Hãy lấy Hà Nội làm ví dụ.
 
@@ -82,7 +80,7 @@ Trong thực tế, khi tối ưu một khu vực của thành phố hoặc một
 Và thay vì điều chỉnh từng trạm một cách độc lập, thuật toán phải tìm ra một bộ cấu hình phù hợp cho toàn bộ khu vực, sao cho các trạm phối hợp với nhau tốt nhất.
 
 Đây chính là một bài toán tối ưu đa mục tiêu với rất nhiều yếu tố ảnh hưởng và các ràng buộc phức tạp.
-### Vai trò của AI và các thuật toán
+## Vai trò của AI và các thuật toán
 
 Không chỉ dừng lại ở việc tìm ra cấu hình tối ưu, dự án còn có nhiều bài toán AI khác nhau.
 
@@ -108,13 +106,7 @@ Thực tế, phía sau mỗi quyết định tối ưu còn có rất nhiều y�
 
 Đó cũng chính là điều khiến mình cảm thấy công việc nghiên cứu này vừa thú vị, vừa đầy thách thức. 😂
 
-## Tháng 9/2026
-
-Tháng 9/2026 là 1 tháng phải nói là kinh khủng. Trong khoảng hơn 1 tháng này, tôi vừa nghiên cứu và triển khai các mô hình AI phân tích mạng, vừa hướng dẫn 2 bạn VDT (viettel digital talent - 2 bạn đều pass và đến nay bắt đầu làm việc nghiên cứu cùng.), vừa thi 2 chứng chỉ quốc tế, vừa báo cáo luận văn thạc sĩ.
-
-Ấy thế mà cũng xong hết, đều thành công (●'◡'●)
-
-Tính ra cũng thần kỳ, nghiên cứu và triển khai từ AI agent tới các mô hình phân tích, thuật toán tối ưu mạng cũng làm được.
+## Lời kết
 
 Đã có nhiều thứ làm được trong năm 2026 này.
 

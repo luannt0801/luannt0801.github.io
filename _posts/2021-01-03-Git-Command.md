@@ -63,13 +63,13 @@ git pull origin main
 
 ### Git remote
 
-|Lệnh|Ý nghĩa|
-|---|---|
-|`git remote -v`|Hiển thị remote repository đang kết nối|
-|`git push`|Đẩy commit lên remote (GitHub, GitLab,...)|
-|`git push origin <branch>`|Đẩy nhánh lên remote|
-|`git pull`|Kéo code mới nhất từ remote về local|
-|`git fetch`|Lấy dữ liệu từ remote nhưng **không** merge|
+| Lệnh                       | Ý nghĩa                                               |
+| -------------------------- | ----------------------------------------------------- |
+| `git remote -v`            | Hiển thị remote repository đang kết nối               |
+| `git push`                 | Đẩy commit lên remote (GitHub, GitLab,...)            |
+| `git push origin <branch>` | Đẩy nhánh lên remote                                  |
+| `git pull`                 | Kéo code mới nhất từ remote về local                  |
+| `git fetch`                | Lấy, kiểm tra dữ liệu từ remote nhưng **không** merge |
 
 ### Undo and restore
 
