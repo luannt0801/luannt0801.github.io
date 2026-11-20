@@ -13,7 +13,15 @@ cover_alt: "Ảnh cover minh hoạ"
 published: true
 ---
 
-Viettel vừa trở thành nhà mạng đầu tiên tại Việt Nam đạt cấp độ tự trị cao nhất thế giới tính đến hiện nay, là nhà mạng đầu tiên tại Đông Nam Á chinh phục chứng chỉ ANL4 *(Nguồn: [Báo Viettel Family](https://vtnet.viettelfamily.com/news/vtnet-dat-chung-nhan-mang-tu-tri-cap-do-cao-nhat-the-gioi-hien-nay-tu-tm-forum))*.
+Viettel vừa trở thành nhà mạng đầu tiên tại Việt Nam đạt cấp độ tự trị cao nhất thế giới tính đến hiện nay, là nhà mạng đầu tiên tại Đông Nam Á chinh phục chứng chỉ ANL4.
+
+*Các nguồn báo đăng tin:
+- [Báo Viettel Family](https://vtnet.viettelfamily.com/news/vtnet-dat-chung-nhan-mang-tu-tri-cap-do-cao-nhat-the-gioi-hien-nay-tu-tm-forum))*.
+- [Báo chính phủ - Viettel đạt chuẩn mạng tự trị cao nhất thế giới](https://baochinhphu.vn/viettel-dat-chuan-mang-tu-tri-cao-nhat-the-gioi-102261119230239182.htm)
+- [Báo nhân dân - Viettel đạt chứng nhận mạng tự trị cấp độ 4 ở hai nghiệp vụ trọng điểm](https://nhandan.vn/viettel-dat-chung-nhan-mang-tu-tri-cap-do-4-o-hai-nghiep-vu-trong-diem-post1003982.html)
+- [Báo Vietnam (english) - Viettel achieves the highest autonomous network standard in the world.](https://www.vietnam.vn/en/viettel-dat-chuan-mang-tu-tri-cao-nhat-the-gioi)
+
+_Và video phóng sự trên đài truyền hình quốc gia  VTV1 đăng tin tại:_ [Phóng sự VTV1 - Mạng tự trị](https://youtu.be/7XookLck0QA)
 
 Mạng tự trị cấp độ 4 (Autonomous Networks Level 4 – ANL4) hướng tới khả năng vận hành mạng gần như hoàn toàn tự động. Hệ thống có thể chủ động giám sát, phát hiện vấn đề, phân tích nguyên nhân, đưa ra quyết định và thực thi các hành động điều chỉnh, tối ưu chất lượng mạng mà không cần sự can thiệp trực tiếp của con người. Điều này đòi hỏi các thuật toán, mô hình AI đưa ra có khả năng chính xác cao, xử lý với dữ liệu lớn của toàn mạng lưới với hàng triệu thuê bao.
 
